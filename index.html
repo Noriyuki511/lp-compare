@@ -1,0 +1,685 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Journey Matters | 田中紀之 — 精密栄養カウンセラー</title>
+<meta name="description" content="血液検査×生活データをAI解析し、何からやるかの優先順位を設計。神宮前統合医療クリニック監修の8weeks.aiを活用した精密栄養カウンセリング。">
+<meta property="og:title" content="Your Journey Matters | 田中紀之">
+<meta property="og:description" content="血液検査と生活データで今の状態を整理し、改善の優先順位を見つける精密栄養カウンセリング。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourjourney-matters.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--navy:#071426;--navy-light:#122a4a;
+--accent:#1554d1;--accent-light:#4f8fe8;--accent-pale:#b8cfe8;
+--accent-hero:#7db8e0;
+--blue-tint:#d4e1ef;--blue-tint-deep:#bdd0e4;
+--white:#FFFFFF;--off-white:#F7F9FB;
+--gray-light:#E5EAF0;--gray:#8a9bb0;
+--text:#151c28;--text-light:#556275;
+--glass:rgba(255,255,255,0.72);--glass-border:rgba(30,95,216,0.15);
+--shadow-sm:0 1px 4px rgba(7,20,38,0.05);
+--shadow-md:0 4px 24px rgba(7,20,38,0.07);
+--shadow-lg:0 8px 40px rgba(7,20,38,0.09);
+--radius:16px;--radius-sm:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.02em}
+.emphasis{font-weight:600;color:var(--navy)}
+.accent-word{color:var(--accent);font-weight:600}
+.solo-line{font-size:1.1rem;font-weight:500;color:var(--navy);line-height:2.1;margin:2.5rem 0;letter-spacing:0.02em}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);backdrop-filter:blur(20px);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--white);letter-spacing:0.06em;text-decoration:none}
+.nav-logo span{color:var(--accent-hero)}
+.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--white);color:var(--navy)!important;padding:0.5rem 1.4rem;border-radius:10px;font-weight:500!important;transition:all 0.2s!important}
+.nav-cta:hover{background:#eef2f7!important;transform:translateY(-1px)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:110}
+.hamburger span{display:block;width:100%;height:2px;background:var(--white);position:absolute;left:0;transition:all 0.3s}
+.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
+.hamburger.active span:nth-child(1){top:9px;transform:rotate(45deg)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){top:9px;transform:rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(7,20,38,0.96);backdrop-filter:blur(20px);z-index:105;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-menu.active{display:flex}
+.mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.08em}
+.mobile-menu .nav-cta{margin-top:1rem;padding:0.9rem 2.2rem;font-size:1rem;border-radius:12px;background:var(--white);color:var(--navy)!important}
+
+/* SECTION COMMON */
+.section-label{font-size:0.68rem;letter-spacing:0.22em;color:var(--accent);text-transform:uppercase;margin-bottom:1.4rem;font-weight:500}
+.section-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;color:var(--navy);line-height:1.5;letter-spacing:0.01em;margin-bottom:2.5rem}
+.section-sub{font-size:0.9rem;color:var(--text-light);line-height:2.1;max-width:520px}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:180px 6% 100px;background:radial-gradient(circle at 72% 38%,rgba(125,184,224,0.22),transparent 34%),radial-gradient(ellipse at 30% 50%,#1a4a7a 0%,#0d2847 40%,#071426 100%)}
+.hero-left{max-width:540px}
+.hero-hook{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.05em;margin-bottom:1.8rem;animation:fadeUp 0.7s ease both;line-height:1.6}
+.hero-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.55;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
+.section-title,.step-title,.about-name{font-family:'Noto Sans JP',sans-serif;font-weight:500;letter-spacing:0.01em}
+.hero-title strong{font-weight:600;color:var(--white)}
+.hero-title .accent-word{color:var(--accent-hero);font-weight:600}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.24s both}
+.btn-primary{background:var(--white);color:var(--navy);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;font-weight:500;transition:all 0.25s;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
+.btn-primary:hover{background:#f0f4f8;transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.2)}
+.btn-outline{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;transition:all 0.25s;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px)}
+.btn-outline:hover{background:rgba(255,255,255,0.15);color:var(--white);border-color:rgba(255,255,255,0.35)}
+.hero-cta-desc{font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:0.6rem;line-height:1.8;animation:fadeUp 0.8s ease 0.3s both}
+.hero-free-detail{margin-top:2rem;padding:1.3rem 1.5rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-sm);backdrop-filter:blur(12px);animation:fadeUp 0.8s ease 0.36s both}
+.hero-free-title{font-size:0.7rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;font-weight:500;margin-bottom:0.7rem}
+.hero-free-items{display:flex;flex-direction:column;gap:0.35rem}
+.hero-free-item{font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.7;display:flex;align-items:center;gap:0.5rem}
+.hero-free-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent-hero);flex-shrink:0}
+.hero-trust{display:flex;gap:1.5rem;margin-top:2.2rem;animation:fadeUp 0.8s ease 0.42s both;flex-wrap:wrap}
+.trust-item{font-size:0.72rem;color:rgba(255,255,255,0.55);letter-spacing:0.04em}
+
+/* HEALTH MAP */
+.hero-right{display:flex;align-items:center;justify-content:center;animation:fadeUp 1s ease 0.2s both;align-self:center}
+.health-map{position:relative;width:100%;max-width:420px;margin:0 auto;filter:drop-shadow(0 0 80px rgba(125,184,224,0.28))}
+.hm-input-nodes{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;width:88%;margin:0 auto}
+.hm-node{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:var(--radius-sm);text-align:center;backdrop-filter:blur(12px);padding:0.75rem 0.7rem}
+.hm-node:nth-child(1){transform:none}
+.hm-node:nth-child(2){transform:none}
+.hm-node:nth-child(3){transform:none}
+.hm-node:nth-child(4){transform:none}
+.hm-node-icon{margin-bottom:0.25rem;font-size:1.2rem}
+.hm-node-text{font-size:0.66rem;color:rgba(255,255,255,0.65);font-weight:500;letter-spacing:0.04em}
+.hm-map-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:var(--radius-sm);padding:1.3rem 1.5rem;box-shadow:0 4px 24px rgba(0,0,0,0.12);backdrop-filter:blur(12px)}
+.hm-map-title{font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-weight:500;color:var(--white);margin-bottom:0.7rem;letter-spacing:0.04em}
+.hm-map-bars{display:flex;flex-direction:column;gap:0.45rem}
+.hm-bar-label{font-size:0.6rem;color:rgba(255,255,255,0.5);margin-bottom:0.15rem}
+.hm-bar-track{height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
+.hm-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent-hero),#a8d4f0);border-radius:3px;transition:width 1.5s ease}
+.hm-bar-fill.hm-bar-warn{background:linear-gradient(90deg,#E8A87C,#D4956B)}
+.hm-results{display:flex;gap:0.7rem}
+.hm-result-card{flex:1;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:var(--radius-sm);padding:0.7rem;text-align:center;backdrop-filter:blur(8px)}
+.hm-result-num{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--accent-hero);font-weight:300;margin-bottom:0.1rem}
+.hm-result-text{font-size:0.62rem;color:rgba(255,255,255,0.55);font-weight:500}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:0.88}}
+
+/* PAIN */
+#pain{padding:140px 6%;background:var(--white);text-align:center}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--gray-light);border-radius:var(--radius);overflow:hidden;max-width:680px;margin:2.5rem auto 0;box-shadow:var(--shadow-sm)}
+.pain-item{background:var(--white);padding:3rem 2rem}
+.pain-item p{font-size:0.9rem;line-height:1.9;color:var(--text-light)}
+
+/* DATA */
+#data-you-have{padding:140px 6%;background:var(--off-white);text-align:center}
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:760px;margin:2.5rem auto 0}
+.data-card{background:var(--white);border:1px solid var(--gray-light);border-radius:var(--radius-sm);padding:2rem 1.5rem;text-align:center;transition:transform 0.3s}
+.data-card:hover{transform:translateY(-2px)}
+.data-card-icon{font-size:1.6rem;margin-bottom:0.8rem}
+.data-card-title{font-size:0.85rem;font-weight:500;color:var(--navy);margin-bottom:0.4rem}
+.data-card-desc{font-size:0.75rem;color:var(--text-light);line-height:1.8}
+.data-card.optional-card{border-style:dashed;background:transparent;box-shadow:none}
+.data-note{font-size:0.75rem;color:var(--gray);margin-top:2.5rem;line-height:1.8}
+
+/* TRANSITION */
+#transition{padding:120px 6%;background:var(--white);text-align:center}
+.transition-content{max-width:520px;margin:0 auto}
+.transition-before{font-size:0.9rem;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+.transition-arrow{font-size:1.5rem;color:var(--accent);margin-bottom:2rem;opacity:0.5}
+.transition-after{font-size:1.15rem;font-weight:500;color:var(--navy);line-height:2.1}
+
+/* SERVICE */
+#service{padding:140px 6%;background:var(--off-white)}
+.service-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:1000px}
+.service-text p{font-size:0.88rem;line-height:2.2;color:var(--text-light);margin-bottom:1.5rem}
+.service-flow{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:2.5rem 2rem;box-shadow:var(--shadow-md);backdrop-filter:blur(8px)}
+.flow-title{font-size:0.68rem;letter-spacing:0.15em;color:var(--gray);text-transform:uppercase;margin-bottom:2rem;text-align:center}
+.flow-diagram{display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-bottom:2rem}
+.flow-node{text-align:center;flex:1;max-width:120px}
+.flow-node-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 0.6rem;font-size:1.2rem}
+.flow-node-icon.user-icon{background:var(--accent-pale)}
+.flow-node-icon.pro-icon{background:rgba(7,20,38,0.05)}
+.flow-node-icon.ai-icon{background:rgba(30,95,216,0.1)}
+.flow-node-label{font-size:0.75rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
+.flow-node-sub{font-size:0.65rem;color:var(--gray);line-height:1.4}
+.flow-connector{color:var(--accent);font-size:1rem;flex-shrink:0;opacity:0.35}
+.flow-steps{display:flex;flex-direction:column;gap:0.7rem;border-top:1px solid var(--glass-border);padding-top:1.5rem}
+.flow-step-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.8rem;color:var(--text-light);line-height:1.7}
+.flow-step-num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:var(--white);font-size:0.65rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+
+/* TIMELINE */
+.timeline{position:relative;max-width:800px;margin:3rem auto 0;padding:2rem 0}
+.tl-line{position:absolute;top:2rem;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0.3}
+.tl-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative}
+.tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--white);box-shadow:0 0 0 2px var(--accent);margin-bottom:1rem;position:relative;z-index:2}
+.tl-month{font-size:0.68rem;letter-spacing:0.1em;color:var(--accent);font-weight:500;text-transform:uppercase;margin-bottom:0.8rem}
+.tl-card{background:var(--white);border:1px solid var(--gray-light);border-radius:var(--radius-sm);padding:1.4rem 1.2rem;min-height:110px;display:flex;flex-direction:column;justify-content:center;width:100%}
+.tl-card-title{font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem}
+.tl-card-desc{font-size:0.72rem;color:var(--text-light);line-height:1.7}
+
+/* COMPARISON TABLE */
+.compare-table{max-width:700px;margin:3rem auto 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-light);box-shadow:var(--shadow-sm)}
+.compare-header{display:grid;grid-template-columns:1fr 1.2fr 1.2fr;background:var(--navy);padding:1.2rem 1.5rem}
+.compare-col-label{font-size:0.72rem;color:rgba(255,255,255,0.5);font-weight:500}
+.compare-col-old{font-size:0.75rem;color:rgba(255,255,255,0.6);font-weight:500;text-align:center}
+.compare-col-new{font-size:0.75rem;color:var(--accent-hero);font-weight:600;text-align:center}
+.compare-row{display:grid;grid-template-columns:1fr 1.2fr 1.2fr;padding:1.2rem 1.5rem;border-bottom:1px solid var(--gray-light);background:var(--white)}
+.compare-row:last-child{border-bottom:none}
+.compare-item-label{font-size:0.78rem;font-weight:600;color:var(--navy);display:flex;align-items:center}
+.compare-item-old{font-size:0.76rem;color:var(--gray);text-align:center;display:flex;align-items:center;justify-content:center}
+.compare-item-new{font-size:0.76rem;color:var(--text);font-weight:500;text-align:center;display:flex;align-items:center;justify-content:center}
+
+/* HOW */
+#how{padding:140px 6%;background:var(--navy);text-align:center}
+#how .section-title{color:var(--white)}
+#how .section-label{color:var(--accent-hero)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3.5rem;max-width:860px;margin-left:auto;margin-right:auto}
+.step-num{font-family:'Noto Sans JP',sans-serif;font-size:2.4rem;font-weight:300;color:rgba(125,184,224,0.4);margin-bottom:1.2rem}
+.step-title{font-size:0.92rem;font-weight:500;color:var(--white);margin-bottom:0.8rem;font-family:'Noto Sans JP',sans-serif}
+.step-desc{font-size:0.82rem;line-height:2;color:rgba(255,255,255,0.6)}
+
+/* LEARN */
+#learn{padding:140px 6%;background:var(--white);text-align:center}
+.learn-single{max-width:640px;margin:0 auto}
+.video-embed-wrap{position:relative;width:100%;aspect-ratio:16/9;background:var(--off-white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
+.video-embed-wrap iframe{position:absolute;inset:0;width:100%;height:100%}
+
+/* SAMPLE REPORT */
+#sample-report{padding:180px 6%;background:var(--off-white);text-align:center}
+.report-context{font-size:0.82rem;color:var(--text-light);line-height:2.1;max-width:500px;margin:0 auto 3rem}
+.report-preview{max-width:580px;margin:0 auto;background:var(--white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:0;box-shadow:var(--shadow-lg);overflow:hidden}
+.report-cover{background:linear-gradient(135deg,var(--navy) 0%,#1a4a7a 100%);padding:2.5rem 2.5rem 2rem;position:relative}
+.report-cover::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-hero))}
+.report-cover-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--white);margin-bottom:0.4rem;letter-spacing:0.04em}
+.report-cover-sub{font-size:0.7rem;color:rgba(255,255,255,0.5);letter-spacing:0.06em}
+.report-cover-badge{position:absolute;top:2rem;right:2rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:0.4rem 0.8rem;font-size:0.6rem;color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase}
+.report-body{padding:2.5rem}
+.report-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--glass-border)}
+.report-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.report-header-text h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:0.15rem}
+.report-header-text p{font-size:0.68rem;color:var(--gray)}
+.report-items{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:2rem}
+.report-item{background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius-sm);padding:1.2rem;text-align:left}
+.report-item-icon{font-size:1rem;margin-bottom:0.5rem}
+.report-item-title{font-size:0.88rem;font-weight:600;color:var(--navy);margin-bottom:0.2rem}
+.report-item-desc{font-size:0.72rem;color:var(--text-light);line-height:1.6}
+.btn-secondary{display:inline-block;background:var(--white);color:var(--accent);padding:0.8rem 2rem;border-radius:12px;text-decoration:none;font-size:0.85rem;font-weight:500;border:1px solid var(--accent);transition:all 0.25s}
+.btn-secondary:hover{background:var(--accent-pale);transform:translateY(-1px)}
+.report-footnote{font-size:0.82rem;color:var(--text);margin-top:3rem;line-height:2.1;font-weight:500}
+
+/* PRICING */
+#pricing{padding:180px 6%;background:var(--white);text-align:center}
+.pricing-card{max-width:500px;margin:2.5rem auto 0;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:3.5rem;text-align:left;box-shadow:0 8px 40px rgba(7,20,38,0.12);backdrop-filter:blur(10px)}
+.pricing-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1.5rem}
+.pricing-amount{display:flex;align-items:baseline;gap:0.3rem;margin-bottom:0.5rem}
+.pricing-amount .currency{font-size:1.1rem;color:var(--navy)}
+.pricing-amount .amount{font-family:'Noto Sans JP',sans-serif;font-size:2.8rem;font-weight:400;color:var(--navy);line-height:1;letter-spacing:-0.01em}
+.pricing-amount .period{font-size:0.85rem;color:var(--gray)}
+.pricing-tax{font-size:0.72rem;color:var(--gray);margin-bottom:2rem}
+.pricing-divider{height:1px;background:var(--glass-border);margin:1.5rem 0}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:0.9rem;margin-bottom:2.5rem}
+.pricing-features li{display:flex;align-items:flex-start;gap:0.8rem;font-size:0.86rem;color:var(--text-light);line-height:1.7}
+.pricing-features li::before{content:'\2713';color:var(--accent);font-weight:700;flex-shrink:0}
+.btn-pricing{display:block;background:var(--navy);color:var(--white);text-align:center;padding:1rem;text-decoration:none;font-size:0.86rem;font-weight:500;border-radius:12px;transition:all 0.25s;box-shadow:var(--shadow-sm)}
+.btn-pricing:hover{background:var(--navy-light);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.pricing-cta-sub{text-align:center;font-size:0.72rem;color:var(--gray);line-height:1.8;margin-top:0.8rem}
+.pricing-disclaimer{font-size:0.72rem;color:var(--gray);text-align:center;margin-top:2.5rem;line-height:1.8}
+
+/* ABOUT */
+#about{padding:140px 6%;background:var(--off-white)}
+.about-layout{max-width:640px}
+.about-name{font-family:'Noto Sans JP',sans-serif;font-size:1.5rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
+.about-name-en{font-size:0.72rem;letter-spacing:0.12em;color:var(--gray);margin-bottom:1.8rem}
+.about-bio{font-size:0.86rem;line-height:2.3;color:var(--text-light);margin-bottom:2rem}
+.about-belief{padding:1.5rem 1.8rem;background:var(--white);border-radius:var(--radius-sm);font-size:0.92rem;line-height:2.1;color:var(--navy);margin-bottom:2rem;font-weight:500;border-left:3px solid var(--accent)}
+.about-creds{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.about-cred-tag{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;padding:0.45rem 0.9rem;font-size:0.7rem;color:var(--text-light)}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.8rem;font-weight:500;transition:opacity 0.2s}
+.btn-ghost:hover{opacity:0.7}
+
+/* TESTIMONIALS */
+#testimonials{padding:200px 6%;background:var(--white);text-align:center}
+.testimonial-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:760px;margin:2.5rem auto 0}
+.testimonial-card{background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.4rem;text-align:left;box-shadow:var(--shadow-sm)}
+.testimonial-text{font-size:0.86rem;line-height:2.1;color:var(--text-light);margin-bottom:1.2rem}
+.testimonial-author{border-top:1px solid var(--gray-light);padding-top:0.8rem}
+.testimonial-name{font-size:0.78rem;font-weight:500;color:var(--text)}
+.testimonial-meta{font-size:0.68rem;color:var(--gray);margin-top:0.1rem}
+
+/* FAQ */
+#faq{padding:140px 6%;background:var(--off-white);text-align:center}
+#faq .section-label{color:var(--accent)}
+#faq .section-title{color:var(--navy)}
+.faq-list{max-width:700px;margin:2.5rem auto 0}
+.faq-item{border-bottom:1.5px dotted var(--gray-light);padding:0}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:2.2rem 0;font-family:'Noto Sans JP',sans-serif;font-size:0.9rem;font-weight:500;color:var(--navy);text-align:left;gap:1rem}
+.faq-q:hover{color:var(--accent)}
+.faq-q-label{font-weight:700;color:var(--accent);margin-right:0.8rem;font-size:0.85rem}
+.faq-icon{width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;color:var(--accent);font-weight:300}
+.faq-item.open .faq-icon{color:var(--navy)}
+.faq-a{font-size:0.84rem;line-height:2.1;color:var(--text-light);padding:0 0 2.2rem 0;display:none;text-align:left}
+.faq-item.open .faq-a{display:block}
+
+/* APPLY */
+#apply{padding:180px 6%;background:var(--navy);text-align:center}
+#apply .section-label{color:var(--accent-hero)}
+#apply .section-title{color:var(--white)}
+.apply-sub{font-size:0.9rem;color:rgba(255,255,255,0.65);margin-bottom:2.5rem;line-height:2.1;max-width:440px;margin-left:auto;margin-right:auto}
+.apply-flow{display:flex;justify-content:center;align-items:center;gap:0;margin-bottom:2.5rem;flex-wrap:wrap}
+.flow-step-label{font-size:0.75rem;color:rgba(255,255,255,0.55);padding:0 0.5rem}
+.flow-arrow-label{color:var(--accent-hero);padding:0 0.3rem;font-size:0.8rem;opacity:0.6}
+.apply-cta-wrap{display:flex;flex-direction:column;align-items:center}
+.apply-cta-sub{font-size:0.72rem;color:rgba(255,255,255,0.2);max-width:360px;line-height:1.8;margin-top:0.8rem}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);padding:2.5rem 6%;display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:rgba(255,255,255,0.15)}
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav-links{display:none}.hamburger{display:block}
+#hero{grid-template-columns:1fr;text-align:center;padding:110px 6% 60px;gap:2.5rem}
+.hero-left{max-width:100%}.hero-buttons{justify-content:center}.hero-trust{justify-content:center}
+.hero-free-detail{text-align:left}
+.health-map{max-width:300px}.hm-input-nodes{width:92%}
+.pain-grid{grid-template-columns:1fr}
+.data-cards{grid-template-columns:1fr;max-width:300px}
+.service-layout{grid-template-columns:1fr;gap:3rem}
+.flow-diagram{flex-direction:column;gap:0.4rem}.flow-connector{transform:rotate(90deg)}
+.steps{grid-template-columns:1fr;gap:2rem}
+.tl-steps{grid-template-columns:1fr;gap:1.2rem}
+.tl-line{display:none}
+.compare-table{font-size:0.7rem}
+.compare-header,.compare-row{grid-template-columns:0.8fr 1fr 1fr;padding:1rem}
+.report-items{grid-template-columns:1fr}
+.testimonial-grid{grid-template-columns:1fr}
+.apply-flow{flex-direction:column;gap:0.4rem}.apply-flow .flow-arrow-label{transform:rotate(90deg)}
+footer{flex-direction:column;gap:0.5rem;text-align:center}
+.pricing-card{padding:2rem}
+#pain,#data-you-have,#transition,#service,#how,#learn,#sample-report,#pricing,#about,#testimonials,#faq,#apply,#timeline,#comparison{padding:100px 6%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Your Journey<span> Matters</span></a>
+  <ul class="nav-links">
+    <li><a href="#service">Service</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#apply" class="nav-cta">3分で方向性を整理</a></li>
+  </ul>
+  <button class="hamburger" aria-label="メニューを開く" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#service" onclick="closeMenu()">Service</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#apply" class="nav-cta" onclick="closeMenu()">3分で方向性を整理する</a>
+</div>
+
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-hook">変わらない理由は、"順番"。</p>
+    <h1 class="hero-title">
+      あなたのデータから、<br>
+      <span class="accent-word">健康地図</span>をつくる。
+    </h1>
+    <p class="hero-sub">
+      努力が足りないのではなく、やる順番が違うだけかもしれません。<br>
+      お手元のデータをAIが解析し、「何からやるか」を見つけます。
+    </p>
+    <div class="hero-buttons">
+      <a href="https://forms.gle/your-form-link" class="btn-primary">3分で「最初の一歩」を整理する</a>
+      <a href="#service" class="btn-outline">サービス詳細を見る</a>
+    </div>
+    <p class="hero-cta-desc">迷っている時間を、整理する時間に変えます。</p>
+    <div class="hero-free-detail">
+      <p class="hero-free-title">3分でわかること</p>
+      <div class="hero-free-items">
+        <div class="hero-free-item">今の状態（ざっくり）</div>
+        <div class="hero-free-item">最初にやるべき1つ</div>
+      </div>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-item">神宮前統合医療クリニック監修</span>
+      <span class="trust-item">AI解析基盤：日本人データ 2,000名超</span>
+    </div>
+  </div>
+  <div class="hero-right" aria-hidden="true">
+    <div class="health-map">
+      <p style="font-size:0.6rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem;font-weight:500">Input Data</p>
+      <div class="hm-input-nodes">
+        <div class="hm-node"><div class="hm-node-icon">🩸</div><div class="hm-node-text">血液検査</div></div>
+        <div class="hm-node"><div class="hm-node-icon">🌙</div><div class="hm-node-text">睡眠</div></div>
+        <div class="hm-node"><div class="hm-node-icon">🍽️</div><div class="hm-node-text">食事</div></div>
+        <div class="hm-node"><div class="hm-node-icon">🏃</div><div class="hm-node-text">活動量</div></div>
+      </div>
+      <div style="text-align:center;margin:0.8rem 0;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
+      <div style="text-align:center;margin-bottom:0.8rem">
+        <span style="display:inline-block;background:rgba(125,184,224,0.15);border:1px solid rgba(125,184,224,0.3);border-radius:20px;padding:0.4rem 1.2rem;font-size:0.72rem;color:var(--accent-hero);font-weight:500;letter-spacing:0.04em">AI 解析（8weeks.ai）</span>
+      </div>
+      <div style="text-align:center;margin-bottom:0.8rem;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
+      <p style="font-size:0.6rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem;font-weight:500">Output</p>
+      <div class="hm-map-card">
+        <div class="hm-map-title">Your Health Map</div>
+        <div class="hm-map-bars">
+          <div class="hm-bar"><div class="hm-bar-label">栄養バランス</div><div class="hm-bar-track"><div class="hm-bar-fill" style="width:72%"></div></div></div>
+          <div class="hm-bar"><div class="hm-bar-label">睡眠の質</div><div class="hm-bar-track"><div class="hm-bar-fill" style="width:58%"></div></div></div>
+          <div class="hm-bar"><div class="hm-bar-label">炎症リスク</div><div class="hm-bar-track"><div class="hm-bar-fill hm-bar-warn" style="width:35%"></div></div></div>
+        </div>
+      </div>
+      <div class="hm-results" style="position:relative;margin-top:1rem;display:flex;gap:0.7rem;width:100%">
+        <div class="hm-result-card"><div class="hm-result-num">01</div><div class="hm-result-text">改善ポイント</div></div>
+        <div class="hm-result-card"><div class="hm-result-num">02</div><div class="hm-result-text">優先順位</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section id="pain">
+  <div class="reveal"><p class="section-label">Common Challenges</p><h2 class="section-title">こんなこと、ありませんか？</h2></div>
+  <div class="pain-grid reveal">
+    <div class="pain-item"><p>何から変えるべきか、<span class="emphasis">決められない</span></p></div>
+    <div class="pain-item"><p>始めても、忙しくなると<span class="emphasis">続かない</span></p></div>
+    <div class="pain-item"><p>健診は異常なし。でも<span class="emphasis">調子の波</span>がある</p></div>
+    <div class="pain-item"><p>自分に効く順番が、<span class="emphasis">分からない</span></p></div>
+  </div>
+</section>
+
+<!-- DATA -->
+<section id="data-you-have">
+  <div class="reveal"><p class="section-label">Your Data</p><h2 class="section-title">特別な検査は不要です</h2><p class="section-sub" style="margin:0 auto 2rem;text-align:center">すでに持っているデータで始められます。</p></div>
+  <div class="data-cards reveal">
+    <div class="data-card"><div class="data-card-icon">🩸</div><div class="data-card-title">健康診断結果</div><div class="data-card-desc">会社や自治体の健診結果<br>献血時の検査成績</div></div>
+    <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">ヘルスケアデータ</div><div class="data-card-desc">iPhone等の睡眠・活動量<br>体温・体重の記録</div></div>
+    <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">食事・血糖記録</div><div class="data-card-desc">日々の食事記録<br>グルコース変動データ</div></div>
+  </div>
+  <div class="data-cards reveal" style="margin-top:1.2rem"><div class="data-card optional-card" style="grid-column:1/-1;max-width:300px;margin:0 auto"><div class="data-card-icon">🧬</div><div class="data-card-title">遺伝子データ（任意）</div><div class="data-card-desc">SNPs変異データをお持ちの場合、<br>合わせて解析可能です</div></div></div>
+  <p class="data-note reveal">※データが多いほど解析精度が高まります。まずはお手元にあるものだけでOKです。</p>
+</section>
+
+<!-- TRANSITION -->
+<section id="transition">
+  <div class="transition-content reveal">
+    <p class="transition-before">情報は足りている。<br>足りないのは、<span class="emphasis">「何からやるか」の整理</span>。</p>
+    <div class="transition-arrow">↓</div>
+    <p class="transition-after"><span class="accent-word">「何からやるか」</span>が決まるだけで、<br>改善は回り始めます。</p>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service">
+  <div class="service-layout">
+    <div class="service-text reveal">
+      <p class="section-label">Service</p>
+      <h2 class="section-title">クリニック監修AI ×<br><span class="accent-word">カウンセラー</span>の伴走</h2>
+      <p>神宮前統合医療クリニック監修のAI解析ツール <span class="emphasis">8weeks.ai</span> を活用。2,000人超の日本人データを深層学習したAIが、あなたのデータを解析します。</p>
+      <p class="solo-line">解析レポートをもとに、<br>「何からやるか」の優先順位を設計。</p>
+      <p style="font-size:0.76rem;color:var(--gray)">※医療行為ではありません。必要な場合は受診を推奨します。</p>
+    </div>
+    <div class="reveal">
+      <div class="service-flow">
+        <p class="flow-title">サービスの仕組み</p>
+        <div class="flow-diagram">
+          <div class="flow-node"><div class="flow-node-icon user-icon">👤</div><div class="flow-node-label">あなた</div><div class="flow-node-sub">データを提出</div></div>
+          <div class="flow-connector">→</div>
+          <div class="flow-node"><div class="flow-node-icon pro-icon">🧑‍⚕️</div><div class="flow-node-label">カウンセラー</div><div class="flow-node-sub">解析＋アドバイス</div></div>
+          <div class="flow-connector">⇄</div>
+          <div class="flow-node"><div class="flow-node-icon ai-icon">🤖</div><div class="flow-node-label">8weeks.ai</div><div class="flow-node-sub">AI深層学習解析</div></div>
+        </div>
+        <div class="flow-steps">
+          <div class="flow-step-item"><div class="flow-step-num">1</div><span>お手元のデータ（健診結果・ヘルスケア等）を提出</span></div>
+          <div class="flow-step-item"><div class="flow-step-num">2</div><span>8weeks.ai がAI解析し、レポートを生成</span></div>
+          <div class="flow-step-item"><div class="flow-step-num">3</div><span>レポートをもとにカウンセラーが優先順位を設計</span></div>
+          <div class="flow-step-item"><div class="flow-step-num">4</div><span>月次で検証・更新し、改善を積み上げる</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <p class="section-label reveal">How it works</p>
+  <h2 class="section-title reveal" style="font-family:'Noto Sans JP',sans-serif">3つのステップ</h2>
+  <div class="steps reveal">
+    <div class="step"><div class="step-num">01</div><div class="step-title">AI解析で現状を可視化</div><div class="step-desc">データをAIが解析し、<br>今の状態を可視化します。</div></div>
+    <div class="step"><div class="step-num">02</div><div class="step-title">優先順位を設計する</div><div class="step-desc">解析レポートをもとに、<br>何をする・何をしないを絞ります。</div></div>
+    <div class="step"><div class="step-num">03</div><div class="step-title">実行→検証→更新</div><div class="step-desc">月次で振り返り、データで検証。<br>改善を積み上げます。</div></div>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section id="learn">
+  <p class="section-label reveal">Learn</p>
+  <h2 class="section-title reveal">まずは考え方を<span class="accent-word" style="font-family:'Noto Sans JP',sans-serif">1つだけ</span>。</h2>
+  <div class="learn-single reveal">
+    <div class="video-embed-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/p74G81Rt8vE" title="精密栄養学について" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE REPORT -->
+<section id="sample-report">
+  <p class="section-label reveal">Output</p>
+  <h2 class="section-title reveal"><span class="accent-word">あなたに届く</span>レポート（有料プラン）</h2>
+  <p class="report-context reveal">無料診断では簡易的な方向性の整理のみ行います。<br>詳細な分析は、以下のようなレポートで提供します。</p>
+  <div class="report-preview reveal">
+    <div class="report-cover">
+      <div class="report-cover-title">Health Analysis Report</div>
+      <div class="report-cover-sub">8weeks.ai × Precision Nutrition Counselor</div>
+    </div>
+    <div class="report-body">
+    <div class="report-items">
+      <div class="report-item"><div class="report-item-icon">📋</div><div class="report-item-title">総合評価サマリー</div><div class="report-item-desc">健康状態の全体像と<br>優先順位の提示</div></div>
+      <div class="report-item"><div class="report-item-icon">🔍</div><div class="report-item-title">詳細な分析</div><div class="report-item-desc">現状の問題点と<br>メカニズムの解説</div></div>
+      <div class="report-item"><div class="report-item-icon">🩸</div><div class="report-item-title">血液検査の分析</div><div class="report-item-desc">精密栄養学的理想値との<br>比較と読み解き</div></div>
+      <div class="report-item"><div class="report-item-icon">🎯</div><div class="report-item-title">改善プラン</div><div class="report-item-desc">食事・栄養素・生活習慣の<br>具体的アクション</div></div>
+    </div>
+    <a href="https://forms.gle/your-sample-form-link" class="btn-secondary">サンプルレポートを受け取る →</a>
+    </div>
+  </div>
+  <p class="report-footnote reveal" style="font-size:1.05rem">これは"結果"ではなく、<br><span class="accent-word" style="font-size:1.2rem">"あなたの健康地図"</span>です。</p>
+  <p style="font-size:0.82rem;color:var(--text-light);margin-top:1.2rem;text-align:center" class="reveal">あなたにも、同じ形式で届きます。</p>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section id="comparison" style="padding:140px 6%;background:var(--white);text-align:center">
+  <p class="section-label reveal">Difference</p>
+  <h2 class="section-title reveal">従来のアプローチとの違い</h2>
+  <div class="compare-table reveal">
+    <div class="compare-header">
+      <div class="compare-col-label">比較項目</div>
+      <div class="compare-col-old">従来</div>
+      <div class="compare-col-new">Your Journey Matters</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-item-label">場所</div>
+      <div class="compare-item-old">クリニックに通院</div>
+      <div class="compare-item-new">オンラインで完結</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-item-label">データ活用</div>
+      <div class="compare-item-old">一般的な問診・検査中心</div>
+      <div class="compare-item-new">2,000人超のデータをAIが解析</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-item-label">個別性</div>
+      <div class="compare-item-old">一般的なアドバイス</div>
+      <div class="compare-item-new">あなた専用のAI解析レポート</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-item-label">費用</div>
+      <div class="compare-item-old">追加提案が発生する場合あり</div>
+      <div class="compare-item-new">月額¥23,000で伴走型</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-item-label">継続性</div>
+      <div class="compare-item-old">単発で終わりがち</div>
+      <div class="compare-item-new">月次で検証・更新を積み上げ</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE FLOW -->
+<section id="timeline" style="padding:140px 6%;background:var(--off-white);text-align:center">
+  <p class="section-label reveal">Flow</p>
+  <h2 class="section-title reveal">サービスの流れ</h2>
+  <div class="timeline reveal">
+    <div class="tl-line"></div>
+    <div class="tl-steps">
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-month">Month 1</div>
+        <div class="tl-card">
+          <div class="tl-card-title">データ提出+初回解析</div>
+          <div class="tl-card-desc">各種データを提出<br>AIがレポート生成</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-month">Month 1〜2</div>
+        <div class="tl-card">
+          <div class="tl-card-title">優先順位の設計</div>
+          <div class="tl-card-desc">レポートをもとに<br>何からやるかを設計</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-month">毎月</div>
+        <div class="tl-card">
+          <div class="tl-card-title">月次レポート+検証</div>
+          <div class="tl-card-desc">食事・ヘルスデータで<br>解析レポートを更新</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-month">半年〜1年</div>
+        <div class="tl-card">
+          <div class="tl-card-title">血液データ更新</div>
+          <div class="tl-card-desc">新しい検査結果で再解析<br>根本の変化を確認</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:0.75rem;color:var(--gray);margin-top:2.5rem;line-height:1.8" class="reveal">※データが多いほど解析精度が高まります。提出方法はご入会後にご案内します。</p>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <p class="section-label reveal">Pricing</p>
+  <h2 class="section-title reveal">月額プラン</h2>
+  <div class="pricing-card reveal">
+    <p class="pricing-label">Monthly Plan</p>
+    <div class="pricing-amount"><span class="currency">¥</span><span class="amount">23,000</span><span class="period">/ 月</span></div>
+    <p class="pricing-tax">税込 · クレジットカード決済（Stripe）</p>
+    <p style="font-size:0.76rem;color:var(--text-light);margin-bottom:1.5rem">月1回の解析・優先順位設計・改善レビューを含みます。</p>
+    <div class="pricing-divider"></div>
+    <ul class="pricing-features">
+      <li>8weeks.ai によるAI解析レポート</li>
+      <li>解析レポートに基づく優先順位の設計</li>
+      <li>月次の検証・更新の伴走</li>
+      <li>必要に応じた解説資料の提供</li>
+    </ul>
+    <a href="https://forms.gle/your-form-link" class="btn-pricing">3分で「最初の一歩」を整理する</a>
+    <p class="pricing-cta-sub">※まず無料で方向性を整理してから、ご判断ください。</p>
+    <p style="font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:0.5rem">判断に迷う時間を減らすための投資です。</p>
+  </div>
+  <p class="pricing-disclaimer reveal">※本サービスは医療行為ではありません。生活改善のサポートです。</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-layout">
+    <div class="reveal">
+      <p class="section-label">About</p>
+      <h2 class="about-name">田中紀之</h2>
+      <p class="about-name-en">NORIYUKI TANAKA · Precision Nutrition Counselor</p>
+      <p class="about-bio">5,000名以上の組織で"行動が変わる設計"をしてきました。外資系テック企業の戦略人事として培った方法論を、精密栄養学に転用。自分自身も8weeks.aiのユーザーとして日々活用しています。</p>
+      <div class="about-belief">「何をやるか」ではなく<br>「何からやるか」を決めることが、<br>パフォーマンスを変える本質。</div>
+      <div class="about-creds">
+        <span class="about-cred-tag">精密栄養カウンセラー</span>
+        <span class="about-cred-tag">8weeks.ai 認定・自身もユーザー</span>
+        <span class="about-cred-tag">神宮前統合医療クリニック提携</span>
+        <span class="about-cred-tag">戦略人事 15年（5,000名超の組織）</span>
+      </div>
+      <a href="https://www.linkedin.com/in/noriyuki-tanaka-a806b61a9/" target="_blank" rel="noopener noreferrer" class="btn-ghost">詳しいプロフィールを見る（LinkedIn） →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding:120px 6%;background:var(--white);text-align:center">
+  <p class="section-label reveal">Voice</p>
+  <h2 class="section-title reveal" style="font-size:1.4rem">診断後の声</h2>
+  <div class="testimonial-grid reveal" style="margin-top:0">
+    <div class="testimonial-card">
+      <p class="testimonial-text">「<span class="emphasis">足りないものが初めて言語化できました。</span>」</p>
+      <div class="testimonial-author"><div class="testimonial-name">K.S.</div><div class="testimonial-meta">30代・外資系企業</div></div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">「<span class="emphasis">優先順位を整理してもらうだけで、行動がシンプルに。</span>」</p>
+      <div class="testimonial-author"><div class="testimonial-name">M.T.</div><div class="testimonial-meta">40代・製造業管理職</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <p class="section-label reveal">FAQ</p>
+  <h2 class="section-title reveal">よくある質問</h2>
+  <div class="faq-list reveal">
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>どのようなお支払方法がありますか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">Stripeによるクレジットカード決済です。</div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>どのような方に向いていますか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">生活習慣を整えたい方、検査データを活用したい方、継続的にセルフケアに取り組みたい方に適しています。</div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>年齢制限はありますか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">特にありません。血液検査データをお持ちの方であればどなたでもご利用いただけます。</div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>妊娠中、持病や投薬中でも参加できますか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">ご参加いただけますが、医療行為は行いません。主治医にご相談のうえ、生活改善の参考としてご活用ください。</div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>海外からも利用できますか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">はい。オンライン完結のため、海外からもご利用いただけます。</div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>利用開始に必要なものは何ですか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">血液検査の結果（健康診断・献血等）があれば開始できます。iPhoneのヘルスケアデータや食事記録があるとさらに精度が高まります。</div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>サービスに医療行為は含まれますか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">含まれません。本サービスは生活改善のサポートです。診断・治療が必要な場合は医療機関の受診を推奨します。</div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>途中解約は可能ですか？</span><div class="faq-icon" aria-hidden="true">+</div></button><div class="faq-a" role="region">はい、いつでも解約可能です。詳細はサービス開始時にご案内します。</div></div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply">
+  <p class="section-label reveal">First Step</p>
+  <h2 class="section-title reveal" style="color:var(--white)">一度、整理してみませんか。</h2>
+  <p class="apply-sub reveal">フォームに回答いただくだけ。<br>精密栄養学の視点から、改善の方向性をお送りします。</p>
+  <div class="apply-flow reveal">
+    <span class="flow-step-label">フォーム入力</span><span class="flow-arrow-label">→</span>
+    <span class="flow-step-label">状態の整理</span><span class="flow-arrow-label">→</span>
+    <span class="flow-step-label">改善のヒント</span><span class="flow-arrow-label">→</span>
+    <span class="flow-step-label">必要に応じてご案内</span>
+  </div>
+  <div class="apply-cta-wrap reveal">
+    <a href="https://forms.gle/your-form-link" class="btn-primary" style="background:var(--white);color:var(--navy)">3分で「最初の一歩」を整理する</a>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Your Journey Matters</span>
+  <span>※本サービスは医療行為ではありません</span>
+</footer>
+
+<script>
+function toggleMenu(){const h=document.querySelector('.hamburger'),m=document.getElementById('mobileMenu');h.classList.toggle('active');m.classList.toggle('active');document.body.style.overflow=m.classList.contains('active')?'hidden':''}
+function closeMenu(){const h=document.querySelector('.hamburger'),m=document.getElementById('mobileMenu');h.classList.remove('active');m.classList.remove('active');document.body.style.overflow=''}
+function toggleFaq(btn){const item=btn.parentElement,icon=btn.querySelector('.faq-icon'),isOpen=item.classList.contains('open');item.classList.toggle('open');icon.textContent=isOpen?'+':'-';btn.setAttribute('aria-expanded',!isOpen)}
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*60);observer.unobserve(entry.target)}})},{threshold:0.12});
+reveals.forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

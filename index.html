@@ -432,7 +432,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div class="pricing-card reveal">
     <p class="pricing-label">Monthly Plan</p>
     <div class="pricing-amount"><span class="currency">¥</span><span class="amount">23,000</span><span class="period">/ 月</span></div>
-    <p class="pricing-tax">税込 · クレジットカード決済（Stripe）</p>
+    <p class="pricing-tax">税込 · クレジットカード決済（Stripe）· 継続課金</p>
     <ul class="pricing-features">
       <li>8weeks.ai によるAI解析レポート（毎月更新）</li>
       <li>解析レポートに基づく優先順位の設計</li>
@@ -444,6 +444,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <p style="text-align:center;font-size:0.7rem;color:var(--gray);margin-top:1rem;line-height:1.8">3分程度で完了します</p>
   </div>
   <p style="font-size:0.7rem;color:var(--gray);text-align:center;margin-top:2rem;line-height:1.8" class="reveal">※本サービスは医療行為ではありません。生活改善のサポートです。</p>
+  <p style="font-size:0.72rem;color:var(--text-light);text-align:center;margin-top:1.2rem;line-height:1.9;max-width:560px;margin-left:auto;margin-right:auto" class="reveal">本サービスは月額23,000円（税込）の継続課金サービスです。初回申込時に初回決済が行われ、以後は初回決済日を基準として毎月自動決済されます。</p>
 </section>
 
 <!-- ABOUT -->
@@ -477,7 +478,8 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>海外からも利用できますか？</span><div class="faq-icon">+</div></button><div class="faq-a">はい。オンライン完結のため、海外からもご利用いただけます。</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>利用開始に必要なものは何ですか？</span><div class="faq-icon">+</div></button><div class="faq-a">血液検査の結果（健康診断・献血等）があれば開始できます。iPhoneのヘルスケアデータや食事記録があるとさらに精度が高まります。</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>サービスに医療行為は含まれますか？</span><div class="faq-icon">+</div></button><div class="faq-a">含まれません。本サービスは生活改善のサポートです。診断・治療が必要な場合は医療機関の受診を推奨します。</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>途中解約は可能ですか？</span><div class="faq-icon">+</div></button><div class="faq-a">はい、いつでも解約可能です。詳細はサービス開始時にご案内します。</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>途中解約は可能ですか？</span><div class="faq-icon">+</div></button><div class="faq-a">はい、いつでも解約可能です。解約をご希望の場合は、次回決済日の3日前までにメールにてご連絡ください。確認後、次回以降の請求を停止します。すでにお支払い済みの当月分については、サービスの性質上、原則として返金は行っておりません。</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>毎月の決済日はいつになりますか？</span><div class="faq-icon">+</div></button><div class="faq-a">初回申込時に初回決済が行われ、以後は初回決済日を基準として毎月自動決済されます。たとえば5月6日にお申し込みいただいた場合、次回決済日は6月6日となります。月末日など、翌月に同じ日付がない場合は、Stripeの仕様により月末付近で決済される場合があります。</div></div>
   </div>
 </section>
 
@@ -492,10 +494,54 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   </div>
 </section>
 
+<!-- キャンセル・返金ポリシー -->
+<section class="story-section bg-off" style="padding:80px 6% 60px">
+  <div class="story-wide reveal">
+    <p class="s-label">Cancellation & Refund Policy</p>
+    <h2 class="s-title" style="font-size:1.3rem">キャンセル・返金ポリシー</h2>
+    <div style="max-width:640px;margin:0 auto;font-size:0.82rem;color:var(--text-light);line-height:2.2">
+      <p>本サービスは月額課金制です。解約をご希望の場合は、次回決済日の3日前までにメールにてご連絡ください。確認後、次回以降の請求を停止します。</p>
+      <p style="margin-top:1rem">すでにお支払い済みの当月分については、サービスの性質上、原則として返金は行っておりません。ただし、誤決済等の場合は個別に確認のうえ対応します。</p>
+      <p style="margin-top:1rem;font-size:0.76rem;color:var(--gray)">連絡先：<a href="mailto:yjmatters.nt@gmail.com" style="color:var(--accent)">yjmatters.nt@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 特定商取引法に基づく表記 -->
+<section id="tokushoho" class="story-section bg-white" style="padding:80px 6% 60px">
+  <div class="story-wide reveal">
+    <p class="s-label">Legal</p>
+    <h2 class="s-title" style="font-size:1.3rem">特定商取引法に基づく表記</h2>
+    <div style="max-width:640px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.8rem;line-height:2">
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top;width:35%">販売事業者</td><td style="padding:0.9rem 0;color:var(--text)">Your Journey Matters</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">運営責任者</td><td style="padding:0.9rem 0;color:var(--text)">田中 紀之</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">所在地</td><td style="padding:0.9rem 0;color:var(--text)">請求があった場合、遅滞なく開示します。</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">連絡先</td><td style="padding:0.9rem 0;color:var(--text)"><a href="mailto:yjmatters.nt@gmail.com" style="color:var(--accent)">yjmatters.nt@gmail.com</a></td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">販売価格</td><td style="padding:0.9rem 0;color:var(--text)">月額23,000円（税込）</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">商品代金以外の必要料金</td><td style="padding:0.9rem 0;color:var(--text)">インターネット接続料金、通信料金等はお客様のご負担となります。</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">お支払い方法</td><td style="padding:0.9rem 0;color:var(--text)">クレジットカード決済（Stripe）</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">お支払い時期</td><td style="padding:0.9rem 0;color:var(--text)">初回申込時に初回決済が行われ、以後は初回決済日を基準として毎月自動決済されます。</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">サービス提供時期</td><td style="padding:0.9rem 0;color:var(--text)">決済完了後、初回説明1on1の予約案内をメールでお送りします。</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-light)"><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">解約について</td><td style="padding:0.9rem 0;color:var(--text)">解約をご希望の場合は、次回決済日の3日前までにメールでご連絡ください。確認後、次回以降の請求を停止します。</td></tr>
+        <tr><td style="padding:0.9rem 0;color:var(--gray);white-space:nowrap;vertical-align:top">返金について</td><td style="padding:0.9rem 0;color:var(--text)">サービスの性質上、決済後の返金は原則として行っておりません。ただし、誤決済等の場合は個別に確認のうえ対応します。</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 医療行為に関する注意事項 -->
+<section class="story-section bg-off" style="padding:60px 6%">
+  <div class="story-center reveal">
+    <p style="font-size:0.78rem;color:var(--text-light);line-height:2.2;max-width:600px;margin:0 auto;text-align:center">本サービスは医療行為、診断、治療を目的としたものではありません。血液検査データや生活習慣情報をもとに、栄養状態や体調の背景を整理し、生活習慣改善の参考情報を提供するサービスです。</p>
+  </div>
+</section>
+
 <footer>
   <div style="text-align:center;width:100%">
     <p style="margin-bottom:0.8rem;color:rgba(255,255,255,0.4);font-size:0.72rem">【お問い合わせ先】</p>
     <p style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:2">田中紀之（Precision Nutrition Counselor）<br><a href="mailto:yjmatters.nt@gmail.com" style="color:var(--accent-hero);text-decoration:none">yjmatters.nt@gmail.com</a><br>提携クリニック（神宮前統合医療クリニック）<br><a href="https://integrated-medicine.clinic" target="_blank" rel="noopener noreferrer" style="color:var(--accent-hero);text-decoration:none">https://integrated-medicine.clinic</a></p>
+    <p style="margin-top:1.2rem;color:rgba(255,255,255,0.4);font-size:0.68rem"><a href="#tokushoho" style="color:var(--accent-hero);text-decoration:none">特定商取引法に基づく表記</a></p>
     <p style="margin-top:1.5rem;color:rgba(255,255,255,0.15);font-size:0.65rem">&copy; 2026 Your Journey Matters ｜ ※本サービスは医療行為ではありません</p>
   </div>
 </footer>

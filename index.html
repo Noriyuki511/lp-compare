@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Journey Matters | 田中紀之 — 精密栄養カウンセラー</title>
 <meta name="description" content="血液検査×生活データをAI解析し、何からやるかの優先順位を設計。神宮前統合医療クリニック監修の8weeks.aiを活用した精密栄養カウンセリング。">
+<link rel="alternate" hreflang="ja" href="https://healthmap.jp/" />
+<link rel="alternate" hreflang="en" href="https://healthmap.jp/en/" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -193,6 +195,23 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 /* FOOTER */
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);padding:2.5rem 6%;display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:rgba(255,255,255,0.15)}
 
+/* ADVICE CARDS */
+.advice-section{padding:100px 6%;background:var(--white)}
+.advice-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:2.5rem auto 0}
+.advice-card{background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.2rem 2rem;transition:transform 0.3s}
+.advice-card:hover{transform:translateY(-2px)}
+.advice-icon{font-size:2rem;display:block;margin-bottom:1rem}
+.advice-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:1.2rem;line-height:1.6}
+.advice-data{font-size:0.78rem;color:var(--gray);line-height:1.9;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--gray-light)}
+.advice-conclusion{font-size:0.84rem;color:var(--text-light);line-height:2}
+.advice-conclusion strong{color:var(--accent);font-weight:600;font-size:0.88rem}
+
+/* LANG SWITCH */
+.lang-switch{display:flex;align-items:center;gap:0.3rem;font-size:0.78rem}
+.lang-switch a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+.lang-switch a:hover,.lang-switch a.active{color:var(--white)}
+.lang-switch span{color:rgba(255,255,255,0.3)}
+
 /* ANIMATION */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
@@ -209,6 +228,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);paddin
 .steps-minimal{grid-template-columns:1fr;gap:1.5rem}
 .report-items{grid-template-columns:1fr}
 .sample-pages{grid-template-columns:1fr;max-width:400px}
+.advice-grid{grid-template-columns:1fr}
 .story-section{padding:80px 6%}
 .connector{padding:40px 6%}
 footer{flex-direction:column;gap:0.5rem;text-align:center}
@@ -223,8 +243,8 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <li><a href="#about">About</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <!-- Nav CTA: "現在地を知る"に統一 -->
-    <li><a href="#cta-final" class="nav-cta">現在地を知る</a></li>
+    <li><div class="lang-switch"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div></li>
+    <li><a href="#cta-final" class="nav-cta">無料で整理する</a></li>
   </ul>
   <button class="hamburger" aria-label="メニューを開く" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
@@ -232,11 +252,11 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#pricing" onclick="closeMenu()">Pricing</a>
-  <!-- Mobile Nav CTA: "現在地を知る"に統一 -->
-  <a href="#cta-final" class="nav-cta" onclick="closeMenu()">現在地を知る</a>
+  <div class="lang-switch" style="justify-content:center"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div>
+  <a href="#cta-final" class="nav-cta" onclick="closeMenu()">無料で整理する</a>
 </div>
 
-<!-- ① HERO -->
+<!-- ① HERO: 違和感 -->
 <section id="hero">
   <div class="hero-left">
     <p class="hero-hook">変わらない理由は、"順番"。</p>
@@ -246,20 +266,16 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     </h1>
     <p class="hero-sub">
       努力が足りないのではなく、やる順番が違うだけかもしれません。<br>
-      血液検査データや日々の生活情報をもとに、今の身体の状態を整理し、<br>
-      最初に取り組むべきことを見える化します。
+      お手元のデータをAIが解析し、「何からやるか」が分かる1枚をつくります。
     </p>
     <div class="hero-buttons">
-      <!-- CTA: "現在地を知る"コンセプトに統一 -->
-      <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary">まずは現在地を知る</a>
+      <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary">無料で「最初の一歩」を整理する</a>
       <a href="#pain" class="btn-outline">もう少し知る</a>
     </div>
-    <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);margin-top:1rem;animation:fadeUp 0.8s ease 0.3s both">3分程度で完了します</p>
     <div class="hero-trust">
       <span class="trust-item">神宮前統合医療クリニック監修</span>
-      <span class="trust-item">8weeks.ai解析基盤：日本人データ 2,000名超をもとにしたAI解析</span>
+      <span class="trust-item">AI解析基盤：日本人データ 2,000名超</span>
     </div>
-    <p style="font-size:0.62rem;color:rgba(255,255,255,0.25);margin-top:0.6rem;line-height:1.7;animation:fadeUp 0.8s ease 0.4s both">AI解析は、血液検査データや生活情報を整理するための補助として活用します。<br>診断・治療を目的とするものではありません。</p>
   </div>
   <div class="hero-right" aria-hidden="true">
     <div class="health-map">
@@ -292,18 +308,6 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   </div>
 </section>
 
-<!-- Health Mapとは -->
-<section class="story-section bg-off">
-  <div class="story-center reveal">
-    <p class="s-label">What is Health Map</p>
-    <h2 class="s-title"><span class="accent-word">Health Map</span> とは</h2>
-    <p class="s-body">Health Mapは、血液検査データや日々の生活情報をもとに、今の身体の状態を整理し、次に取り組むべき優先順位を見える化するサービスです。</p>
-    <p class="s-body">そのアウトプットとして、一人ひとりの状態を整理した「健康地図」を作成します。</p>
-    <p class="s-body">背景には、個人差を前提に栄養や生活習慣を考える「精密栄養学」の考え方があります。</p>
-    <p class="s-body">単なる数値の説明ではなく、血液検査データ、食事、睡眠、活動量、ストレス、生活リズムなどをつなげて読み解き、無理なく続けられる次の一歩を考えます。</p>
-  </div>
-</section>
-
 <!-- ② PAIN: 共感 -->
 <section id="pain" class="story-section bg-white">
   <div class="story-center reveal">
@@ -321,6 +325,27 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <div class="connector reveal">
   <p>情報は足りている。<br>足りないのは、<span class="accent-word">「何からやるか」の整理</span>。<br>そのために、健康地図をつくります。</p>
 </div>
+
+<!-- アドバイス例セクション -->
+<section class="advice-section">
+  <div class="story-center reveal">
+    <h2 class="s-title">例えば、こんなアドバイスが届きます。</h2>
+  </div>
+  <div class="advice-grid reveal">
+    <div class="advice-card">
+      <span class="advice-icon">😴</span>
+      <h3>「食事改善より、睡眠が先」</h3>
+      <p class="advice-data">データが示したこと：副腎ホルモンが枯渇レベル。朝起きられない、日中の倦怠感</p>
+      <p class="advice-conclusion">Health Mapの結論：<strong>栄養改善の前に、コルチゾール回復が先。</strong>カフェインを午前1杯に制限し、23時台就寝を目指す。食事は「完璧」でなくていい。</p>
+    </div>
+    <div class="advice-card">
+      <span class="advice-icon">🌸</span>
+      <h3>「花粉症の根本は、腸とビタミンDだった」</h3>
+      <p class="advice-data">データが示したこと：ビタミンDが理想値の1/6。腸内環境の乱れ示唆</p>
+      <p class="advice-conclusion">Health Mapの結論：<strong>抗ヒスタミン薬を増やすのではなく、免疫の"ブレーキ"を立て直す。</strong>まず朝の日光浴15分 + 発酵食品を1品追加から。</p>
+    </div>
+  </div>
+</section>
 
 <!-- ③ DATA: 気づき -->
 <section class="story-section bg-off">
@@ -397,17 +422,13 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div style="text-align:center;margin-top:2.5rem;padding-bottom:1rem" class="reveal">
     <a href="sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">実際の健康地図を見る</a>
     <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※サンプルPDFが開きます</p>
-    <!-- 注釈：抜粋版であることを補足 -->
-    <p style="font-size:0.65rem;color:var(--gray);margin-top:0.5rem;line-height:1.7">※実際のレポートは20ページ以上の詳細分析で構成されています（本ページは一部抜粋）</p>
   </div>
 </section>
 
 <!-- MID CTA -->
 <div class="connector reveal">
   <p style="margin-bottom:1.5rem">一度、自分の健康地図を見てみませんか。</p>
-  <!-- CTA: Sample後 -->
-  <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--navy);color:var(--white)">まずは現在地を知る</a>
-  <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">3分程度で完了します</p>
+  <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--navy);color:var(--white)">自分の健康地図を作ってみる</a>
 </div>
 
 <!-- LEARN -->
@@ -432,18 +453,17 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div class="pricing-card reveal">
     <p class="pricing-label">Monthly Plan</p>
     <div class="pricing-amount"><span class="currency">¥</span><span class="amount">23,000</span><span class="period">/ 月</span></div>
-    <p class="pricing-tax">税込 · クレジットカード決済（Stripe）· 継続課金</p>
+    <p class="pricing-tax">税込 · クレジットカード決済（Stripe）</p>
     <ul class="pricing-features">
       <li>8weeks.ai によるAI解析レポート（毎月更新）</li>
       <li>解析レポートに基づく優先順位の設計</li>
       <li>月次の検証・更新の伴走</li>
       <li>必要に応じた解説資料の提供</li>
     </ul>
-    <!-- CTA: Pricing -->
-    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-pricing">まずは現在地を知る</a>
-    <p style="text-align:center;font-size:0.7rem;color:var(--gray);margin-top:1rem;line-height:1.8">3分程度で完了します</p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-pricing">無料で「最初の一歩」を整理する</a>
+    <p style="text-align:center;font-size:0.7rem;color:var(--gray);margin-top:0.7rem;line-height:1.8">※まず無料で方向性を整理してから、ご判断ください。</p>
   </div>
-
+  <p style="font-size:0.7rem;color:var(--gray);text-align:center;margin-top:2rem;line-height:1.8" class="reveal">※本サービスは医療行為ではありません。生活改善のサポートです。</p>
 </section>
 
 <!-- ABOUT -->
@@ -456,8 +476,8 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <div class="about-belief">「何をやるか」ではなく「何からやるか」を決めることが、<br>パフォーマンスを変える本質。</div>
     <div class="about-creds">
       <span class="about-cred-tag">戦略人事（Amazon）· 5,000名超の組織</span>
-      <span class="about-cred-tag">精密栄養学カウンセラー</span>
-      <span class="about-cred-tag">8weeks.ai 認定カウンセラー</span>
+      <span class="about-cred-tag">精密栄養カウンセラー</span>
+      <span class="about-cred-tag">8weeks.ai 認定・自身もユーザー</span>
       <span class="about-cred-tag">神宮前統合医療クリニック提携</span>
     </div>
     <a href="https://www.linkedin.com/in/noriyuki-tanaka-a806b61a9/" target="_blank" rel="noopener noreferrer" class="btn-ghost">詳しいプロフィール（LinkedIn） →</a>
@@ -478,7 +498,6 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>利用開始に必要なものは何ですか？</span><div class="faq-icon">+</div></button><div class="faq-a">血液検査の結果（健康診断・献血等）があれば開始できます。iPhoneのヘルスケアデータや食事記録があるとさらに精度が高まります。</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>サービスに医療行為は含まれますか？</span><div class="faq-icon">+</div></button><div class="faq-a">含まれません。本サービスは生活改善のサポートです。診断・治療が必要な場合は医療機関の受診を推奨します。</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>途中解約は可能ですか？</span><div class="faq-icon">+</div></button><div class="faq-a">はい、いつでも解約可能です。解約をご希望の場合は、次回決済日の3日前までにメールにてご連絡ください。確認後、次回以降の請求を停止します。すでにお支払い済みの当月分については、サービスの性質上、原則として返金は行っておりません。</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-label">Q</span>毎月の決済日はいつになりますか？</span><div class="faq-icon">+</div></button><div class="faq-a">初回申込時に初回決済が行われ、以後は初回決済日を基準として毎月自動決済されます。たとえば5月6日にお申し込みいただいた場合、次回決済日は6月6日となります。月末日など、翌月に同じ日付がない場合は、Stripeの仕様により月末付近で決済される場合があります。</div></div>
   </div>
 </section>
 
@@ -487,9 +506,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div class="reveal">
     <h2 class="s-title" style="color:var(--white)">一度、自分の健康地図を<br>見てみませんか。</h2>
     <p>フォームに回答いただくだけ。<br>あなたの状態を整理し、「何からやるか」の方向性をお送りします。</p>
-    <!-- CTA: Final -->
-    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--white);color:var(--navy)">まずは現在地を知る</a>
-    <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);margin-top:1rem">3分程度で完了します</p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--white);color:var(--navy)">無料で「最初の一歩」を整理する</a>
   </div>
 </section>
 
@@ -497,11 +514,6 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div style="text-align:center;width:100%">
     <p style="margin-bottom:0.8rem;color:rgba(255,255,255,0.4);font-size:0.72rem">【お問い合わせ先】</p>
     <p style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:2">田中紀之（Precision Nutrition Counselor）<br><a href="mailto:yjmatters.nt@gmail.com" style="color:var(--accent-hero);text-decoration:none">yjmatters.nt@gmail.com</a><br>提携クリニック（神宮前統合医療クリニック）<br><a href="https://integrated-medicine.clinic" target="_blank" rel="noopener noreferrer" style="color:var(--accent-hero);text-decoration:none">https://integrated-medicine.clinic</a></p>
-    <p style="margin-top:1.5rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap">
-      <a href="/cancel-refund" style="color:rgba(255,255,255,0.45);font-size:0.68rem;text-decoration:none">キャンセル・返金ポリシー</a>
-      <a href="/legal" style="color:rgba(255,255,255,0.45);font-size:0.68rem;text-decoration:none">特定商取引法に基づく表記</a>
-      <a href="/privacy" style="color:rgba(255,255,255,0.45);font-size:0.68rem;text-decoration:none">プライバシーポリシー</a>
-    </p>
     <p style="margin-top:1.5rem;color:rgba(255,255,255,0.15);font-size:0.65rem">&copy; 2026 Your Journey Matters ｜ ※本サービスは医療行為ではありません</p>
   </div>
 </footer>

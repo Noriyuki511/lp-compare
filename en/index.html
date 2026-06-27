@@ -1,16 +1,17 @@
 ```xml
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Map | 血液データ×AIで「何から始めるか」を設計する精密栄養カウンセリング</title>
-<meta name="description" content="血液検査と生活データをもとに、食事・睡眠・生活習慣を見直す優先順位を整理。医療機関監修のAI分析支援ツールを活用し、日々の行動に落とし込める精密栄養カウンセリングを提供します。">
+<title>Health Map | Precision Nutrition Counseling — Know Where to Start with Blood Data × AI</title>
+<meta name="description" content="Using blood tests and lifestyle data, we organize your health improvement priorities. Powered by a clinic-supervised AI analysis tool, we provide precision nutrition counseling that translates into daily action.">
+<meta property="og:locale" content="en_US">
 <link rel="alternate" hreflang="ja" href="https://healthmap.jp/" />
 <link rel="alternate" hreflang="en" href="https://healthmap.jp/en/" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="[REDACTED_CONN_STRING]://300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
 --navy:#071426;--navy-light:#122a4a;
@@ -27,7 +28,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.02em}
+body{font-family:'Inter','Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.01em}
 .emphasis{font-weight:600;color:var(--accent)}
 .accent-word{color:var(--accent);font-weight:600}
 
@@ -53,7 +54,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:180px 6% 100px;background:radial-gradient(circle at 72% 38%,rgba(125,184,224,0.22),transparent 34%),radial-gradient(ellipse at 30% 50%,#1a4a7a 0%,#0d2847 40%,#071426 100%)}
 .hero-left{max-width:540px}
 .hero-hook{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.05em;margin-bottom:1.8rem;animation:fadeUp 0.7s ease both;line-height:1.6}
-.hero-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.55;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
+.hero-title{font-family:'Inter',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.55;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
 .hero-title .accent-word{color:var(--accent-hero);font-weight:600}
 .hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.24s both}
@@ -80,7 +81,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .hm-bar-fill.hm-bar-warn{background:linear-gradient(90deg,#E8A87C,#D4956B)}
 .hm-results{display:flex;gap:0.7rem}
 .hm-result-card{flex:1;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:var(--radius-sm);padding:0.7rem;text-align:center;backdrop-filter:blur(8px)}
-.hm-result-num{font-family:'Noto Sans JP',sans-serif;font-size:1rem;color:var(--accent-hero);font-weight:300;margin-bottom:0.1rem}
+.hm-result-num{font-family:'Inter',sans-serif;font-size:1rem;color:var(--accent-hero);font-weight:300;margin-bottom:0.1rem}
 .hm-result-text{font-size:0.62rem;color:rgba(255,255,255,0.55);font-weight:500}
 
 /* STORY SECTIONS - seamless flow */
@@ -93,7 +94,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 
 /* Section titles */
 .s-label{font-size:0.65rem;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
-.s-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
+.s-title{font-family:'Inter',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
 .s-title.white{color:var(--white)}
 .s-body{font-size:0.9rem;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
 .s-body.white{color:rgba(255,255,255,0.6)}
@@ -153,7 +154,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .pricing-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1.2rem}
 .pricing-amount{display:flex;align-items:baseline;gap:0.3rem;margin-bottom:0.4rem}
 .pricing-amount .currency{font-size:1rem;color:var(--navy)}
-.pricing-amount .amount{font-family:'Noto Sans JP',sans-serif;font-size:2.6rem;font-weight:400;color:var(--navy);line-height:1}
+.pricing-amount .amount{font-family:'Inter',sans-serif;font-size:2.6rem;font-weight:400;color:var(--navy);line-height:1}
 .pricing-amount .period{font-size:0.82rem;color:var(--gray)}
 .pricing-tax{font-size:0.7rem;color:var(--gray);margin-bottom:1.5rem}
 .pricing-features{list-style:none;display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem}
@@ -164,7 +165,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 
 /* ABOUT */
 .about-layout{max-width:580px}
-.about-name{font-family:'Noto Sans JP',sans-serif;font-size:1.4rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
+.about-name{font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
 .about-name-en{font-size:0.7rem;letter-spacing:0.12em;color:var(--gray);margin-bottom:1.5rem}
 .about-bio{font-size:0.84rem;line-height:2.3;color:var(--text-light);margin-bottom:1.8rem}
 .about-belief{padding:1.3rem 1.6rem;background:var(--white);border-radius:var(--radius-sm);font-size:0.9rem;line-height:2.1;color:var(--navy);margin-bottom:1.5rem;font-weight:500;border-left:3px solid var(--accent)}
@@ -180,7 +181,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 /* FAQ */
 .faq-list{max-width:640px;margin:2rem auto 0}
 .faq-item{border-bottom:1.5px dotted var(--gray-light)}
-.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:2rem 0;font-family:'Noto Sans JP',sans-serif;font-size:0.88rem;font-weight:500;color:var(--navy);text-align:left;gap:1rem}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:2rem 0;font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:500;color:var(--navy);text-align:left;gap:1rem}
 .faq-q:hover{color:var(--accent)}
 .faq-q-label{font-weight:700;color:var(--accent);margin-right:0.7rem;font-size:0.82rem}
 .faq-icon{width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;color:var(--accent);font-weight:300}
@@ -245,162 +246,162 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <li><a href="#about">About</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><div class="lang-switch"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div></li>
-    <li><a href="#cta-final" class="nav-cta">無料相談する</a></li>
+    <li><div class="lang-switch"><a href="/">JP</a><span>|</span><a href="/en/" class="active">EN</a></div></li>
+    <li><a href="#cta-final" class="nav-cta">Book a Free Consultation</a></li>
   </ul>
-  <button class="hamburger" aria-label="メニューを開く" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#pricing" onclick="closeMenu()">Pricing</a>
-  <div class="lang-switch" style="justify-content:center"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div>
-  <a href="#cta-final" class="nav-cta" onclick="closeMenu()">無料相談する</a>
+  <div class="lang-switch" style="justify-content:center"><a href="/">JP</a><span>|</span><a href="/en/" class="active">EN</a></div>
+  <a href="#cta-final" class="nav-cta" onclick="closeMenu()">Book a Free Consultation</a>
 </div>
 
 <!-- ① HERO -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-hook">精密栄養カウンセリング — Precision Nutrition Counseling</p>
+    <p class="hero-hook">Precision Nutrition Counseling</p>
     <h1 class="hero-title">
-      血液データ × 生活データ × 行動設計で、<br>
-      あなたの<span class="accent-word">「最初の一手」</span>を明確にする。
+      Blood Data × Lifestyle Data × Behavioral Design:<br>
+      Clarifying Your <span class="accent-word">First Move</span>.
     </h1>
     <p class="hero-sub">
-      検査値、睡眠、食事、活動量——あなたのデータをもとに、何から整えるべきかを整理します。<br>
-      医療機関監修のAI分析支援ツールを活用し、カウンセラーが行動の優先順位を設計します。
+      Based on your test results, sleep, diet, and activity data, we help you identify where to start.<br>
+      Using a clinic-supervised AI analysis tool, your counselor designs your action priorities.
     </p>
     <div class="hero-buttons">
-      <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary">無料相談で方向性を確認する</a>
-      <a href="#pain" class="btn-outline">もう少し知る</a>
+      <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary">Book a Free Consultation</a>
+      <a href="#pain" class="btn-outline">Learn More</a>
     </div>
     <div class="hero-trust">
-      <span class="trust-item">神宮前統合医療クリニック監修</span>
-      <span class="trust-item">AI解析基盤：日本人データ 2,000名超</span>
-      <span class="trust-item">※診断・治療・投薬判断は行いません</span>
+      <span class="trust-item">Supervised by Jingumae Integrative Medicine Clinic</span>
+      <span class="trust-item">AI analysis: 2,000+ Japanese health profiles</span>
+      <span class="trust-item">※This is not a medical diagnosis or treatment</span>
     </div>
   </div>
   <div class="hero-right" aria-hidden="true">
     <div class="health-map">
       <p style="font-size:0.6rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem;font-weight:500">Input Data</p>
       <div class="hm-input-nodes">
-        <div class="hm-node"><div class="hm-node-icon">🩸</div><div class="hm-node-text">血液検査</div></div>
-        <div class="hm-node"><div class="hm-node-icon">🌙</div><div class="hm-node-text">睡眠</div></div>
-        <div class="hm-node"><div class="hm-node-icon">🍽️</div><div class="hm-node-text">食事</div></div>
-        <div class="hm-node"><div class="hm-node-icon">🏃</div><div class="hm-node-text">活動量</div></div>
+        <div class="hm-node"><div class="hm-node-icon">🩸</div><div class="hm-node-text">Blood Tests</div></div>
+        <div class="hm-node"><div class="hm-node-icon">🌙</div><div class="hm-node-text">Sleep</div></div>
+        <div class="hm-node"><div class="hm-node-icon">🍽️</div><div class="hm-node-text">Diet</div></div>
+        <div class="hm-node"><div class="hm-node-icon">🏃</div><div class="hm-node-text">Activity</div></div>
       </div>
       <div style="text-align:center;margin:0.8rem 0;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
       <div style="text-align:center;margin-bottom:0.8rem">
-        <span style="display:inline-block;background:rgba(125,184,224,0.15);border:1px solid rgba(125,184,224,0.3);border-radius:20px;padding:0.4rem 1.2rem;font-size:0.72rem;color:var(--accent-hero);font-weight:500;letter-spacing:0.04em">AI 解析（8weeks.ai）</span>
+        <span style="display:inline-block;background:rgba(125,184,224,0.15);border:1px solid rgba(125,184,224,0.3);border-radius:20px;padding:0.4rem 1.2rem;font-size:0.72rem;color:var(--accent-hero);font-weight:500;letter-spacing:0.04em">AI Analysis (8weeks.ai)</span>
       </div>
       <div style="text-align:center;margin-bottom:0.8rem;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
       <p style="font-size:0.6rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem;font-weight:500">Output</p>
       <div class="hm-map-card">
         <div class="hm-map-title">Your Health Map</div>
         <div class="hm-map-bars">
-          <div class="hm-bar"><div class="hm-bar-label">栄養バランス</div><div class="hm-bar-track"><div class="hm-bar-fill" style="width:72%"></div></div></div>
-          <div class="hm-bar"><div class="hm-bar-label">睡眠の質</div><div class="hm-bar-track"><div class="hm-bar-fill" style="width:58%"></div></div></div>
-          <div class="hm-bar"><div class="hm-bar-label">炎症リスク</div><div class="hm-bar-track"><div class="hm-bar-fill hm-bar-warn" style="width:35%"></div></div></div>
+          <div class="hm-bar"><div class="hm-bar-label">Nutritional Balance</div><div class="hm-bar-track"><div class="hm-bar-fill" style="width:72%"></div></div></div>
+          <div class="hm-bar"><div class="hm-bar-label">Sleep Quality</div><div class="hm-bar-track"><div class="hm-bar-fill" style="width:58%"></div></div></div>
+          <div class="hm-bar"><div class="hm-bar-label">Inflammation Risk</div><div class="hm-bar-track"><div class="hm-bar-fill hm-bar-warn" style="width:35%"></div></div></div>
         </div>
       </div>
       <div style="display:flex;gap:0.7rem;margin-top:1rem">
-        <div class="hm-result-card"><div class="hm-result-num">01</div><div class="hm-result-text">改善ポイント</div></div>
-        <div class="hm-result-card"><div class="hm-result-num">02</div><div class="hm-result-text">優先順位</div></div>
+        <div class="hm-result-card"><div class="hm-result-num">01</div><div class="hm-result-text">Key Improvements</div></div>
+        <div class="hm-result-card"><div class="hm-result-num">02</div><div class="hm-result-text">Priority Order</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ② PAIN: 共感 -->
+<!-- ② PAIN -->
 <section id="pain" class="story-section bg-white">
   <div class="story-center reveal">
-    <h2 class="s-title">こんなこと、ありませんか？</h2>
+    <h2 class="s-title">Sound familiar?</h2>
   </div>
   <div class="pain-grid reveal">
-    <div class="pain-item"><p>何から変えるべきか、<span class="emphasis">決められない</span></p></div>
-    <div class="pain-item"><p>始めても、忙しくなると<span class="emphasis">続かない</span></p></div>
-    <div class="pain-item"><p>健診は異常なし。でも<span class="emphasis">不調</span>がある</p></div>
-    <div class="pain-item"><p>自分に効く順番が、<span class="emphasis">分からない</span></p></div>
+    <div class="pain-item"><p>Can't decide <span class="emphasis">where to start</span></p></div>
+    <div class="pain-item"><p>Start something, but <span class="emphasis">can't keep it up</span> when life gets busy</p></div>
+    <div class="pain-item"><p>Check-up says "normal." But you don't <span class="emphasis">feel right</span></p></div>
+    <div class="pain-item"><p>Don't know the <span class="emphasis">right order</span> for YOUR body</p></div>
   </div>
 </section>
 
 <!-- connector -->
 <div class="connector reveal">
-  <p>情報は足りている。<br>足りないのは、<span class="accent-word">「何からやるか」の整理</span>。<br>そのために、健康地図をつくります。</p>
+  <p>You have enough information.<br>What's missing is knowing <span class="accent-word">where to begin</span>.<br>That's why we create your Health Map.</p>
 </div>
 
-<!-- アドバイス例セクション -->
+<!-- Advice Examples -->
 <section class="advice-section">
   <div class="story-center reveal">
-    <h2 class="s-title">例えば、こんなアドバイスが届きます。</h2>
+    <h2 class="s-title">Here's the kind of advice you'll receive.</h2>
   </div>
   <div class="advice-grid reveal">
     <div class="advice-card">
       <span class="advice-icon">😴</span>
-      <h3>「食事改善より、睡眠が先」</h3>
-      <p class="advice-data">データが示したこと：分析レポートが副腎疲労の傾向を示唆。朝起きられない、日中の倦怠感</p>
-      <p class="advice-conclusion">Health Mapの提案：<strong>栄養改善の前に、コルチゾール回復が先。</strong>カフェインを午前1杯に制限し、23時台就寝を目指す。食事は「完璧」でなくていい。</p>
+      <h3>"Fix sleep before fixing diet"</h3>
+      <p class="advice-data">What the data showed: The analysis report suggested signs of adrenal fatigue. Can't get up in the morning, overwhelming daytime fatigue</p>
+      <p class="advice-conclusion">Health Map's suggestion: <strong>Recovery of cortisol comes before nutritional optimization.</strong> Limit caffeine to one cup before noon, aim for sleep by 11 PM. Your diet doesn't need to be "perfect" yet.</p>
     </div>
     <div class="advice-card">
       <span class="advice-icon">🌸</span>
-      <h3>「花粉症の根本は、腸とビタミンDだった」</h3>
-      <p class="advice-data">データが示したこと：分析レポートがビタミンD不足と腸内バランスの乱れを示唆</p>
-      <p class="advice-conclusion">Health Mapの提案：<strong>抗ヒスタミン薬を増やすのではなく、免疫の"ブレーキ"を立て直す。</strong>まず朝の日光浴15分 + 発酵食品を1品追加から。</p>
+      <h3>"The root of your allergies: gut health + Vitamin D"</h3>
+      <p class="advice-data">What the data showed: The analysis report suggested Vitamin D deficiency and gut imbalance</p>
+      <p class="advice-conclusion">Health Map's suggestion: <strong>Instead of more antihistamines, rebuild your immune "brakes."</strong> Start with 15 min of morning sunlight + one fermented food per day.</p>
     </div>
   </div>
 </section>
 
-<!-- ③ DATA: 気づき -->
+<!-- ③ DATA -->
 <section class="story-section bg-off">
   <div class="story-center reveal">
-    <h2 class="s-title">特別な検査は不要です</h2>
-    <p class="s-body">すでに持っているデータで始められます。</p>
+    <h2 class="s-title">No special tests required</h2>
+    <p class="s-body">You can start with data you already have.</p>
   </div>
   <div class="data-cards reveal">
-    <div class="data-card"><div class="data-card-icon">🩸</div><div class="data-card-title">健康診断結果</div><div class="data-card-desc">会社や自治体の健診結果<br>献血時の検査成績</div></div>
-    <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">ヘルスケアデータ</div><div class="data-card-desc">iPhone等の睡眠・活動量<br>体温・体重の記録</div></div>
-    <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">食事・血糖記録</div><div class="data-card-desc">日々の食事記録<br>グルコース変動データ</div></div>
+    <div class="data-card"><div class="data-card-icon">🩸</div><div class="data-card-title">Health Check-up Results</div><div class="data-card-desc">Company or municipal screening<br>Blood donation test results</div></div>
+    <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">Healthcare Data</div><div class="data-card-desc">Sleep & activity from iPhone, etc.<br>Temperature & weight records</div></div>
+    <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">Diet & Glucose Records</div><div class="data-card-desc">Daily food logs<br>Glucose variability data</div></div>
   </div>
-  <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※データが多いほど精度が高まります。まずはお手元にあるものだけでOK。</p>
+  <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※The more data, the better the accuracy. Start with whatever you have on hand.</p>
 </section>
 
 <!-- connector -->
 <div class="connector bg-off reveal">
-  <p>データはある。<br>あとは<span class="accent-word">「決める人」</span>がいればいい。</p>
+  <p>You have the data.<br>All you need is <span class="accent-word">someone to help you decide</span>.</p>
 </div>
 
-<!-- ④ SERVICE: 解決方法 -->
+<!-- ④ SERVICE -->
 <section class="story-section bg-white">
   <div class="story-center reveal">
-    <h2 class="s-title">医療機関監修のAI分析支援 ×<br>カウンセラーの行動設計</h2>
+    <h2 class="s-title">Clinic-Supervised AI Analysis ×<br>Counselor's Behavioral Design</h2>
   </div>
   <div class="service-core reveal">
-    <p>医療機関監修のAI分析支援ツール <span class="emphasis">8weeks.ai</span>（神宮前統合医療クリニック監修）が、2,000人超の日本人データをもとにあなたの状態を分析。</p>
-    <p>解析レポートをもとに、カウンセラーが「何からやるか」の優先順位を設計します。</p>
-    <p style="font-size:0.84rem;color:var(--text-light);line-height:2.2;margin-bottom:1.5rem">まず「何からやるか」が1枚で分かる設計。<br>その裏側に、詳細な分析レポートがあります。</p>
-    <div class="service-inline-compare">従来は「正しいこと」を積み上げるアプローチ。<br>しかしそれでは、何からやるべきかは分かりません。<br>健康地図によって<span class="emphasis">「何からやるか」を明確に</span>します。</div>
-    <p style="font-size:0.9rem;line-height:2.3;color:var(--text-light);margin-top:2rem"><span class="emphasis">カウンセラーの役割</span>：AIが出した分析結果を、あなたの生活に合った「行動の優先順位」に翻訳すること。<br>「正しいことを増やす」のではなく、「今、何から始めるか」を一緒に決める——それがこのサービスの核心です。</p>
-    <!-- 役割図 -->
+    <p>The clinic-supervised AI analysis tool <span class="emphasis">8weeks.ai</span> (supervised by Jingumae Integrative Medicine Clinic) analyzes your condition based on data from 2,000+ Japanese health profiles.</p>
+    <p>Based on the analysis report, your counselor designs the priority order of "where to start."</p>
+    <p style="font-size:0.84rem;color:var(--text-light);line-height:2.2;margin-bottom:1.5rem">Designed so "where to start" is clear on one page.<br>Behind it lies a detailed analysis report.</p>
+    <div class="service-inline-compare">The traditional approach stacks "correct" actions.<br>But that doesn't tell you where to begin.<br>The Health Map clarifies <span class="emphasis">"where to start."</span></div>
+    <p style="font-size:0.9rem;line-height:2.3;color:var(--text-light);margin-top:2rem"><span class="emphasis">The counselor's role</span>: To translate the AI's analysis results into "action priorities" that fit your life.<br>Not "adding more correct things to do," but deciding together "what to start with right now" — that's the core of this service.</p>
+    <!-- Role diagram -->
     <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin:2.5rem 0 1.5rem;flex-wrap:wrap">
-      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">👤</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">あなた</div><div style="font-size:0.65rem;color:var(--gray)">データを提出</div></div>
+      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">👤</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">You</div><div style="font-size:0.65rem;color:var(--gray)">Submit data</div></div>
       <div style="color:var(--accent);font-size:1rem;opacity:0.4">⇄</div>
-      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(7,20,38,0.05);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🧑‍⚕️</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">カウンセラー</div><div style="font-size:0.65rem;color:var(--gray)">解析＋アドバイス</div></div>
+      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(7,20,38,0.05);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🧑‍⚕️</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">Counselor</div><div style="font-size:0.65rem;color:var(--gray)">Analysis + Advice</div></div>
       <div style="color:var(--accent);font-size:1rem;opacity:0.4">⇄</div>
-      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(21,84,209,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🤖</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">8weeks.ai</div><div style="font-size:0.65rem;color:var(--gray)">AI分析支援</div></div>
+      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(21,84,209,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🤖</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">8weeks.ai</div><div style="font-size:0.65rem;color:var(--gray)">AI Analysis Support</div></div>
     </div>
-    <p style="font-size:0.74rem;color:var(--gray)">※診断・治療・投薬判断は行いません。必要に応じて医療機関への相談をおすすめします。</p>
+    <p style="font-size:0.74rem;color:var(--gray)">※This service does not provide medical diagnosis, treatment, or medication decisions. We recommend consulting a healthcare provider as needed.</p>
   </div>
 </section>
 
 <!-- ④-b HOW: 3 steps -->
 <section class="story-section bg-navy">
   <div class="story-center reveal">
-    <h2 class="s-title white">3つのステップ</h2>
+    <h2 class="s-title white">3 Simple Steps</h2>
   </div>
   <div class="steps-minimal reveal">
-    <div class="step-m"><div class="step-m-num">01</div><div class="step-m-title">AI解析で現状を可視化</div><div class="step-m-desc">データをAIが解析し、<br>今の状態を可視化します。</div></div>
-    <div class="step-m"><div class="step-m-num">02</div><div class="step-m-title">優先順位を設計する</div><div class="step-m-desc">解析レポートをもとに、<br>何をする・何をしないを絞ります。</div></div>
-    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">実行→検証→更新</div><div class="step-m-desc">月次で振り返り、データで検証。<br>改善を積み上げます。</div></div>
+    <div class="step-m"><div class="step-m-num">01</div><div class="step-m-title">Visualize with AI</div><div class="step-m-desc">AI analyzes your data and<br>visualizes your current condition.</div></div>
+    <div class="step-m"><div class="step-m-num">02</div><div class="step-m-title">Design your priorities</div><div class="step-m-desc">Based on the report, we narrow down<br>what to do — and what NOT to do.</div></div>
+    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">Execute → Verify → Update</div><div class="step-m-desc">Monthly review, data-driven verification.<br>Stack improvements over time.</div></div>
   </div>
 </section>
 
@@ -408,90 +409,90 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <section class="story-section bg-white">
   <div class="story-center reveal">
     <p class="s-label">Difference</p>
-    <h2 class="s-title">他のサービスとの違い</h2>
-    <p class="s-body">Health Mapは「何を食べるか」「何を鍛えるか」ではなく、<br>「何から始めるか」の優先順位を設計するサービスです。</p>
+    <h2 class="s-title">How We're Different</h2>
+    <p class="s-body">Health Map doesn't tell you "what to eat" or "what to train."<br>It designs the priority order of "where to start."</p>
   </div>
   <div class="story-wide reveal">
     <table style="width:100%;border-collapse:collapse;font-size:0.82rem;line-height:1.9">
       <thead>
         <tr style="border-bottom:2px solid var(--gray-light)">
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">観点</th>
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">一般的な栄養指導</th>
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">パーソナルジム</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">Aspect</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">General Nutrition Guidance</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">Personal Training</th>
           <th style="padding:1rem 0.8rem;text-align:left;color:var(--accent);font-weight:600">Health Map</th>
         </tr>
       </thead>
       <tbody>
         <tr style="border-bottom:1px solid var(--gray-light)">
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">判断の根拠</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">食事記録</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">体組成・運動量</td>
-          <td style="padding:1rem 0.8rem;color:var(--text)">血液検査＋生活データ＋AI分析</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Basis of judgment</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">Food logs</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">Body composition & activity</td>
+          <td style="padding:1rem 0.8rem;color:var(--text)">Blood tests + lifestyle data + AI analysis</td>
         </tr>
         <tr style="border-bottom:1px solid var(--gray-light)">
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">焦点</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">何を食べるか</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">何をトレーニングするか</td>
-          <td style="padding:1rem 0.8rem;color:var(--text);font-weight:500">何から始めるか（優先順位）</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Focus</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">What to eat</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">What to train</td>
+          <td style="padding:1rem 0.8rem;color:var(--text);font-weight:500">Where to start (priorities)</td>
         </tr>
         <tr style="border-bottom:1px solid var(--gray-light)">
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">医療機関連携</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">施設による</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">施設による</td>
-          <td style="padding:1rem 0.8rem;color:var(--text)">医療機関監修のAI分析支援ツールを活用</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Clinical partnership</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">Varies by provider</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">Varies by provider</td>
+          <td style="padding:1rem 0.8rem;color:var(--text)">Clinic-supervised AI analysis tool</td>
         </tr>
         <tr>
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">継続の仕組み</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">食事記録の継続</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">定期セッション</td>
-          <td style="padding:1rem 0.8rem;color:var(--text)">月次データ検証→更新</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Continuity</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">Food logging</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">Regular sessions</td>
+          <td style="padding:1rem 0.8rem;color:var(--text)">Monthly data verification → update</td>
         </tr>
       </tbody>
     </table>
-    <p style="font-size:0.72rem;color:var(--gray);margin-top:1.5rem;text-align:center">※各サービスにはそれぞれの強みがあります。上記は観点の違いを示すものです。</p>
+    <p style="font-size:0.72rem;color:var(--gray);margin-top:1.5rem;text-align:center">※Each service has its own strengths. The above illustrates differences in approach.</p>
   </div>
 </section>
 
 <!-- connector -->
 <div class="connector reveal">
-  <p>その結果、あなたに届くもの。</p>
+  <p>Here's what you'll receive.</p>
 </div>
 
-<!-- ⑤ SAMPLE: 結果 -->
+<!-- ⑤ SAMPLE -->
 <section class="story-section bg-off">
   <div class="story-center reveal">
-    <h2 class="s-title">あなたの<span class="accent-word">健康地図</span>（サンプル）</h2>
-    <p class="s-body">これは実際に提供している内容の一部です。<br>何から整えるべきかが、1枚で分かります。</p>
+    <h2 class="s-title">Your <span class="accent-word">Health Map</span> (Sample)</h2>
+    <p class="s-body">This is part of what we actually deliver.<br>What to address first — clear on one page.</p>
   </div>
   <div class="sample-pages reveal">
     <div class="sample-page-card">
-      <img src="report_page1.png" alt="健康地図サンプル - 表紙" loading="lazy">
+      <img src="../report_page1.png" alt="Health Map Sample - Cover" loading="lazy">
     </div>
     <div class="sample-page-card">
-      <img src="report_page2.png" alt="健康地図サンプル - 総合評価サマリー" loading="lazy">
+      <img src="../report_page2.png" alt="Health Map Sample - Summary" loading="lazy">
     </div>
   </div>
   <div style="text-align:center;margin-top:2.5rem;padding-bottom:1rem" class="reveal">
-    <a href="sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">実際の健康地図を見る</a>
-    <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※サンプルPDFが開きます</p>
+    <a href="../sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">View a Sample Health Map</a>
+    <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※Opens a sample PDF</p>
   </div>
 </section>
 
 <!-- MID CTA -->
 <div class="connector reveal">
-  <p style="margin-bottom:1.5rem">一度、自分の健康地図を見てみませんか。</p>
-  <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--navy);color:var(--white)">無料相談で方向性を確認する</a>
+  <p style="margin-bottom:1.5rem">Why not take a look at your own Health Map?</p>
+  <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--navy);color:var(--white)">Book a Free Consultation</a>
 </div>
 
 <!-- LEARN -->
 <section class="story-section bg-white">
   <div class="story-center reveal">
     <p class="s-label">Learn</p>
-    <h2 class="s-title">まずは考え方を<span class="accent-word">1つだけ</span>。</h2>
+    <h2 class="s-title">Start with just <span class="accent-word">one idea</span>.</h2>
   </div>
   <div class="reveal">
     <div class="video-embed-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/p74G81Rt8vE" title="精密栄養学について" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/p74G81Rt8vE" title="About Precision Nutrition" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -500,22 +501,22 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <section id="pricing" class="story-section bg-off">
   <div class="story-center reveal">
     <p class="s-label">Pricing</p>
-    <h2 class="s-title">月額プラン</h2>
+    <h2 class="s-title">Monthly Plan</h2>
   </div>
   <div class="pricing-card reveal">
     <p class="pricing-label">Monthly Plan</p>
-    <div class="pricing-amount"><span class="currency">¥</span><span class="amount">23,000</span><span class="period">/ 月</span></div>
-    <p class="pricing-tax">税込 · クレジットカード決済（Stripe）</p>
+    <div class="pricing-amount"><span class="currency">¥</span><span class="amount">23,000</span><span class="period">/ month</span></div>
+    <p class="pricing-tax">Tax included · Credit card (Stripe)</p>
     <ul class="pricing-features">
-      <li>8weeks.ai によるAI解析レポート（毎月更新）</li>
-      <li>解析レポートに基づく優先順位の設計</li>
-      <li>月次の検証・更新の伴走</li>
-      <li>必要に応じた解説資料の提供</li>
+      <li>AI analysis report by 8weeks.ai (updated monthly)</li>
+      <li>Priority design based on analysis report</li>
+      <li>Monthly verification & update support</li>
+      <li>Supplementary materials provided as needed</li>
     </ul>
-    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-pricing">無料相談で方向性を確認する</a>
-    <p style="text-align:center;font-size:0.7rem;color:var(--gray);margin-top:0.7rem;line-height:1.8">※まず無料で方向性を整理してから、ご判断ください。</p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-pricing">Book a Free Consultation</a>
+    <p style="text-align:center;font-size:0.7rem;color:var(--gray);margin-top:0.7rem;line-height:1.8">※Start with a free consultation to clarify your direction.</p>
   </div>
-  <p style="font-size:0.7rem;color:var(--gray);text-align:center;margin-top:2rem;line-height:1.8" class="reveal">※本サービスは診断・治療・投薬判断を行うものではありません。必要に応じて医療機関への相談をおすすめします。</p>
+  <p style="font-size:0.7rem;color:var(--gray);text-align:center;margin-top:2rem;line-height:1.8" class="reveal">※This service does not provide medical diagnosis, treatment, or medication decisions. We recommend consulting a healthcare provider as needed.</p>
 </section>
 
 <!-- ABOUT -->
@@ -523,11 +524,11 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div class="story-wide reveal">
     <div class="about-layout">
       <p class="s-label">About</p>
-      <h2 class="about-name">田中紀之</h2>
-      <p class="about-name-en">精密栄養カウンセラー</p>
-      <p class="about-bio">「正しいこと」を積み上げても変わらないのは、努力ではなく順番の問題かもしれません。<br><br>Amazon等で5,000人規模の組織変革を率いた経験から学んだのは、人を動かすのは正論ではなく"優先順位の設計"だということ。<br><br>神宮前統合医療クリニック監修のAI解析基盤（8weeks.ai）で血液検査・睡眠・食事・活動量を読み解き、あなたの身体にとっての「最初の一手」を一緒に決めます。</p>
-      <div class="about-belief">人を動かすのは正論ではなく、「優先順位の設計」。<br>5,000人規模の組織変革で学んだこの原則を、あなたの身体の改善設計に応用します。</div>
-      <a href="https://www.linkedin.com/in/noriyuki-tanaka-5a532919/" target="_blank" class="btn-ghost">詳しいプロフィール（LinkedIn） →</a>
+      <h2 class="about-name">Noriyuki Tanaka</h2>
+      <p class="about-name-en">Precision Nutrition Counselor</p>
+      <p class="about-bio">Stacking "the right things" without seeing change isn't a matter of effort — it may be a matter of order.<br><br>Leading organizational transformation for 5,000+ people at Amazon and other companies taught me one thing: what moves people isn't logic — it's the design of priorities.<br><br>Using the AI analysis platform 8weeks.ai, supervised by Jingumae Integrative Medicine Clinic, I decode your blood tests, sleep, diet, and activity data to help you decide your body's true "first move."</p>
+      <div class="about-belief">What moves people isn't logic — it's the design of priorities.<br>This principle, learned from leading organizational transformation for 5,000+ people, is now applied to your body's improvement design.</div>
+      <a href="https://www.linkedin.com/in/noriyuki-tanaka-5a532919/" target="_blank" class="btn-ghost">Full profile (LinkedIn) →</a>
     </div>
   </div>
 </section>
@@ -536,52 +537,52 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <section id="faq" class="story-section bg-off">
   <div class="story-center reveal">
     <p class="s-label">FAQ</p>
-    <h2 class="s-title">よくある質問</h2>
+    <h2 class="s-title">Frequently Asked Questions</h2>
   </div>
   <div class="faq-list reveal">
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>どのような支払い方法に対応していますか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">Stripeによるクレジットカード決済です。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>What payment methods are available?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Credit card payment via Stripe.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>どんな人が対象ですか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">生活習慣を改善したい方、検査データを活用したい方、継続的にセルフケアに取り組みたい方に向いています。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>Who is this service for?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Ideal for those who want to improve lifestyle habits, utilize test data, and commit to ongoing self-care.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>妊娠中・持病あり・薬を飲んでいても参加できますか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">参加は可能ですが、診断・治療・投薬判断は行いません。主治医にご相談のうえ、生活改善のご参考としてご利用ください。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>Can I participate if pregnant, with chronic conditions, or on medication?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes, but we do not provide medical diagnosis, treatment, or medication decisions. Please consult your physician and use this as a reference for lifestyle improvement.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>海外から参加できますか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">はい。すべてオンラインで完結するため、どこからでもご利用いただけます。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>Can I use this from overseas?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes. Everything is online, so you can use it from anywhere.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>始めるのに必要なものは？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">血液検査の結果（健診・献血等）があれば始められます。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>What do I need to get started?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Blood test results (health check-up, blood donation, etc.) are all you need to begin.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>診断や治療は行いますか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">いいえ。本サービスは診断・治療・投薬判断を行うものではありません。生活改善のサポートとして、データに基づく行動の優先順位を一緒に考えるサービスです。必要に応じて医療機関への相談をおすすめします。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>Does this service include medical diagnosis or treatment?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">No. This service does not provide medical diagnosis, treatment, or medication decisions. It supports lifestyle improvement by helping you design data-driven action priorities. We recommend consulting a healthcare provider as needed.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>一般的な栄養指導とどう違いますか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">食事内容のアドバイスではなく、血液データと生活データをもとに「何から取り組むか」の優先順位を設計します。カウンセラーは、AIの分析結果をあなたの生活に合った行動計画に翻訳する役割を担います。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>How is this different from general nutrition guidance?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Rather than advising on what to eat, we use blood data and lifestyle data to design the priority order of "what to address first." The counselor translates AI analysis results into an action plan tailored to your life.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>カウンセラーの医療資格は？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">医師ではなく、診断・治療・投薬判断は行いません。分析は医療機関監修のAI分析支援ツール（8weeks.ai）で行い、必要に応じて医療機関への相談をおすすめしています。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>Does the counselor have medical credentials?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">The counselor is not a physician and does not provide medical diagnosis, treatment, or medication decisions. Analysis is conducted through a clinic-supervised AI tool (8weeks.ai), and we recommend consulting a healthcare provider when needed.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>どのくらいで変化を実感できますか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">個人差がありますが、最初の1ヶ月で「何に集中すべきか」が明確になります。数値の変化は2〜3ヶ月目以降のデータ検証で確認していきます。効果を保証するものではありません。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>How long until I notice changes?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">It varies, but within the first month you'll gain clarity on "what to focus on." Data-verified changes typically become apparent from months 2–3 onward. This is not a guarantee of results.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>途中解約は可能ですか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">はい。次回決済日の3日前までにメールでご連絡ください。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>Can I cancel anytime?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes. Please email us at least 3 days before your next billing date.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>毎月の決済日はいつですか？</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">初回はお申し込み時に決済され、以降は同じ日付に毎月自動決済されます。</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>When is the monthly billing date?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">First payment is charged upon sign-up, then automatically charged monthly on the same date.</div>
     </div>
   </div>
 </section>
@@ -589,16 +590,16 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <!-- CTA FINAL -->
 <section id="cta-final" class="cta-final">
   <div class="reveal">
-    <h2 class="s-title">まず、方向性を確認しませんか。</h2>
-    <p>フォームにご回答いただくだけ。<br>あなたの状態を整理し、「何からやるか」の方向性をお送りします。</p>
-    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--white);color:var(--navy)">無料相談で方向性を確認する</a>
+    <h2 class="s-title">Why not start by getting clarity?</h2>
+    <p>Just fill out the form.<br>We'll organize your current state and send you a direction for "where to start."</p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--white);color:var(--navy)">Book a Free Consultation</a>
   </div>
 </section>
 
 <footer>
-  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3);font-size:0.65rem">本サービスは診断・治療・投薬判断を目的としたものではありません。必要に応じて医療機関への相談をおすすめします。</span>
+  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3);font-size:0.65rem">This service does not provide medical diagnosis, treatment, or medication decisions. We recommend consulting a healthcare provider as needed.</span>
   <span>© 2025 Health Map</span>
-  <span><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none">プライバシーポリシー</a> | <a href="/legal/" style="color:rgba(255,255,255,0.3);text-decoration:none">特定商取引法に基づく表記</a></span>
+  <span><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none">Privacy Policy</a> | <a href="/legal/" style="color:rgba(255,255,255,0.3);text-decoration:none">Legal Notice</a></span>
 </footer>
 
 <script>
@@ -611,4 +612,3 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 </body>
 </html>
 ```
-

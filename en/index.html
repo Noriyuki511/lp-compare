@@ -237,6 +237,68 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 .two-audience-grid{grid-template-columns:1fr!important}
 .voice-support-grid{grid-template-columns:1fr!important}
 }
+
+/* === DESKTOP READABILITY (1200px+) === */
+@media (min-width: 1200px) {
+  body { font-size: 1.125rem; line-height: 1.8; }
+  .s-title { font-size: clamp(2rem, 2.5vw, 2.625rem); }
+  .s-body { font-size: 1.0625rem; line-height: 1.8; }
+  .s-label { font-size: 0.9375rem; }
+  .pain-item p { font-size: 1.0625rem; }
+  .data-card-title { font-size: 1.25rem; }
+  .data-card-desc { font-size: 0.9375rem; }
+  .advice-card h3 { font-size: 1.3rem; }
+  .advice-data { font-size: 0.9375rem; line-height: 1.7; }
+  .advice-conclusion { font-size: 1rem; line-height: 1.7; }
+  .step-m-title { font-size: 1.0625rem; }
+  .step-m-desc { font-size: 0.9375rem; line-height: 1.7; }
+  table td, table th { font-size: 0.9375rem; }
+  .pricing-features li { font-size: 0.9375rem; line-height: 1.7; }
+  .faq-q { font-size: 1rem; }
+  .faq-a { font-size: 0.9375rem; line-height: 1.8; }
+  .btn-primary, .btn-outline, .btn-pricing { font-size: 1rem; }
+  footer { font-size: 0.875rem; }
+}
+@media (max-width: 1023px) {
+  body { font-size: max(0.9rem, 1rem); line-height: 1.7; }
+}
+
+
+/* ===== DESKTOP READABILITY (1024px+) ===== */
+@media(min-width:1024px){
+  body{font-size:17px;line-height:1.8}
+  .s-title{font-size:clamp(1.8rem,3.2vw,2.4rem)}
+  .s-body{font-size:1.08rem;line-height:1.85}
+  .hero-title,.hero h1{font-size:clamp(2rem,3.8vw,2.8rem)}
+  .hero-sub{font-size:1.12rem;line-height:1.85}
+  .pain-item p{font-size:1.05rem}
+  .advice-card p,.advice-data,.advice-conclusion{font-size:1rem;line-height:1.8}
+  .advice-card h3{font-size:1.2rem}
+  .data-card-title{font-size:1.05rem}
+  .data-card-desc{font-size:0.95rem}
+  .step-m-title{font-size:1rem}
+  .step-m-desc{font-size:0.92rem}
+  .step-card .step-desc{font-size:0.92rem}
+  .step-card .step-title{font-size:1rem}
+  .compare-table td,.compare-table th{font-size:0.95rem;padding:1rem}
+  .btn-primary,.btn-outline,.btn-pricing{font-size:1rem}
+  .faq-q{font-size:1.02rem}
+  .faq-a{font-size:0.98rem;line-height:1.85}
+  .inc-card-body{font-size:1rem;line-height:1.8}
+  .inc-card-title{font-size:1.15rem}
+  .exp-title{font-size:1.05rem}
+  .exp-desc{font-size:0.98rem;line-height:1.85}
+  .value-card-title,.value-title{font-size:1.2rem}
+  .value-desc{font-size:1.02rem;line-height:1.85}
+  .privacy-card-title,.pr-title{font-size:1.05rem}
+  .privacy-card-body,.pr-desc{font-size:0.95rem;line-height:1.8}
+}
+
+/* ===== MOBILE READABILITY ===== */
+@media(max-width:768px){
+  body{font-size:16px;line-height:1.75}
+  .s-body{font-size:1rem;line-height:1.8}
+}
 </style>
 </head>
 <body>
@@ -365,7 +427,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">Healthcare Data</div><div class="data-card-desc">Sleep &amp; activity from iPhone, etc.<br>Temperature &amp; weight records</div></div>
     <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">Diet &amp; Glucose Records</div><div class="data-card-desc">Daily food logs<br>Glucose variability data</div></div>
   </div>
-  <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※Additional data can provide more context. You can start with what you already have. Start with whatever you have on hand.</p>
+  <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※Additional data can provide more context. You can start with what you already have. </p>
 </section>
 
 <!-- connector -->
@@ -404,7 +466,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div class="steps-minimal reveal">
     <div class="step-m"><div class="step-m-num">01</div><div class="step-m-title">KNOW — Understand yourself</div><div class="step-m-desc">Using blood and lifestyle data,<br>organize your current state.</div></div>
     <div class="step-m"><div class="step-m-num">02</div><div class="step-m-title">DECIDE — Set your priorities</div><div class="step-m-desc">In your case,<br>clarify what to start with first.</div></div>
-    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">ACT &amp; REVIEW — Execute and verify</div><div class="step-m-desc">Take one action, verify with data.<br>Adjust as needed.</div></div>
+    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">ACT — Take one action</div><div class="step-m-desc">Take one action, verify with data.<br>Adjust as needed.</div></div>
   </div>
 </section>
 
@@ -476,14 +538,14 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     </div>
   </div>
   <div style="text-align:center;margin-top:2.5rem;padding-bottom:1rem" class="reveal">
-    <a href="../sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">View a Sample Healthmap</a>
+    <a href="../sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">View a Sample Health Map</a>
     <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※Opens a sample PDF</p>
   </div>
 </section>
 
 <!-- MID CTA -->
 <div class="connector reveal">
-  <p style="margin-bottom:1.5rem">Why not take a look at your own Healthmap?</p>
+  <p style="margin-bottom:1.5rem">Why not take a look at your own Health Map?</p>
   <a href="individuals.html" class="btn-primary" style="background:var(--navy);color:var(--white)">See Healthmap Insight</a>
 </div>
 
@@ -503,8 +565,8 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     </div>
     <div class="reveal" style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
       <p style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.2rem;">For Business</p>
-      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">Help each employee find<br>their own next step<br>toward better health.</h3>
-      <p style="font-size:0.84rem;font-weight:500;color:var(--navy);margin-bottom:1.5rem;">Scaled Insight</p>
+      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">Help each employee identify<br>their own next step.</h3>
+      <p style="font-size:0.84rem;font-weight:500;color:var(--navy);margin-bottom:1.5rem;">For Business</p>
       <a href="business.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.82rem;font-weight:500;">For organizations →</a>
     </div>
   </div>

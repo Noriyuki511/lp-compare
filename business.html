@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthmap for Business｜従業員一人ひとりの「次の一歩」が見える健康支援</title>
+<meta name="description" content="健康診断や生活データを、「知る」で終わらせず、一人ひとりの行動につながるInsightへ。Healthmapは、従業員が自分に合った次の一歩を見つけられる健康支援を提供します。">
+<link rel="alternate" hreflang="ja" href="https://healthmap.jp/business.html">
+<link rel="alternate" hreflang="en" href="https://healthmap.jp/en/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--navy:#071426;--navy-light:#122a4a;
+--accent:#1554d1;--accent-light:#4f8fe8;--accent-pale:#b8cfe8;
+--accent-hero:#7db8e0;
+--white:#FFFFFF;--off-white:#F7F9FB;
+--gray-light:#E5EAF0;--gray:#8a9bb0;
+--text:#151c28;--text-light:#556275;
+--glass:rgba(255,255,255,0.72);--glass-border:rgba(30,95,216,0.15);
+--shadow-sm:0 1px 4px rgba(7,20,38,0.05);
+--shadow-md:0 4px 24px rgba(7,20,38,0.07);
+--shadow-lg:0 8px 40px rgba(7,20,38,0.09);
+--radius:16px;--radius-sm:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.02em}
+.emphasis{font-weight:600;color:var(--accent)}
+.accent-word{color:var(--accent);font-weight:600}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);backdrop-filter:blur(20px);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--white);letter-spacing:0.06em;text-decoration:none}
+.nav-logo span{color:var(--accent-hero)}
+.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a.active-link{color:var(--white)}
+.nav-cta{background:var(--white);color:var(--navy)!important;padding:0.5rem 1.4rem;border-radius:10px;font-weight:500!important;transition:all 0.2s!important}
+.nav-cta:hover{background:#eef2f7!important;transform:translateY(-1px)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:110}
+.hamburger span{display:block;width:100%;height:2px;background:var(--white);position:absolute;left:0;transition:all 0.3s}
+.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
+.hamburger.active span:nth-child(1){top:9px;transform:rotate(45deg)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){top:9px;transform:rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(7,20,38,0.96);backdrop-filter:blur(20px);z-index:105;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-menu.active{display:flex}
+.mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.08em}
+.mobile-menu .nav-cta{margin-top:1rem;padding:0.9rem 2.2rem;font-size:1rem;border-radius:12px;background:var(--white);color:var(--navy)!important}
+.lang-switch{display:flex;align-items:center;gap:0.3rem;font-size:0.78rem}
+.lang-switch a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+.lang-switch a:hover,.lang-switch a.active{color:var(--white)}
+.lang-switch span{color:rgba(255,255,255,0.3)}
+
+/* HERO */
+#hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:160px 6% 100px;background:radial-gradient(circle at 50% 40%,rgba(125,184,224,0.18),transparent 40%),radial-gradient(ellipse at 50% 60%,#1a4a7a 0%,#0d2847 40%,#071426 100%)}
+.hero-label{font-size:0.68rem;letter-spacing:0.22em;color:var(--accent-hero);text-transform:uppercase;margin-bottom:2rem;font-weight:500;animation:fadeUp 0.7s ease both}
+.hero-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--white);line-height:1.7;letter-spacing:0.02em;margin-bottom:2rem;animation:fadeUp 0.8s ease 0.08s both;max-width:700px}
+.hero-title .accent-word{color:var(--accent-hero);font-weight:600}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;max-width:520px;animation:fadeUp 0.8s ease 0.16s both}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.8s ease 0.24s both}
+.btn-primary{background:var(--white);color:var(--navy);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;font-weight:500;transition:all 0.25s;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
+.btn-primary:hover{background:#f0f4f8;transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.2)}
+.btn-outline{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;transition:all 0.25s;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px)}
+.btn-outline:hover{background:rgba(255,255,255,0.15);color:var(--white);border-color:rgba(255,255,255,0.35)}
+
+/* STORY SECTIONS */
+.story-section{padding:120px 6%;position:relative}
+.story-section.bg-white{background:var(--white)}
+.story-section.bg-off{background:var(--off-white)}
+.story-section.bg-navy{background:var(--navy)}
+.story-center{max-width:640px;margin:0 auto;text-align:center}
+.story-wide{max-width:900px;margin:0 auto}
+
+/* Section titles */
+.s-label{font-size:0.65rem;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
+.s-label.white{color:var(--accent-hero)}
+.s-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
+.s-title.white{color:var(--white)}
+.s-body{font-size:0.9rem;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+.s-body.white{color:rgba(255,255,255,0.6)}
+
+/* PROBLEM GRID */
+.problem-intro{font-size:0.95rem;color:var(--text-light);line-height:2.2;margin-bottom:2.5rem;text-align:center;max-width:540px;margin-left:auto;margin-right:auto}
+.problem-highlight{text-align:center;margin:2.5rem 0;padding:2rem;background:var(--off-white);border-radius:var(--radius);border-left:4px solid var(--accent)}
+.problem-highlight .big{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--navy);letter-spacing:0.04em;margin-bottom:0.5rem}
+.problem-highlight p{font-size:0.85rem;color:var(--text-light);line-height:2}
+
+/* VALUES */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:840px;margin:2.5rem auto 0}
+.value-card{text-align:center;padding:2.5rem 1.5rem}
+.value-label{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--accent);letter-spacing:0.08em;margin-bottom:1rem;text-transform:uppercase}
+.value-title{font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:0.8rem;line-height:1.6}
+.value-desc{font-size:0.82rem;color:var(--text-light);line-height:2}
+
+/* SOLUTION */
+.solution-visual{text-align:center;margin:2.5rem auto;max-width:500px}
+.solution-flow{display:flex;flex-direction:column;gap:0.8rem;align-items:center}
+.flow-inputs{display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;width:100%}
+.flow-input{background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius-sm);padding:0.8rem 0.5rem;text-align:center;font-size:0.72rem;color:var(--text-light);font-weight:500}
+.flow-arrow{font-size:1.2rem;color:var(--accent-hero);margin:0.3rem 0}
+.flow-output{background:var(--navy);color:var(--white);border-radius:var(--radius);padding:1.5rem 2rem;width:100%}
+.flow-output-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;letter-spacing:0.04em;margin-bottom:0.3rem}
+.flow-output-sub{font-size:0.75rem;color:rgba(255,255,255,0.55)}
+.solution-desc{font-size:0.9rem;color:var(--text-light);line-height:2.2;text-align:center;max-width:520px;margin:2rem auto 0}
+
+/* EXPERIENCE STEPS */
+.exp-steps{display:flex;flex-direction:column;gap:0;max-width:600px;margin:2.5rem auto 0}
+.exp-step{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--gray-light)}
+.exp-step:last-child{border-bottom:none}
+.exp-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--accent-hero)}
+.exp-title{font-size:0.92rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem}
+.exp-desc{font-size:0.82rem;color:var(--text-light);line-height:2}
+
+/* PRIVACY */
+.privacy-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:800px;margin:2.5rem auto 0}
+.privacy-card{text-align:center;padding:2rem 1.2rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius)}
+.privacy-icon{font-size:1.8rem;margin-bottom:1rem}
+.privacy-card-title{font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:0.6rem;letter-spacing:0.04em}
+.privacy-card-desc{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.9}
+
+/* PILOT */
+.pilot-content{max-width:560px;margin:0 auto;text-align:center}
+.pilot-content p{font-size:0.9rem;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+
+/* FOUNDER */
+.founder-section{max-width:560px;margin:0 auto;text-align:center}
+.founder-quote{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--navy);line-height:1.8;letter-spacing:0.04em;margin-bottom:2rem;font-style:italic}
+.founder-body{font-size:0.88rem;color:var(--text-light);line-height:2.2;margin-bottom:1.5rem}
+.founder-link{font-size:0.78rem;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem}
+.founder-link:hover{text-decoration:underline}
+
+/* CTA FINAL */
+.cta-final{padding:140px 6%;background:var(--navy);text-align:center}
+.cta-final .s-title{color:var(--white);margin-bottom:1.2rem}
+.cta-final p{font-size:0.88rem;color:rgba(255,255,255,0.6);margin-bottom:2.5rem;line-height:2}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);padding:2.5rem 6%;display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:rgba(255,255,255,0.15)}
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav-links{display:none}.hamburger{display:block}
+#hero{padding:120px 6% 70px;min-height:auto}
+.hero-title{font-size:1.6rem}
+.values-grid{grid-template-columns:1fr}
+.flow-inputs{grid-template-columns:repeat(2,1fr)}
+.exp-step{grid-template-columns:40px 1fr;gap:1rem}
+.privacy-principles{grid-template-columns:1fr}
+.story-section{padding:80px 6%}
+footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Health<span>map</span></a>
+  <ul class="nav-links">
+    <li><a href="individuals.html">Individuals</a></li>
+    <li><a href="business.html" class="active-link">Business</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><div class="lang-switch"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div></li>
+    <li><a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="nav-cta" target="_blank" rel="noopener">相談する</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="individuals.html" onclick="closeMenu()">Individuals</a>
+  <a href="business.html" onclick="closeMenu()">Business</a>
+  <a href="/#about" onclick="closeMenu()">About</a>
+  <div class="lang-switch" style="justify-content:center"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div>
+  <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="nav-cta" target="_blank" rel="noopener" onclick="closeMenu()">相談する</a>
+</div>
+
+
+<!-- ============================================ -->
+<!-- 01. HERO                                     -->
+<!-- ============================================ -->
+<section id="hero">
+  <div class="hero-label">Healthmap for Business</div>
+  <h1 class="hero-title">
+    健康支援を、<br>
+    「<span class="accent-word">提供する</span>」から<br>
+    「<span class="accent-word">一人ひとりが活用できる</span>」へ。
+  </h1>
+  <p class="hero-sub">
+    健康診断や生活データを、「知る」で終わらせず、<br>
+    一人ひとりの行動につながるInsightへ。
+  </p>
+  <div class="hero-buttons">
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" target="_blank" rel="noopener">法人導入について相談する</a>
+    <a href="individuals.html" class="btn-outline">個人向けを見る</a>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 02. THE BUSINESS PROBLEM                     -->
+<!-- ============================================ -->
+<section class="story-section bg-white reveal">
+  <div class="story-center">
+    <div class="s-label">The Challenge</div>
+    <h2 class="s-title">
+      企業にはすでに、<br>
+      健康施策がある。
+    </h2>
+    <p class="problem-intro">
+      健康診断。福利厚生。健康情報。アプリ。<br>
+      しかし、データを受け取っても、<br>
+      「自分は何をすればいいか」まで<br>
+      落とし込めなければ、行動にはつながりません。
+    </p>
+    <div class="problem-highlight">
+      <div class="big">DATA ≠ ACTION</div>
+      <p>
+        データを届けるだけでは、行動は変わらない。<br>
+        一人ひとりの「次の一歩」を明確にする仕組みが必要です。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 03. WHY IT MATTERS TO EMPLOYERS              -->
+<!-- ============================================ -->
+<section class="story-section bg-off reveal">
+  <div class="story-center">
+    <div class="s-label">Why It Matters</div>
+    <h2 class="s-title">
+      健康施策があっても、<br>
+      「自分ごと」にならなければ、<br>
+      実際の行動にはつながりにくい。
+    </h2>
+    <p class="s-body" style="margin-bottom:1rem">
+      Healthmapは、従業員一人ひとりの「次の一歩」を明確にすることで、<br>
+      健康支援を「提供すること」から「使われること」へつなげます。
+    </p>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-label">Personal</div>
+      <div class="value-title">一人ひとりの<br>データに基づく</div>
+      <p class="value-desc">
+        全員同じ情報ではなく、<br>
+        血液・食事・睡眠・活動データから<br>
+        個人の状態を整理します。
+      </p>
+    </div>
+    <div class="value-card">
+      <div class="value-label">Actionable</div>
+      <div class="value-title">何から始めるかが<br>明確</div>
+      <p class="value-desc">
+        「もっと運動しましょう」ではなく、<br>
+        「あなたの場合、まずこれから」という<br>
+        #1 Priorityを提示します。
+      </p>
+    </div>
+    <div class="value-card">
+      <div class="value-label">Optional</div>
+      <div class="value-title">強制しない。<br>必要な人が使える</div>
+      <p class="value-desc">
+        参加は本人の意思。<br>
+        希望者のみが自分のペースで<br>
+        活用できる設計です。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 04. HEALTHMAP SOLUTION                       -->
+<!-- ============================================ -->
+<section class="story-section bg-white reveal">
+  <div class="story-center">
+    <div class="s-label">How It Works</div>
+    <h2 class="s-title">
+      一人ひとりに、<br>
+      同じ健康情報を届けるのではなく、<br>
+      「自分の場合、何から始めるか」を<br>
+      整理します。
+    </h2>
+  </div>
+  <div class="solution-visual">
+    <div class="solution-flow">
+      <div class="flow-inputs">
+        <div class="flow-input">🩸 血液検査</div>
+        <div class="flow-input">🍽️ 食事</div>
+        <div class="flow-input">🌙 睡眠</div>
+        <div class="flow-input">🏃 活動量</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div style="font-size:0.72rem;color:var(--text-light);padding:0.3rem 0">AI分析支援（8weeks.ai） × カウンセラーの解釈</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-output">
+        <div class="flow-output-title">Your #1 Priority</div>
+        <div class="flow-output-sub">従業員一人ひとりの「次の一歩」</div>
+      </div>
+    </div>
+  </div>
+  <p class="solution-desc">
+    医療機関監修のAI分析支援ツールとカウンセラーの解釈・優先順位設計で、<br>
+    従業員一人ひとりに合ったInsightを提供します。
+  </p>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 05. EMPLOYEE EXPERIENCE                      -->
+<!-- ============================================ -->
+<section class="story-section bg-off reveal">
+  <div class="story-center">
+    <div class="s-label">Employee Experience</div>
+    <h2 class="s-title">
+      従業員が体験すること
+    </h2>
+  </div>
+  <div class="exp-steps">
+    <div class="exp-step">
+      <div class="exp-num">01</div>
+      <div>
+        <div class="exp-title">OPT IN — 希望者のみ参加</div>
+        <p class="exp-desc">参加は任意。本人の意思で申し込みます。</p>
+      </div>
+    </div>
+    <div class="exp-step">
+      <div class="exp-num">02</div>
+      <div>
+        <div class="exp-title">KNOW — 自分の現在地を理解する</div>
+        <p class="exp-desc">血液データ・生活データをもとに、AI分析支援ツールが状態を整理。カウンセラーが解釈し、身体の「現在地」を可視化します。</p>
+      </div>
+    </div>
+    <div class="exp-step">
+      <div class="exp-num">03</div>
+      <div>
+        <div class="exp-title">DECIDE — #1 Priorityを決める</div>
+        <p class="exp-desc">「自分の場合、まず何から始めるか」— 一つの優先アクションを、カウンセラーと一緒に決めます。</p>
+      </div>
+    </div>
+    <div class="exp-step">
+      <div class="exp-num">04</div>
+      <div>
+        <div class="exp-title">ACT — 自分の日常に合うOne Actionへ</div>
+        <p class="exp-desc">無理のない、日常に組み込める具体的なアクションを設計。「続けられる」ことを重視します。</p>
+      </div>
+    </div>
+    <div class="exp-step">
+      <div class="exp-num">＋</div>
+      <div>
+        <div class="exp-title">OPTIONAL: GUIDED — 必要な方のみ継続サポート</div>
+        <p class="exp-desc">Insightで価値を実感した方だけが、Guided Programで継続サポートを選択できます。強制ではありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 06. PRIVACY BY DESIGN                        -->
+<!-- ============================================ -->
+<section class="story-section bg-navy reveal">
+  <div class="story-center">
+    <div class="s-label white">Privacy by Design</div>
+    <h2 class="s-title white">
+      個人の健康データは、<br>
+      個人のもの。
+    </h2>
+    <p class="s-body white">
+      従業員の健康データは企業に共有されません。<br>
+      Healthmapと個人の間で完結する設計です。
+    </p>
+  </div>
+  <div class="privacy-principles">
+    <div class="privacy-card">
+      <div class="privacy-icon">🔒</div>
+      <div class="privacy-card-title">OPT-IN</div>
+      <p class="privacy-card-desc">参加は本人の意思。<br>強制ではありません。</p>
+    </div>
+    <div class="privacy-card">
+      <div class="privacy-icon">🛡️</div>
+      <div class="privacy-card-title">PRIVATE BY DESIGN</div>
+      <p class="privacy-card-desc">個人の健康データは、<br>本人へのサービス提供の<br>ために使用します。</p>
+    </div>
+    <div class="privacy-card">
+      <div class="privacy-icon">📊</div>
+      <div class="privacy-card-title">AGGREGATE ONLY</div>
+      <p class="privacy-card-desc">企業への情報提供を行う場合は、<br>合意した範囲で<br>匿名・集計情報のみ。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 07. PILOT                                    -->
+<!-- ============================================ -->
+<section class="story-section bg-white reveal">
+  <div class="story-center">
+    <div class="s-label">Start Small</div>
+    <h2 class="s-title">まずは、小さく始める。</h2>
+  </div>
+  <div class="pilot-content">
+    <p>
+      対象人数・期間・提供内容を設計し、<br>
+      小規模Pilotから導入できます。<br><br>
+      まずは数名からのトライアルでも構いません。<br>
+      導入前のご相談はいつでもお受けしています。
+    </p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" target="_blank" rel="noopener" style="display:inline-block">Pilotについて相談する</a>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 08. FOUNDER / WHY HEALTHMAP                  -->
+<!-- ============================================ -->
+<section class="story-section bg-off reveal" id="about">
+  <div class="founder-section">
+    <div class="s-label">Why Healthmap</div>
+    <div class="founder-quote">
+      "Health is also about<br>designing priorities."
+    </div>
+    <p class="founder-body">
+      Healthmapは、「健康情報を提供するサービス」ではありません。<br><br>
+      一人ひとりが、自分にとってのPriorityを理解し、<br>
+      実際の行動につなげるための仕組みです。<br><br>
+      People・HR・行動変容に関する<br>
+      大規模組織での経験をHealthmapへ応用しています。
+    </p>
+    <a href="https://www.linkedin.com/in/noriyuki-tanaka-and-healthmap/" class="founder-link" target="_blank" rel="noopener">Founder LinkedIn →</a>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- 09. FINAL CTA                                -->
+<!-- ============================================ -->
+<section class="cta-final">
+  <div class="story-center">
+    <h2 class="s-title white">
+      従業員一人ひとりの<br>
+      「次の一歩」が見える<br>
+      健康支援へ。
+    </h2>
+    <p>
+      Pilot、対象人数、提供方法について<br>
+      お気軽にご相談ください。
+    </p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" target="_blank" rel="noopener">法人導入について相談する</a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3);font-size:0.65rem">本サービスは診断・治療・投薬判断を目的としたものではありません。必要に応じて医療機関への相談をおすすめします。</span>
+  <span>© 2026 Healthmap</span>
+  <span><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none">プライバシーポリシー</a> | <a href="/legal/" style="color:rgba(255,255,255,0.3);text-decoration:none">特定商取引法に基づく表記</a></span>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active');document.querySelector('.hamburger').classList.toggle('active')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('active');document.querySelector('.hamburger').classList.remove('active')}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

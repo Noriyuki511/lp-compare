@@ -242,6 +242,68 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   .two-audience-grid{grid-template-columns:1fr !important;}
   .voice-support-grid{grid-template-columns:1fr !important;}
 }
+
+/* === DESKTOP READABILITY (1200px+) === */
+@media (min-width: 1200px) {
+  body { font-size: 1.125rem; line-height: 1.8; }
+  .s-title { font-size: clamp(2rem, 2.5vw, 2.625rem); }
+  .s-body { font-size: 1.0625rem; line-height: 1.8; }
+  .s-label { font-size: 0.9375rem; }
+  .pain-item p { font-size: 1.0625rem; }
+  .data-card-title { font-size: 1.25rem; }
+  .data-card-desc { font-size: 0.9375rem; }
+  .advice-card h3 { font-size: 1.3rem; }
+  .advice-data { font-size: 0.9375rem; line-height: 1.7; }
+  .advice-conclusion { font-size: 1rem; line-height: 1.7; }
+  .step-m-title { font-size: 1.0625rem; }
+  .step-m-desc { font-size: 0.9375rem; line-height: 1.7; }
+  table td, table th { font-size: 0.9375rem; }
+  .pricing-features li { font-size: 0.9375rem; line-height: 1.7; }
+  .faq-q { font-size: 1rem; }
+  .faq-a { font-size: 0.9375rem; line-height: 1.8; }
+  .btn-primary, .btn-outline, .btn-pricing { font-size: 1rem; }
+  footer { font-size: 0.875rem; }
+}
+@media (max-width: 1023px) {
+  body { font-size: max(0.9rem, 1rem); line-height: 1.7; }
+}
+
+
+/* ===== DESKTOP READABILITY (1024px+) ===== */
+@media(min-width:1024px){
+  body{font-size:17px;line-height:1.8}
+  .s-title{font-size:clamp(1.8rem,3.2vw,2.4rem)}
+  .s-body{font-size:1.08rem;line-height:1.85}
+  .hero-title,.hero h1{font-size:clamp(2rem,3.8vw,2.8rem)}
+  .hero-sub{font-size:1.12rem;line-height:1.85}
+  .pain-item p{font-size:1.05rem}
+  .advice-card p,.advice-data,.advice-conclusion{font-size:1rem;line-height:1.8}
+  .advice-card h3{font-size:1.2rem}
+  .data-card-title{font-size:1.05rem}
+  .data-card-desc{font-size:0.95rem}
+  .step-m-title{font-size:1rem}
+  .step-m-desc{font-size:0.92rem}
+  .step-card .step-desc{font-size:0.92rem}
+  .step-card .step-title{font-size:1rem}
+  .compare-table td,.compare-table th{font-size:0.95rem;padding:1rem}
+  .btn-primary,.btn-outline,.btn-pricing{font-size:1rem}
+  .faq-q{font-size:1.02rem}
+  .faq-a{font-size:0.98rem;line-height:1.85}
+  .inc-card-body{font-size:1rem;line-height:1.8}
+  .inc-card-title{font-size:1.15rem}
+  .exp-title{font-size:1.05rem}
+  .exp-desc{font-size:0.98rem;line-height:1.85}
+  .value-card-title,.value-title{font-size:1.2rem}
+  .value-desc{font-size:1.02rem;line-height:1.85}
+  .privacy-card-title,.pr-title{font-size:1.05rem}
+  .privacy-card-body,.pr-desc{font-size:0.95rem;line-height:1.8}
+}
+
+/* ===== MOBILE READABILITY ===== */
+@media(max-width:768px){
+  body{font-size:16px;line-height:1.75}
+  .s-body{font-size:1rem;line-height:1.8}
+}
 </style>
 </head>
 <body>
@@ -492,8 +554,8 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     </div>
     <div style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
       <p style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.2rem;">For Business</p>
-      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">従業員一人ひとりが、<br>自分に合った次の一歩を<br>見つけられる健康支援へ。</h3>
-      <p style="font-size:0.84rem;font-weight:500;color:var(--navy);margin-bottom:1.5rem;">Scaled Insight</p>
+      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">従業員一人ひとりに、<br>違う「次の一歩」を。</h3>
+      <p style="font-size:0.82rem;color:var(--text);line-height:1.7;margin-bottom:1.5rem;">優先順位までパーソナライズ。<br>本人が選んで利用し、<br>個人結果は企業へ共有しません。</p>
       <a href="business.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.82rem;font-weight:500;">法人向けを見る →</a>
     </div>
   </div>

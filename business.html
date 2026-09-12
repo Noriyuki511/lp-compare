@@ -140,54 +140,19 @@ nav{position:fixed;top:0;width:100%;padding:1rem 2rem;display:flex;align-items:c
   .compare-table tbody td{padding:0.7rem 0.8rem}
 }
 
-/* ===== COMPARISON TABLE ===== */
-.compare-section{max-width:960px;margin:0 auto}
-.compare-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0}
-.compare-table{width:100%;border-collapse:collapse;min-width:640px}
-.compare-table th{padding:1rem;font-size:0.95rem;font-weight:500;text-align:left;border-bottom:2px solid var(--navy);color:var(--navy)}
-.compare-table th:first-child{width:22%}
-.compare-table td{padding:0.85rem 1rem;font-size:0.9rem;color:var(--text);border-bottom:1px solid rgba(0,0,0,0.08);vertical-align:top;line-height:1.6}
-.compare-table td:last-child{color:var(--navy);font-weight:500}
-.compare-table tbody tr:last-child td{border-bottom:none}
-/* ===== DIFFERENTIATOR CARDS ===== */
-.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:840px;margin:2rem auto 0}
-.diff-card{background:rgba(255,255,255,0.06);border-radius:12px;padding:2rem 1.5rem}
-.diff-card-title{font-size:1.05rem;font-weight:500;color:var(--white);margin-bottom:0.8rem;line-height:1.5}
-.diff-card-body{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.65}
-/* ===== EMPLOYER VALUE ===== */
-.ev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:840px;margin:2rem auto 0}
-.ev-card{text-align:center;padding:2rem 1.5rem}
-.ev-card-title{font-size:1.1rem;font-weight:500;color:var(--navy);margin-bottom:1rem;line-height:1.5}
-.ev-card-body{font-size:0.9rem;color:var(--text);line-height:1.7}
-/* ===== IMPL FLOW ===== */
-.impl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:860px;margin:2rem auto 0}
-.impl-step{text-align:center;padding:1.5rem 1rem}
-.impl-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent-hero);margin-bottom:0.5rem}
-.impl-text{font-size:0.85rem;color:var(--text);line-height:1.6}
-/* ===== DESKTOP OVERRIDES FOR NEW SECTIONS ===== */
-@media(min-width:1024px){
-  .compare-table th{font-size:1.05rem}
-  .compare-table td{font-size:1rem}
-  .diff-card-title{font-size:1.15rem}
-  .diff-card-body{font-size:0.95rem}
-  .ev-card-title{font-size:1.2rem}
-  .ev-card-body{font-size:1rem}
-  .impl-text{font-size:0.95rem}
+/* Business responsive */
+@media (max-width: 768px) {
+  section [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
+  section [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
 }
-@media(max-width:768px){
-  .diff-grid{grid-template-columns:1fr}
-  .ev-grid{grid-template-columns:1fr}
-  .impl-grid{grid-template-columns:1fr 1fr;gap:1rem}
-  .compare-table{min-width:580px}
-}
-@media(max-width:480px){
-  .impl-grid{grid-template-columns:1fr}
-}
-
 </style>
 </head>
-
 <body>
+
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">Health<span>map</span></a>
@@ -202,262 +167,191 @@ nav{position:fixed;top:0;width:100%;padding:1rem 2rem;display:flex;align-items:c
 </nav>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-label">Healthmap for Business</div>
-  <p style="font-size:clamp(0.9rem,1.5vw,1.1rem);color:rgba(255,255,255,0.6);margin-bottom:1.5rem;line-height:1.6;max-width:520px;margin-left:auto;margin-right:auto">
-    健診も、福利厚生もある。<br>
-    それでも、従業員は<br>
-    「自分は何をすればいいか」が分からない。
-  </p>
-  <h1 class="hero-title">
-    一人ひとりを深く理解することから、<br>
-    組織の健康支援を変える。
-  </h1>
-  <p class="hero-sub">
-    Healthmapは、すでにある健診・生活データを、<br>
-    従業員本人が使える「次の一歩」に変えます。<br><br>
-    個人結果を企業に共有せず、<br>
-    希望する従業員だけが利用する<br>
-    OPT-IN型の健康支援です。
-  </p>
-  <div class="hero-buttons" style="margin-top:2rem">
-    <a href="#business-form" class="btn-primary">法人導入・Pilotについて相談する</a>
+<section id="hero" style="min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--navy);color:var(--white);padding:6rem 1.5rem 4rem;">
+  <div style="max-width:680px;">
+    <p style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent-hero);margin-bottom:2rem;">HEALTHMAP FOR BUSINESS</p>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2rem;">健診も、福利厚生もある。<br>それでも、従業員は<br>「自分は何をすればいいか」が分からない。</p>
+    <h1 style="font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:500;line-height:1.6;margin-bottom:1.5rem;font-family:'Noto Sans JP',sans-serif;">一人ひとりを深く理解することから、<br>組織の健康支援を変える。</h1>
+    <p style="font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:2.5rem;">Healthmapは、すでにある健診・生活データを、<br>従業員本人が使える「次の一歩」に変えます。<br><br>個人結果を企業に共有せず、<br>希望する従業員だけが利用するOPT-IN型の健康支援です。</p>
+    <a href="#business-form" class="btn-primary" style="background:var(--white);color:var(--navy);font-size:1rem;padding:1rem 2.4rem;">法人導入・Pilotについて相談する</a>
   </div>
 </section>
 
-<!-- DIFFERENTIATORS -->
-<section class="story-section bg-navy">
-  <div class="story-center reveal">
-    <h2 class="s-title white" style="margin-bottom:0.5rem">Healthmapの4つの特長</h2>
-  </div>
-  <div class="diff-grid reveal">
-    <div class="diff-card">
-      <div class="diff-card-title">一律の健康支援ではなく、<br>一人ひとりに違う優先順位を。</div>
-      <p class="diff-card-body">血液・食事・睡眠・活動などを横断して整理し、一人ひとりに「自分の場合、まずここから」を設計します。</p>
-    </div>
-    <div class="diff-card">
-      <div class="diff-card-title">会社が決める健康支援から、<br>本人が選ぶ健康支援へ。</div>
-      <p class="diff-card-body">本人が利用を選択するOPT-IN型。必要と感じた従業員が自分の意思で選択します。</p>
-    </div>
-    <div class="diff-card">
-      <div class="diff-card-title">個人を管理せずに、<br>個別化する。</div>
-      <p class="diff-card-body">個人の健康データ、分析結果、相談内容は、企業に共有しません。匿名・集計情報のみ。</p>
-    </div>
-    <div class="diff-card">
-      <div class="diff-card-title">情報を増やすのではなく、<br>「何から始めるか」を決める。</div>
-      <p class="diff-card-body">その人のデータを整理し、「まず一つ何をするか」まで明確にします。</p>
+<!-- FOUR DIFFERENTIATORS -->
+<section class="story-section bg-white">
+  <div class="story-center reveal" style="max-width:900px;">
+    <h2 class="s-title" style="margin-bottom:3rem;">Healthmapが選ばれる理由</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;">
+      <div style="background:var(--bg-card);border-radius:16px;padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:0.8rem;">一律の健康支援ではなく、<br>一人ひとりに違う優先順位を。</h3>
+        <p style="font-size:0.95rem;color:var(--text);line-height:1.8;">血液・食事・睡眠・活動などを横断して整理し、一人ひとりに「自分の場合、まずここから」を設計します。</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:16px;padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:0.8rem;">会社が決める健康支援から、<br>本人が選ぶ健康支援へ。</h3>
+        <p style="font-size:0.95rem;color:var(--text);line-height:1.8;">本人が利用を選択するOPT-IN型。必要と感じた従業員が自分の意思で選択します。</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:16px;padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:0.8rem;">個人を管理せずに、<br>個別化する。</h3>
+        <p style="font-size:0.95rem;color:var(--text);line-height:1.8;">個人の健康データ、分析結果、相談内容は企業に共有しません。匿名・集計情報のみ。</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:16px;padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:0.8rem;">情報を増やすのではなく、<br>「何から始めるか」を決める。</h3>
+        <p style="font-size:0.95rem;color:var(--text);line-height:1.8;">その人のデータを整理し、「まず一つ何をするか」まで明確にします。</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- POSITIONING STATEMENT -->
-<section class="story-section bg-white reveal">
-  <div class="story-center" style="max-width:640px">
-    <h2 class="s-title" style="margin-bottom:1.5rem">
-      健康管理のためではなく、<br>
-      自分を理解するための健康支援。
-    </h2>
-    <p class="s-body">
-      Healthmapは、企業が従業員の健康状態を把握するための仕組みではありません。<br><br>
-      従業員本人が自分のデータを理解し、<br>
-      「自分の場合、何から始めるか」を決めるためのサービスです。<br><br>
-      企業は、個人結果を見ることなく、<br>
-      その機会を福利厚生として提供できます。
-    </p>
+<section class="story-section bg-navy">
+  <div class="story-center reveal" style="max-width:700px;text-align:center;">
+    <h2 class="s-title white" style="margin-bottom:1.5rem;">健康管理のためではなく、<br>自分を理解するための健康支援。</h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.7);line-height:1.85;">Healthmapは、企業が従業員の健康状態を把握するための仕組みではありません。<br><br>従業員本人が自分のデータを理解し、<br>「自分の場合、何から始めるか」を決めるためのサービスです。<br><br>企業は、個人結果を見ることなく、<br>その機会を福利厚生として提供できます。</p>
   </div>
 </section>
 
-<!-- EMPLOYER VALUE -->
-<section class="story-section bg-off reveal">
-  <div class="story-center">
+<!-- EMPLOYER VALUE (2 reasons) -->
+<section class="story-section bg-white">
+  <div class="story-center reveal" style="max-width:840px;">
     <p class="s-label">企業にとっての導入価値</p>
-    <h2 class="s-title" style="margin-bottom:0.5rem">
-      なぜ企業がHealthmapを導入するのか。
-    </h2>
-  </div>
-  <div class="ev-grid reveal">
-    <div class="ev-card">
-      <div class="ev-card-title">既存施策を<br>「自分ごと」にする</div>
-      <p class="ev-card-body">
-        健診も、福利厚生も、健康情報も、すでに企業にはあります。<br><br>
-        Healthmapは、会社が用意した健康施策を、<br>
-        「自分は何をするか」までつなげます。
-      </p>
-    </div>
-    <div class="ev-card">
-      <div class="ev-card-title">個人結果を見ずに、<br>パーソナライズされた支援を提供する</div>
-      <p class="ev-card-body">
-        企業が従業員一人ひとりの健康結果を確認する必要はありません。<br><br>
-        Healthmapが本人に直接Insightを提供し、<br>
-        企業はその機会を福利厚生として提供します。
-      </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem;">
+      <div>
+        <h3 style="font-size:1.15rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1rem;">既存施策を<br>「自分ごと」にする</h3>
+        <p style="font-size:0.95rem;color:var(--text);line-height:1.85;">健診も、福利厚生も、健康情報も、すでに企業にはあります。<br><br>Healthmapは、会社が用意した健康施策を、「自分は何をするか」までつなげます。</p>
+      </div>
+      <div>
+        <h3 style="font-size:1.15rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1rem;">個人結果を見ずに、<br>パーソナライズされた支援を</h3>
+        <p style="font-size:0.95rem;color:var(--text);line-height:1.85;">企業が従業員一人ひとりの健康結果を確認する必要はありません。<br><br>Healthmapが本人に直接Insightを提供し、企業はその機会を福利厚生として提供します。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
-<section class="story-section bg-white reveal">
-  <div class="story-center compare-section">
-    <p class="s-label">サービス比較</p>
-    <h2 class="s-title" style="margin-bottom:1rem">
-      健康支援サービス、<br>何を目的に選ぶか。
-    </h2>
-    <p class="s-body" style="margin-bottom:2rem">
-      それぞれのサービスには、得意な役割があります。<br>
-      Healthmapは、日々の健康管理や組織全体の管理を置き換えるものではありません。<br>
-      一人ひとりが「自分の場合、何から始めるか」を理解することにフォーカスしています。
-    </p>
-    <div class="compare-table-wrap">
-      <table class="compare-table">
+<!-- COMPARISON TABLE (5 rows) -->
+<section class="story-section" style="background:#f8f9fa;">
+  <div class="story-center reveal" style="max-width:960px;">
+    <h2 class="s-title" style="margin-bottom:1rem;">健康支援サービス、<br>何を目的に選ぶか。</h2>
+    <p class="s-body" style="margin-bottom:2.5rem;">それぞれのサービスには、得意な役割があります。<br>Healthmapは、日々の健康管理や組織全体の管理を置き換えるものではありません。<br>一人ひとりが「自分の場合、何から始めるか」を理解することにフォーカスしています。</p>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -1rem;">
+      <table style="width:100%;min-width:640px;border-collapse:collapse;font-size:0.95rem;line-height:1.7;">
         <thead>
-          <tr>
-            <th></th>
-            <th>健康アプリ</th>
-            <th>健康経営・<br>組織管理サービス</th>
-            <th>Healthmap</th>
+          <tr style="border-bottom:2px solid var(--navy);">
+            <th style="padding:1rem 0.8rem;text-align:left;font-weight:500;color:var(--navy);width:22%;"></th>
+            <th style="padding:1rem 0.8rem;text-align:left;font-weight:500;color:var(--navy);width:26%;">健康アプリ</th>
+            <th style="padding:1rem 0.8rem;text-align:left;font-weight:500;color:var(--navy);width:26%;">健康経営・<br>組織管理サービス</th>
+            <th style="padding:1rem 0.8rem;text-align:left;font-weight:600;color:var(--accent);width:26%;">Healthmap</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td style="font-weight:500;color:var(--navy)">主な目的</td>
-            <td>日々の健康習慣を支援</td>
-            <td>組織の健康状態を把握</td>
-            <td>一人ひとりの優先順位を明確にする</td>
+          <tr style="border-bottom:1px solid #e0e0e0;">
+            <td style="padding:1rem 0.8rem;font-weight:500;color:var(--navy);">主な目的</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">日々の健康習慣を支援</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">組織の健康状態を把握</td>
+            <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500;">一人ひとりの優先順位を明確にする</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0;">
+            <td style="padding:1rem 0.8rem;font-weight:500;color:var(--navy);">起点</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">ライフログ・行動</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">組織・集計データ</td>
+            <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500;">血液＋食事＋睡眠＋活動</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0;">
+            <td style="padding:1rem 0.8rem;font-weight:500;color:var(--navy);">本人への<br>アウトプット</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">情報・継続的なアドバイス</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">セルフケア・組織施策</td>
+            <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500;">#1 Priority + Action Plan</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0;">
+            <td style="padding:1rem 0.8rem;font-weight:500;color:var(--navy);">参加の考え方</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">サービスにより異なる</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">企業施策としての利用を含む</td>
+            <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500;">本人が選んで参加する<br>OPT-IN</td>
           </tr>
           <tr>
-            <td style="font-weight:500;color:var(--navy)">起点</td>
-            <td>ライフログ・行動</td>
-            <td>組織・集計データ</td>
-            <td>血液＋食事＋睡眠＋活動</td>
-          </tr>
-          <tr>
-            <td style="font-weight:500;color:var(--navy)">本人へのアウトプット</td>
-            <td>情報・継続的なアドバイス</td>
-            <td>セルフケア・組織施策</td>
-            <td>#1 Priority + Action Plan</td>
-          </tr>
-          <tr>
-            <td style="font-weight:500;color:var(--navy)">参加の考え方</td>
-            <td>サービスにより異なる</td>
-            <td>企業施策としての利用を含む</td>
-            <td>本人が選んで参加するOPT-IN</td>
-          </tr>
-          <tr>
-            <td style="font-weight:500;color:var(--navy)">企業とのデータ関係</td>
-            <td>サービスにより異なる</td>
-            <td>組織分析に活用する<br>サービスもある</td>
-            <td>個人結果は共有しない</td>
+            <td style="padding:1rem 0.8rem;font-weight:500;color:var(--navy);">企業とのデータ関係</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">サービスにより異なる</td>
+            <td style="padding:1rem 0.8rem;color:var(--text);">組織分析に活用する<br>サービスもある</td>
+            <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500;">個人結果は共有しない</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p style="font-size:0.88rem;color:var(--navy);font-weight:500;text-align:center;margin:1.5rem 0 0.5rem">
-      Healthmapは、健康管理ツールでも組織管理システムでもありません。<br>
-      一人ひとりが「自分の場合、何から始めるか」を理解することに特化しています。
-    </p>
-    <p style="font-size:0.75rem;color:var(--gray);text-align:center">
-      ※上記は各サービスカテゴリーの一般的な特徴を整理したものです。具体的な機能・データの取り扱いはサービスごとに異なります。
-    </p>
+    <p style="text-align:center;font-size:0.95rem;color:var(--text);line-height:1.8;margin-top:2rem;">Healthmapは、健康管理ツールでも組織管理システムでもありません。<br>一人ひとりが「自分の場合、何から始めるか」を理解することに特化しています。</p>
+    <p style="text-align:center;font-size:0.78rem;color:var(--gray);margin-top:1.5rem;">※上記は各サービスカテゴリーの一般的な特徴を整理したものです。<br>具体的な機能・データの取り扱いはサービスごとに異なります。</p>
   </div>
 </section>
 
 <!-- IMPLEMENTATION FLOW -->
-<section class="story-section bg-off reveal">
-  <div class="story-center">
-    <p class="s-label">導入の流れ</p>
-    <h2 class="s-title">企業がHealthmapを導入すると</h2>
+<section class="story-section bg-white">
+  <div class="story-center reveal" style="max-width:780px;">
+    <h2 class="s-title" style="margin-bottom:2.5rem;">導入の流れ</h2>
+    <div style="display:grid;gap:2rem;">
+      <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+        <span style="font-size:1.5rem;font-weight:300;color:var(--accent);min-width:2.5rem;">01</span>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem;">企業がHealthmapを福利厚生の選択肢として案内</h3>
+        </div>
+      </div>
+      <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+        <span style="font-size:1.5rem;font-weight:300;color:var(--accent);min-width:2.5rem;">02</span>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem;">希望する従業員が自分で申し込む</h3>
+        </div>
+      </div>
+      <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+        <span style="font-size:1.5rem;font-weight:300;color:var(--accent);min-width:2.5rem;">03</span>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem;">Healthmapが本人へInsightとAction Planを提供</h3>
+        </div>
+      </div>
+      <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+        <span style="font-size:1.5rem;font-weight:300;color:var(--accent);min-width:2.5rem;">04</span>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem;">企業には個人結果ではなく、事前に合意した範囲の匿名・集計情報のみ提供</h3>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="impl-grid reveal">
-    <div class="impl-step">
-      <div class="impl-num">01</div>
-      <p class="impl-text">企業がHealthmapを<br>福利厚生の選択肢として案内</p>
-    </div>
-    <div class="impl-step">
-      <div class="impl-num">02</div>
-      <p class="impl-text">希望する従業員が<br>自分で申し込む</p>
-    </div>
-    <div class="impl-step">
-      <div class="impl-num">03</div>
-      <p class="impl-text">Healthmapが本人へ<br>InsightとAction Planを提供</p>
-    </div>
-    <div class="impl-step">
-      <div class="impl-num">04</div>
-      <p class="impl-text">企業には個人結果ではなく、<br>事前合意した匿名・集計情報のみ</p>
-    </div>
-  </div>
-  <p style="font-size:0.74rem;color:var(--gray);text-align:center;margin-top:2rem">
-    ※診断・治療・投薬判断は行いません。必要に応じて医療機関への相談をおすすめします。
-  </p>
 </section>
 
-<!-- CAFETERIA PLAN / EMPLOYEE CHOICE -->
+<!-- EMPLOYEE CHOICE / CAFETERIA -->
 <section class="story-section bg-navy">
-  <div class="story-center reveal" style="max-width:640px">
-    <h2 class="s-title white" style="margin-bottom:0.3rem">
-      全員に同じ健康支援を、ではない。
-    </h2>
-    <p style="font-size:clamp(1rem,1.8vw,1.2rem);color:var(--accent-hero);font-weight:400;margin-bottom:1.5rem">
-      必要な人が、自分で選ぶ。
-    </p>
-    <p class="s-body white" style="margin-bottom:1.5rem">
-      Healthmapは、本人が利用を選択するOPT-IN型の健康支援です。<br><br>
-      企業は、健康行動を指示するのではなく、<br>
-      従業員が自分に必要な支援を選べる環境を提供する。<br><br>
-      Healthmapは、カフェテリアプランなど、<br>
-      従業員が福利厚生を自ら選択する考え方とも親和性があります。
-    </p>
-    <p style="font-size:0.95rem;color:var(--accent-hero);font-weight:400;text-align:center;margin-bottom:1rem">
-      企業は選択肢を提供する。<br>
-      従業員は、自分に必要な支援を選ぶ。
-    </p>
-    <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);text-align:center">
-      ※特定の福利厚生プラットフォームとのシステム連携・ポイント連携・精算連携を示すものではありません。
-    </p>
+  <div class="story-center reveal" style="max-width:680px;text-align:center;">
+    <h2 class="s-title white" style="margin-bottom:0.8rem;">全員に同じ健康支援を、ではない。</h2>
+    <p style="font-size:1.1rem;color:rgba(255,255,255,0.7);margin-bottom:2rem;">必要な人が、自分で選ぶ。</p>
+    <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:1.5rem;">Healthmapは、本人が利用を選択するOPT-IN型の健康支援です。<br><br>企業は、健康行動を指示するのではなく、<br>従業員が自分に必要な支援を選べる環境を提供する。<br><br>Healthmapは、カフェテリアプランなど、<br>従業員が福利厚生を自ら選択する考え方とも親和性があります。</p>
+    <p style="font-size:1rem;color:var(--white);font-weight:500;line-height:1.8;margin-bottom:1.5rem;">企業は選択肢を提供する。<br>従業員は、自分に必要な支援を選ぶ。</p>
+    <p style="font-size:0.75rem;color:rgba(255,255,255,0.35);">※特定の福利厚生プラットフォームとのシステム連携・ポイント連携・精算連携を示すものではありません。</p>
   </div>
 </section>
 
 <!-- PILOT -->
-<section class="story-section bg-white reveal">
-  <div class="story-center" style="max-width:520px">
-    <p class="s-label">Pilot</p>
-    <h2 class="s-title">まずは、小さく始める。</h2>
-    <p class="s-body" style="margin-bottom:2rem">
-      対象人数、期間、提供内容を設計し、<br>
-      小規模Pilotから導入できます。
-    </p>
-    <div style="text-align:center">
-      <a href="#business-form" class="btn-primary">法人導入・Pilotについて相談する</a>
-    </div>
+<section class="story-section bg-white">
+  <div class="story-center reveal" style="max-width:600px;text-align:center;">
+    <h2 class="s-title" style="margin-bottom:1.5rem;">まずは、小さく始める。</h2>
+    <p class="s-body" style="margin-bottom:2rem;">対象人数、期間、提供内容を設計し、<br>小規模Pilotから導入できます。</p>
+    <p style="font-size:0.88rem;color:var(--gray);margin-bottom:2rem;">※診断・治療・投薬判断は行いません。<br>必要に応じて医療機関への相談をおすすめします。</p>
+    <a href="#business-form" class="btn-primary" style="background:var(--navy);color:var(--white);font-size:1rem;padding:1rem 2.4rem;">法人導入・Pilotについて相談する</a>
   </div>
 </section>
 
 <!-- FOUNDER -->
-<section class="story-section bg-off reveal">
-  <div class="story-center" style="max-width:520px;text-align:center">
+<section class="story-section" style="background:var(--bg-card);">
+  <div class="story-center reveal" style="max-width:600px;text-align:center;">
     <p class="s-label">Healthmapについて</p>
-    <h2 class="s-title" style="font-size:clamp(1.2rem,2vw,1.5rem)">田中紀之</h2>
-    <p class="s-body" style="font-size:0.85rem;margin-bottom:1rem">
-      大規模組織でのPeople / HR領域の経験と、<br>
-      「人が実際に動ける優先順位を設計する」という考え方を<br>
-      Healthmapに応用しています。
-    </p>
-    <p style="font-size:0.82rem;font-style:italic;color:var(--gray);margin-bottom:1rem">
-      "Health is also about designing priorities."
-    </p>
-    <a href="https://www.linkedin.com/in/noriyuki-tanaka/" target="_blank" rel="noopener" style="font-size:0.8rem;color:var(--accent)">LinkedIn →</a>
+    <h2 class="s-title" style="font-size:1.3rem;margin-bottom:1rem;">田中紀之</h2>
+    <p style="font-size:0.88rem;color:var(--text);line-height:1.8;margin-bottom:1rem;">"Health is also about designing priorities."</p>
+    <p style="font-size:0.9rem;color:var(--text);line-height:1.85;">大規模組織でのPeople / HR領域の経験と、<br>「人が実際に動ける優先順位を設計する」という考え方を<br>Healthmapに応用しています。</p>
+    <a href="https://www.linkedin.com/in/noriyuki-tanaka-b5737b143/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1.5rem;color:var(--accent);font-size:0.85rem;text-decoration:none;">LinkedIn →</a>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="cta-final">
-  <div class="reveal" style="text-align:center">
-    <h2 class="s-title" style="color:var(--white);margin-bottom:0.5rem">
-      従業員一人ひとりの<br>「次の一歩」が見える<br>健康支援へ。
-    </h2>
-    <p style="color:rgba(255,255,255,0.6);margin-bottom:2rem">
-      Pilot、対象人数、提供方法について<br>お気軽にご相談ください。
-    </p>
-    <a href="#business-form" class="btn-primary" style="background:var(--white);color:var(--navy)">法人導入・Pilotについて相談する</a>
+<section class="story-section bg-navy" style="padding:4rem 1.5rem;">
+  <div class="story-center reveal" style="max-width:600px;text-align:center;">
+    <h2 class="s-title white" style="margin-bottom:1rem;">従業員一人ひとりの<br>「次の一歩」が見える<br>健康支援へ。</h2>
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:2rem;font-size:0.92rem;">Pilot、対象人数、提供方法について<br>お気軽にご相談ください。</p>
+    <a href="#business-form" class="btn-primary" style="background:var(--white);color:var(--navy);font-size:1rem;padding:1rem 2.4rem;">法人導入・Pilotについて相談する</a>
   </div>
 </section>
 
@@ -473,7 +367,6 @@ function closeMenu(){document.getElementById('mobileMenu').classList.remove('act
 const ro=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.15});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 </script>
-</body>
 
 </body>
 </html>

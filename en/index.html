@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Map | Precision Nutrition Counseling — Know Where to Start with Blood Data × AI</title>
-<meta name="description" content="Using blood tests and lifestyle data, we help organize your health priorities — what to focus on first. Powered by a clinic-supervised AI analysis tool, we provide precision nutrition counseling that translates into daily action.">
+<title>Healthmap | Your Body's Owner's Manual — Precision Nutrition Service</title>
+<meta name="description" content="Combining blood data, lifestyle data, and action design to identify your body's current state and your #1 Priority. Healthmap Insight helps you know yourself and decide where to start.">
 <meta property="og:locale" content="en_US">
-<link rel="alternate" hreflang="ja" href="https://healthmap.jp/" />
-<link rel="alternate" hreflang="en" href="https://healthmap.jp/en/" />
+<link rel="alternate" hreflang="ja" href="https://healthmap.jp/">
+<link rel="alternate" hreflang="en" href="https://healthmap.jp/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+JP:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
 <style>
 :root{
 --navy:#071426;--navy-light:#122a4a;
@@ -234,50 +233,55 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);paddin
 .connector{padding:40px 6%}
 footer{flex-direction:column;gap:0.5rem;text-align:center}
 .story-wide table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.two-audience-grid{grid-template-columns:1fr!important}
+.voice-support-grid{grid-template-columns:1fr!important}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">Health<span> Map</span></a>
+  <a href="#hero" class="nav-logo">Health<span>map</span></a>
   <ul class="nav-links">
+    <li><a href="individuals.html">Individuals</a></li>
+    <li><a href="business.html">Business</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><div class="lang-switch"><a href="/">JP</a><span>|</span><a href="/en/" class="active">EN</a></div></li>
-    <li><a href="#cta-final" class="nav-cta">Book a Free Consultation</a></li>
+    <li><div class="lang-switch"><a href="/">JP</a><span style="color:rgba(255,255,255,0.3);margin:0 0.4rem">|</span><a href="/en/" style="color:var(--white)">EN</a></div></li>
+    <li><a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="nav-cta" target="_blank" rel="noopener">Contact Us</a></li>
   </ul>
-  <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  
+
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="individuals.html" onclick="toggleMenu()">Individuals</a>
+    <a href="business.html" onclick="toggleMenu()">Business</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="/" onclick="toggleMenu()">JP</a>
+    <a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="nav-cta" target="_blank" rel="noopener" onclick="toggleMenu()">Contact Us</a>
+  </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#faq" onclick="closeMenu()">FAQ</a>
-  <a href="#pricing" onclick="closeMenu()">Pricing</a>
-  <div class="lang-switch" style="justify-content:center"><a href="/">JP</a><span>|</span><a href="/en/" class="active">EN</a></div>
-  <a href="#cta-final" class="nav-cta" onclick="closeMenu()">Book a Free Consultation</a>
-</div>
 
 <!-- ① HERO -->
 <section id="hero">
   <div class="hero-left">
     <p class="hero-hook">Precision Nutrition Counseling</p>
     <h1 class="hero-title">
-      Blood Data × Lifestyle Data × Behavioral Design:<br>
-      Clarifying Your <span class="accent-word">First Move</span>.
+      Your Body's<br><span class="accent-word">Owner's Manual.</span>
     </h1>
     <p class="hero-sub">
-      Based on your test results, sleep, diet, and activity data, we help you identify where to start.<br>
-      Using a clinic-supervised AI analysis tool, your counselor designs your action priorities.
+      Blood Data × Lifestyle Data × Action Design<br>Know yourself. Decide where to start.
     </p>
     <div class="hero-buttons">
-      <a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="btn-primary">Book a Free Consultation</a>
-      <a href="#pain" class="btn-outline">Learn More</a>
+      <a href="individuals.html" class="btn-primary">See Healthmap Insight</a>
+      <a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="btn-outline" target="_blank" rel="noopener">See if Healthmap fits you</a>
     </div>
     <div class="hero-trust">
-      <span class="trust-item">Powered by a clinic-supervised AI analysis tool (Jingumae Integrative Medicine Clinic)</span>
-      <span class="trust-item">2,000+ Japanese health profiles</span>
-      <span class="trust-item">※This is not a medical diagnosis or treatment</span>
+      <span class="trust-item">Clinic-supervised analysis support</span>
+      <span class="trust-item">│ Data-informed</span>
+      <span class="trust-item">│ Non-medical wellness service</span>
     </div>
   </div>
   <div class="hero-right" aria-hidden="true">
@@ -291,7 +295,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
       </div>
       <div style="text-align:center;margin:0.8rem 0;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
       <div style="text-align:center;margin-bottom:0.8rem">
-        <span style="display:inline-block;background:rgba(125,184,224,0.15);border:1px solid rgba(125,184,224,0.3);border-radius:20px;padding:0.4rem 1.2rem;font-size:0.72rem;color:var(--accent-hero);font-weight:500;letter-spacing:0.04em">AI Analysis (8weeks.ai)</span>
+        <span style="display:inline-block;background:rgba(125,184,224,0.15);border:1px solid rgba(125,184,224,0.3);border-radius:20px;padding:0.4rem 1.2rem;font-size:0.72rem;color:var(--accent-hero);font-weight:500;letter-spacing:0.04em">AI Analysis Support (8weeks.ai)</span>
       </div>
       <div style="text-align:center;margin-bottom:0.8rem;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
       <p style="font-size:0.6rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem;font-weight:500">Output</p>
@@ -314,7 +318,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <!-- ② PAIN -->
 <section id="pain" class="story-section bg-white">
   <div class="story-center reveal">
-    <h2 class="s-title">Sound familiar?</h2>
+    <h2 class="s-title">Knowing where to start is the hardest part.</h2>
   </div>
   <div class="pain-grid reveal">
     <div class="pain-item"><p>Can't decide <span class="emphasis">where to start</span></p></div>
@@ -326,7 +330,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 
 <!-- connector -->
 <div class="connector reveal">
-  <p>You have enough information.<br>What's missing is knowing <span class="accent-word">where to begin</span>.<br>That's why we create your Health Map.</p>
+  <p>You have enough information.<br>What's missing is knowing <span class="accent-word">where to begin</span>.<br>That's why we create your Healthmap.</p>
 </div>
 
 <!-- Advice Examples -->
@@ -339,13 +343,13 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
       <span class="advice-icon">😴</span>
      <h3>"Fix sleep before changing your diet"</h3>
       <p class="advice-data">What the data showed: The analysis report suggested your sleep rhythm and stress load have room for adjustment. Can't get up in the morning, overwhelming daytime fatigue</p>
-      <p class="advice-conclusion">Health Map's suggestion: <strong>Before adjusting your diet, focus on getting your sleep condition in order first.</strong> Limit caffeine to one cup before noon, aim for sleep by 11 PM. Your diet doesn't need to be "perfect" yet.</p>
+      <p class="advice-conclusion">Healthmap's suggestion: <strong>Before adjusting your diet, focus on getting your sleep condition in order first.</strong> Limit caffeine to one cup before noon, aim for sleep by 11 PM. Your diet doesn't need to be "perfect" yet.</p>
     </div>
     <div class="advice-card">
       <span class="advice-icon">🌸</span>
  <h3>"Seasonal discomfort: gut health and Vitamin D had room for adjustment"</h3>
       <p class="advice-data">What the data showed: The analysis report suggested Vitamin D-related markers worth reviewing, and room to adjust gut balance</p>
-      <p class="advice-conclusion">Health Map's suggestion: <strong>Focus on adjusting your condition through daily lifestyle habits.</strong> Start with 15 min of morning sunlight + one fermented food per day.</p>
+      <p class="advice-conclusion">Healthmap's suggestion: <strong>Focus on adjusting your condition through daily lifestyle habits.</strong> Start with 15 min of morning sunlight + one fermented food per day.</p>
     </div>
   </div>
 </section>
@@ -358,8 +362,8 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   </div>
   <div class="data-cards reveal">
     <div class="data-card"><div class="data-card-icon">🩸</div><div class="data-card-title">Health Check-up Results</div><div class="data-card-desc">Company or municipal screening<br>Blood donation test results</div></div>
-    <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">Healthcare Data</div><div class="data-card-desc">Sleep & activity from iPhone, etc.<br>Temperature & weight records</div></div>
-    <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">Diet & Glucose Records</div><div class="data-card-desc">Daily food logs<br>Glucose variability data</div></div>
+    <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">Healthcare Data</div><div class="data-card-desc">Sleep &amp; activity from iPhone, etc.<br>Temperature &amp; weight records</div></div>
+    <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">Diet &amp; Glucose Records</div><div class="data-card-desc">Daily food logs<br>Glucose variability data</div></div>
   </div>
   <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※The more data, the better the accuracy. Start with whatever you have on hand.</p>
 </section>
@@ -372,19 +376,19 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <!-- ④ SERVICE -->
 <section class="story-section bg-white">
   <div class="story-center reveal">
-    <h2 class="s-title">Clinic-Supervised AI Analysis ×<br>Counselor's Behavioral Design</h2>
+    <h2 class="s-title">AI that organizes data.<br>A counselor who builds action.</h2>
   </div>
   <div class="service-core reveal">
-    <p>The clinic-supervised AI analysis tool <span class="emphasis">8weeks.ai</span> (supervised by Jingumae Integrative Medicine Clinic) analyzes your condition based on data from 2,000+ Japanese health profiles.</p>
-    <p>Based on the analysis report, your counselor designs the priority order of "where to start."</p>
+    <p>The clinic-supervised AI analysis support tool <span class="emphasis">8weeks.ai</span> organizes your data — blood tests, sleep, diet, and activity — into a clear picture of your current state.</p>
+    <p>Based on the analysis, your counselor interprets the results and designs your priority action plan — what to focus on first.</p>
     <p style="font-size:0.84rem;color:var(--text-light);line-height:2.2;margin-bottom:1.5rem">Designed so "where to start" is clear on one page.<br>Behind it lies a detailed analysis report.</p>
-    <div class="service-inline-compare">The traditional approach stacks "correct" actions.<br>But that doesn't tell you where to begin.<br>The Health Map clarifies <span class="emphasis">"where to start."</span></div>
+    <div class="service-inline-compare">The traditional approach stacks "correct" actions.<br>But that doesn't tell you where to begin.<br>Healthmap clarifies <span class="emphasis">"where to start."</span></div>
     <p style="font-size:0.9rem;line-height:2.3;color:var(--text-light);margin-top:2rem"><span class="emphasis">The counselor's role</span>: To translate the AI's analysis results into "action priorities" that fit your life.<br>Not "adding more correct things to do," but deciding together "what to start with right now" — that's the core of this service.</p>
     <!-- Role diagram -->
     <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin:2.5rem 0 1.5rem;flex-wrap:wrap">
       <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">👤</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">You</div><div style="font-size:0.65rem;color:var(--gray)">Submit data</div></div>
       <div style="color:var(--accent);font-size:1rem;opacity:0.4">⇄</div>
-      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(7,20,38,0.05);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🧑‍⚕️</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">Counselor</div><div style="font-size:0.65rem;color:var(--gray)">Analysis + Advice</div></div>
+      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(7,20,38,0.05);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🧑‍⚕️</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">Counselor</div><div style="font-size:0.65rem;color:var(--gray)">Interpretation + Priority Design</div></div>
       <div style="color:var(--accent);font-size:1rem;opacity:0.4">⇄</div>
       <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(21,84,209,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🤖</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">8weeks.ai</div><div style="font-size:0.65rem;color:var(--gray)">AI Analysis Support</div></div>
     </div>
@@ -395,12 +399,12 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <!-- ④-b HOW: 3 steps -->
 <section class="story-section bg-navy">
   <div class="story-center reveal">
-    <h2 class="s-title white">3 Simple Steps</h2>
+    <h2 class="s-title white">Know yourself. Take the next step.</h2>
   </div>
   <div class="steps-minimal reveal">
-    <div class="step-m"><div class="step-m-num">01</div><div class="step-m-title">Visualize with AI</div><div class="step-m-desc">AI analyzes your data and<br>visualizes your current condition.</div></div>
-    <div class="step-m"><div class="step-m-num">02</div><div class="step-m-title">Design your priorities</div><div class="step-m-desc">Based on the report, we narrow down<br>what to do — and what NOT to do.</div></div>
-    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">Execute → Verify → Update</div><div class="step-m-desc">Monthly review, data-driven verification.<br>Gradually fine-tune your routine.</div></div>
+    <div class="step-m"><div class="step-m-num">01</div><div class="step-m-title">KNOW — Understand yourself</div><div class="step-m-desc">Using blood and lifestyle data,<br>organize your current state.</div></div>
+    <div class="step-m"><div class="step-m-num">02</div><div class="step-m-title">DECIDE — Set your priorities</div><div class="step-m-desc">In your case,<br>clarify what to start with first.</div></div>
+    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">ACT &amp; REVIEW — Execute and verify</div><div class="step-m-desc">Take one action, verify with data.<br>Adjust as needed.</div></div>
   </div>
 </section>
 
@@ -409,7 +413,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div class="story-center reveal">
     <p class="s-label">Difference</p>
     <h2 class="s-title">How We're Different</h2>
-    <p class="s-body">Health Map doesn't tell you "what to eat" or "what to train."<br>It designs the priority order of "where to start."</p>
+    <p class="s-body">Healthmap doesn't tell you "what to eat" or "what to train."<br>It designs the priority order of "where to start."</p>
   </div>
   <div class="story-wide reveal">
     <table style="width:100%;border-collapse:collapse;font-size:0.82rem;line-height:1.9">
@@ -418,15 +422,15 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
           <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">Aspect</th>
           <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">General Nutrition Guidance</th>
           <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">Personal Training</th>
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--accent);font-weight:600">Health Map</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--accent);font-weight:600">Healthmap</th>
         </tr>
       </thead>
       <tbody>
         <tr style="border-bottom:1px solid var(--gray-light)">
           <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Basis of judgment</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">Food logs</td>
-          <td style="padding:1rem 0.8rem;color:var(--text-light)">Body composition & activity</td>
-          <td style="padding:1rem 0.8rem;color:var(--text)">Blood tests + lifestyle data + AI analysis</td>
+          <td style="padding:1rem 0.8rem;color:var(--text-light)">Body composition &amp; activity</td>
+          <td style="padding:1rem 0.8rem;color:var(--text)">Blood tests + lifestyle data + AI analysis support</td>
         </tr>
         <tr style="border-bottom:1px solid var(--gray-light)">
           <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Focus</td>
@@ -435,7 +439,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
           <td style="padding:1rem 0.8rem;color:var(--text);font-weight:500">Where to start (priorities)</td>
         </tr>
         <tr style="border-bottom:1px solid var(--gray-light)">
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Clinical partnership</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">Supervision / Analysis support</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">Varies by provider</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">Varies by provider</td>
           <td style="padding:1rem 0.8rem;color:var(--text)">Clinic-supervised AI analysis tool</td>
@@ -460,38 +464,85 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <!-- ⑤ SAMPLE -->
 <section class="story-section bg-off">
   <div class="story-center reveal">
-    <h2 class="s-title">Your <span class="accent-word">Health Map</span> (Sample)</h2>
+    <h2 class="s-title">Your <span class="accent-word">Healthmap</span> (Sample)</h2>
     <p class="s-body">This is part of what we actually deliver.<br>What to address first — clear on one page.</p>
   </div>
   <div class="sample-pages reveal">
     <div class="sample-page-card">
-      <img src="../report_page1.png" alt="Health Map Sample - Cover" loading="lazy">
+      <img src="../report_page1.png" alt="Healthmap Sample - Cover" loading="lazy">
     </div>
     <div class="sample-page-card">
-      <img src="../report_page2.png" alt="Health Map Sample - Summary" loading="lazy">
+      <img src="../report_page2.png" alt="Healthmap Sample - Summary" loading="lazy">
     </div>
   </div>
   <div style="text-align:center;margin-top:2.5rem;padding-bottom:1rem" class="reveal">
-    <a href="../sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">View a Sample Health Map</a>
+    <a href="../sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">View a Sample Healthmap</a>
     <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※Opens a sample PDF</p>
   </div>
 </section>
 
 <!-- MID CTA -->
 <div class="connector reveal">
-  <p style="margin-bottom:1.5rem">Why not take a look at your own Health Map?</p>
-  <a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="btn-primary" style="background:var(--navy);color:var(--white)">Book a Free Consultation</a>
+  <p style="margin-bottom:1.5rem">Why not take a look at your own Healthmap?</p>
+  <a href="individuals.html" class="btn-primary" style="background:var(--navy);color:var(--white)">See Healthmap Insight</a>
 </div>
+
+
+<!-- TWO AUDIENCES -->
+<section class="story-section bg-white">
+  <div class="story-center reveal">
+    <h2 class="s-title">Two ways to use Healthmap</h2>
+  </div>
+  <div class="two-audience-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:2.5rem auto 0;">
+    <div class="reveal" style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+      <p style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.2rem;">For Individuals</p>
+      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">Understand your body<br>and decide your next step.</h3>
+      <p style="font-size:0.84rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem;">Healthmap Insight</p>
+      <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:1.5rem;">¥29,800 (tax included)</p>
+      <a href="individuals.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.82rem;font-weight:500;">Learn more →</a>
+    </div>
+    <div class="reveal" style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+      <p style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.2rem;">For Business</p>
+      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">Help each employee find<br>their own next step<br>toward better health.</h3>
+      <p style="font-size:0.84rem;font-weight:500;color:var(--navy);margin-bottom:1.5rem;">Scaled Insight</p>
+      <a href="business.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.82rem;font-weight:500;">For organizations →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT VOICE -->
+<section class="story-section bg-navy">
+  <div class="story-center reveal">
+    <p class="s-label" style="color:var(--accent-hero);">Client Voice</p>
+  </div>
+  <div style="max-width:640px;margin:0 auto 2rem;text-align:center;" class="reveal">
+    <p style="font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:500;color:var(--white);line-height:1.8;margin-bottom:0.8rem;">
+      "Now I know what to change first<br>— for my specific case."
+    </p>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.45);">Male, 30s, Office worker</p>
+  </div>
+  <div class="voice-support-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:640px;margin:0 auto;">
+    <div class="reveal" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:1.8rem 1.5rem;backdrop-filter:blur(8px);">
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-bottom:0.8rem;">"The vague discomfort I'd been feeling<br>started to make sense through data."</p>
+      <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);">Female, 30s, Office worker</p>
+    </div>
+    <div class="reveal" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:1.8rem 1.5rem;backdrop-filter:blur(8px);">
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-bottom:0.8rem;">"Having evidence made it easy<br>to take action without hesitation."</p>
+      <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);">Female, 20s, Office worker</p>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:0.68rem;color:rgba(255,255,255,0.3);margin-top:2rem;" class="reveal">※Individual experiences. Results may vary.</p>
+</section>
 
 <!-- LEARN -->
 <section class="story-section bg-white">
   <div class="story-center reveal">
     <p class="s-label">Learn</p>
-    <h2 class="s-title">Start with just <span class="accent-word">one idea</span>.</h2>
+    <h2 class="s-title">What is Precision Nutrition?</h2>
   </div>
   <div class="reveal">
     <div class="video-embed-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/p74G81Rt8vE" title="About Precision Nutrition" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/p74G81Rt8vE" title="About Precision Nutrition" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -500,22 +551,47 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <section id="pricing" class="story-section bg-off">
   <div class="story-center reveal">
     <p class="s-label">Pricing</p>
-    <h2 class="s-title">Monthly Plan</h2>
+    <h2 class="s-title">Healthmap Insight</h2>
   </div>
+
   <div class="pricing-card reveal">
-    <p class="pricing-label">Monthly Plan</p>
-    <div class="pricing-amount"><span class="currency">¥</span><span class="amount">23,000</span><span class="period">/ month</span></div>
+    <p class="pricing-label">INSIGHT</p>
+    <div class="pricing-amount">
+      <span class="currency">¥</span>
+      <span class="amount">29,800</span>
+    </div>
     <p class="pricing-tax">Tax included · Credit card (Stripe)</p>
     <ul class="pricing-features">
-      <li>AI analysis report by 8weeks.ai (updated monthly)</li>
-      <li>Priority design based on analysis report</li>
-      <li>Monthly verification & update support</li>
-      <li>Supplementary materials provided as needed</li>
+      <li>Integrated analysis of blood &amp; lifestyle data</li>
+      <li>Understanding your body's current state</li>
+      <li>Priority organization</li>
+      <li>Priority Action Plan</li>
+      <li>Results explanation session</li>
     </ul>
-    <a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="btn-pricing">Book a Free Consultation</a>
-    <p style="text-align:center;font-size:0.7rem;color:var(--gray);margin-top:0.7rem;line-height:1.8">※Start with a free consultation to clarify your direction.</p>
+    <a href="individuals.html" class="btn-pricing">See Healthmap Insight</a>
+    <p style="text-align:center;font-size:0.72rem;color:var(--gray);margin-top:1rem;">※You can also start with a free consultation to see if Healthmap is right for you.</p>
   </div>
-  <p style="font-size:0.7rem;color:var(--gray);text-align:center;margin-top:2rem;line-height:1.8" class="reveal">※This service does not provide medical diagnosis, treatment, or medication decisions. We recommend consulting a healthcare provider as needed.</p>
+
+  <!-- Guided Program (optional after Insight) -->
+  <div style="max-width:460px;margin:2.5rem auto 0;text-align:center;" class="reveal">
+    <p style="font-size:0.82rem;font-weight:500;color:var(--navy);margin-bottom:1rem;">For those who want ongoing support after Insight</p>
+    <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:0.8rem;">Healthmap Guided</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;flex:1;min-width:180px;">
+        <p style="font-size:0.82rem;font-weight:500;color:var(--navy);">3-Month Program</p>
+        <p style="font-size:1.1rem;color:var(--navy);font-weight:400;">¥59,800</p>
+        <p style="font-size:0.7rem;color:var(--text-light);">Build a foundation for behavior change</p>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;flex:1;min-width:180px;position:relative;">
+        <p style="position:absolute;top:-8px;right:12px;background:var(--accent);color:var(--white);font-size:0.58rem;padding:0.15rem 0.6rem;border-radius:10px;letter-spacing:0.06em;">Recommended</p>
+        <p style="font-size:0.82rem;font-weight:500;color:var(--navy);">6-Month Program</p>
+        <p style="font-size:1.1rem;color:var(--navy);font-weight:400;">¥99,800</p>
+        <p style="font-size:0.7rem;color:var(--text-light);">Develop habits and verify progress</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center;font-size:0.72rem;color:var(--gray);margin-top:2rem;max-width:460px;margin-left:auto;margin-right:auto;">※This service does not provide medical diagnosis, treatment, or medication decisions.<br>We recommend consulting a healthcare provider as needed.</p>
 </section>
 
 <!-- ABOUT -->
@@ -549,7 +625,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     </div>
     <div class="faq-item">
       <button class="faq-q"><span><span class="faq-q-label">Q</span>Can I participate if pregnant, with chronic conditions, or on medication?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">Yes, but this service does not provide diagnosis, treatment, or medication decisions. Please consult your physician and use this as a reference for reviewing your lifestyle habits.</div>
+      <div class="faq-a">If you are pregnant, undergoing treatment, or taking medication, please consult your physician before using this service. Healthmap does not provide diagnosis, treatment, or medication decisions.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q"><span><span class="faq-q-label">Q</span>Can I use this from overseas?</span><span class="faq-icon">+</span></button>
@@ -565,23 +641,23 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     </div>
     <div class="faq-item">
       <button class="faq-q"><span><span class="faq-q-label">Q</span>How is this different from general nutrition guidance?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">Rather than advising on what to eat, we use blood data and lifestyle data to design the priority order of "what to address first." The counselor translates AI analysis results into an action plan tailored to your life.</div>
+      <div class="faq-a">Rather than advising on what to eat, we use blood data and lifestyle data to design the priority order of "what to address first." The counselor translates AI analysis support results into an action plan tailored to your life.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q"><span><span class="faq-q-label">Q</span>Does the counselor have medical credentials?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">The counselor is not a physician and does not provide medical diagnosis, treatment, or medication decisions. Analysis is conducted through a clinic-supervised AI tool (8weeks.ai), and we recommend consulting a healthcare provider when needed.</div>
+      <div class="faq-a">The counselor is not a physician and does not provide medical diagnosis, treatment, or medication decisions. Analysis is conducted through a clinic-supervised AI analysis support tool (8weeks.ai), and we recommend consulting a healthcare provider when needed.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q"><span><span class="faq-q-label">Q</span>How long until I notice changes?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">It varies, but within the first month you'll gain clarity on "what to focus on." Data-verified changes typically become apparent from months 2–3 onward. This is not a guarantee of results.</div>
+      <div class="faq-a">Changes and data shifts vary by individual. Healthmap focuses first on clarifying your current state and priorities. We do not guarantee specific results within any timeframe.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>Can I cancel anytime?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">Yes. Please email us at least 3 days before your next billing date.</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>What's the difference between Insight and Guided?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Insight is a one-time service that organizes your current state and priorities. Guided is an ongoing support program for those who want continued accompaniment after Insight.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span><span class="faq-q-label">Q</span>When is the monthly billing date?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">First payment is charged upon sign-up, then automatically charged monthly on the same date.</div>
+      <button class="faq-q"><span><span class="faq-q-label">Q</span>Are results guaranteed?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">No. Health outcomes vary by individual. This service does not guarantee specific health results.</div>
     </div>
   </div>
 </section>
@@ -589,15 +665,15 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <!-- CTA FINAL -->
 <section id="cta-final" class="cta-final">
   <div class="reveal">
-    <h2 class="s-title">Why not start by getting clarity?</h2>
-    <p>Just fill out the form.<br>We'll organize your current state and send you a direction for "where to start."</p>
-    <a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="btn-primary" style="background:var(--white);color:var(--navy)">Book a Free Consultation</a>
+    <h2 class="s-title">Your Body's Owner's Manual.</h2>
+    <p>Know yourself. Decide where to start.</p>
+    <a href="individuals.html" class="btn-primary" style="background:var(--white);color:var(--navy)">See Healthmap Insight</a>
   </div>
 </section>
 
 <footer>
   <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3);font-size:0.65rem">This service does not provide medical diagnosis, treatment, or medication decisions. We recommend consulting a healthcare provider as needed.</span>
-  <span>© 2025 Health Map</span>
+  <span>© 2026 Healthmap</span>
   <span><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none">Privacy Policy</a> | <a href="/legal/" style="color:rgba(255,255,255,0.3);text-decoration:none">Legal Notice</a></span>
 </footer>
 
@@ -608,5 +684,6 @@ const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInt
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')})});
 </script>
-</body>
-</html>
+
+
+</body></html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthmap Insight｜自分の身体を理解し、次の一歩を決める</title>
+<meta name="description" content="血液・食事・睡眠・活動データを統合解析し、あなたの#1 Priorityを整理。Healthmap Insightで身体の「取扱説明書」をつくります。¥29,800（税込）">
+<link rel="alternate" hreflang="ja" href="https://healthmap.jp/individuals.html">
+<link rel="alternate" hreflang="en" href="https://healthmap.jp/en/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--navy:#071426;--navy-light:#122a4a;
+--accent:#1554d1;--accent-light:#4f8fe8;--accent-pale:#b8cfe8;
+--accent-hero:#7db8e0;
+--white:#FFFFFF;--off-white:#F7F9FB;
+--gray-light:#E5EAF0;--gray:#8a9bb0;
+--text:#151c28;--text-light:#556275;
+--glass:rgba(255,255,255,0.72);--glass-border:rgba(30,95,216,0.15);
+--shadow-sm:0 1px 4px rgba(7,20,38,0.05);
+--shadow-md:0 4px 24px rgba(7,20,38,0.07);
+--shadow-lg:0 8px 40px rgba(7,20,38,0.09);
+--radius:16px;--radius-sm:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.02em}
+.emphasis{font-weight:600;color:var(--accent)}
+.accent-word{color:var(--accent);font-weight:600}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);backdrop-filter:blur(20px);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--white);letter-spacing:0.06em;text-decoration:none}
+.nav-logo span{color:var(--accent-hero)}
+.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:var(--navy)!important;padding:0.5rem 1.4rem;border-radius:10px;font-weight:500!important;transition:all 0.2s!important}
+.nav-cta:hover{background:#eef2f7!important;transform:translateY(-1px)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:110}
+.hamburger span{display:block;width:100%;height:2px;background:var(--white);position:absolute;left:0;transition:all 0.3s}
+.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
+.hamburger.active span:nth-child(1){top:9px;transform:rotate(45deg)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){top:9px;transform:rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(7,20,38,0.96);backdrop-filter:blur(20px);z-index:105;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-menu.active{display:flex}
+.mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.08em}
+.mobile-menu .nav-cta{margin-top:1rem;padding:0.9rem 2.2rem;font-size:1rem;border-radius:12px;background:var(--white);color:var(--navy)!important}
+.lang-switch{display:flex;align-items:center;gap:0.3rem;font-size:0.78rem}
+.lang-switch a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+.lang-switch a:hover,.lang-switch a.active{color:var(--white)}
+.lang-switch span{color:rgba(255,255,255,0.3)}
+
+/* HERO */
+.page-hero{padding:160px 6% 100px;background:radial-gradient(circle at 72% 38%,rgba(125,184,224,0.18),transparent 34%),radial-gradient(ellipse at 30% 50%,#1a4a7a 0%,#0d2847 40%,#071426 100%);text-align:center}
+.page-hero .s-label{color:var(--accent-hero);margin-bottom:1.5rem;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:500}
+.page-hero h1{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--white);line-height:1.6;margin-bottom:1.5rem}
+.page-hero h1 .accent-word{color:var(--accent-hero);font-weight:600}
+.page-hero .hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:0.8rem;max-width:520px;margin-left:auto;margin-right:auto}
+.page-hero .price-display{margin:2rem auto;display:inline-flex;align-items:baseline;gap:0.4rem}
+.page-hero .price-display .currency{font-size:1rem;color:rgba(255,255,255,0.7)}
+.page-hero .price-display .amount{font-size:2.8rem;font-weight:400;color:var(--white);line-height:1}
+.page-hero .price-tax{font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:2.5rem}
+.page-hero .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--white);color:var(--navy);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;font-weight:500;transition:all 0.25s;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
+.btn-primary:hover{background:#f0f4f8;transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.2)}
+.btn-outline{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;transition:all 0.25s;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px)}
+.btn-outline:hover{background:rgba(255,255,255,0.15);color:var(--white);border-color:rgba(255,255,255,0.35)}
+
+/* SECTIONS */
+.story-section{padding:120px 6%;position:relative}
+.story-section.bg-white{background:var(--white)}
+.story-section.bg-off{background:var(--off-white)}
+.story-section.bg-navy{background:var(--navy)}
+.story-center{max-width:640px;margin:0 auto;text-align:center}
+.story-wide{max-width:900px;margin:0 auto}
+.s-label{font-size:0.65rem;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
+.s-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
+.s-title.white{color:var(--white)}
+.s-body{font-size:0.9rem;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+.s-body.white{color:rgba(255,255,255,0.6)}
+
+/* INSIGHT INCLUDES */
+.includes-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;max-width:900px;margin:2.5rem auto 0}
+.include-card{background:var(--white);border:1px solid var(--gray-light);border-radius:var(--radius-sm);padding:2rem 1.2rem;text-align:center;transition:transform 0.3s}
+.include-card:hover{transform:translateY(-3px)}
+.include-card .icon{font-size:1.8rem;margin-bottom:1rem}
+.include-card h3{font-size:0.84rem;font-weight:600;color:var(--navy);margin-bottom:0.6rem;line-height:1.5}
+.include-card p{font-size:0.72rem;color:var(--text-light);line-height:1.8}
+
+/* STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:900px;margin:2.5rem auto 0}
+.step-card{text-align:center;position:relative}
+.step-card::after{content:'→';position:absolute;right:-1.2rem;top:1.5rem;color:rgba(255,255,255,0.2);font-size:1.2rem}
+.step-card:last-child::after{display:none}
+.step-num{font-size:2.2rem;font-weight:300;color:rgba(125,184,224,0.4);margin-bottom:0.8rem;font-family:'Cormorant Garamond',serif}
+.step-name{font-size:0.82rem;font-weight:600;color:var(--accent-hero);margin-bottom:0.4rem;letter-spacing:0.06em}
+.step-title{font-size:0.88rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;line-height:1.6}
+.step-desc{font-size:0.76rem;color:rgba(255,255,255,0.5);line-height:1.9}
+
+/* ADVICE */
+.advice-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:2.5rem auto 0}
+.advice-card{background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.2rem 2rem;transition:transform 0.3s}
+.advice-card:hover{transform:translateY(-2px)}
+.advice-icon{font-size:2rem;display:block;margin-bottom:1rem}
+.advice-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:1.2rem;line-height:1.6}
+.advice-data{font-size:0.78rem;color:var(--gray);line-height:1.9;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--gray-light)}
+.advice-conclusion{font-size:0.84rem;color:var(--text-light);line-height:2}
+.advice-conclusion strong{color:var(--accent);font-weight:600;font-size:0.88rem}
+
+/* GUIDED */
+.guided-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:700px;margin:2.5rem auto 0}
+.guided-card{background:var(--white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;text-align:center;transition:transform 0.3s;position:relative}
+.guided-card:hover{transform:translateY(-3px)}
+.guided-card.recommended{border-color:var(--accent);box-shadow:0 4px 24px rgba(21,84,209,0.12)}
+.guided-card.recommended::before{content:'Recommended';position:absolute;top:-0.6rem;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--white);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:20px;font-weight:600}
+.guided-card .duration{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem;font-weight:500}
+.guided-card .g-price{display:flex;align-items:baseline;justify-content:center;gap:0.3rem;margin-bottom:0.4rem}
+.guided-card .g-price .currency{font-size:0.9rem;color:var(--navy)}
+.guided-card .g-price .amount{font-size:2rem;font-weight:400;color:var(--navy);line-height:1}
+.guided-card .g-tax{font-size:0.68rem;color:var(--gray);margin-bottom:1.5rem}
+.guided-card .g-features{list-style:none;text-align:left;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem}
+.guided-card .g-features li{font-size:0.78rem;color:var(--text-light);line-height:1.7;display:flex;align-items:flex-start;gap:0.5rem}
+.guided-card .g-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+
+/* SAMPLE */
+.sample-pages{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;margin:2.5rem auto 0}
+.sample-page-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 32px rgba(7,20,38,0.1);transition:transform 0.3s}
+.sample-page-card:hover{transform:translateY(-3px)}
+.sample-page-card img{width:100%;height:auto;display:block}
+
+/* CONSULTATION */
+.consult-box{max-width:560px;margin:0 auto;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:3rem;text-align:center;box-shadow:var(--shadow-lg);backdrop-filter:blur(10px)}
+.consult-box h3{font-size:1.1rem;font-weight:500;color:var(--navy);margin-bottom:1rem;line-height:1.6}
+.consult-box p{font-size:0.84rem;color:var(--text-light);line-height:2.1;margin-bottom:2rem}
+.btn-consult{display:inline-block;background:var(--navy);color:var(--white);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;font-weight:500;transition:all 0.25s;box-shadow:var(--shadow-sm)}
+.btn-consult:hover{background:var(--navy-light);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+
+/* CTA FINAL */
+.cta-final{padding:140px 6%;background:var(--navy);text-align:center}
+.cta-final .s-title{color:var(--white);margin-bottom:1.2rem}
+.cta-final p{font-size:0.88rem;color:rgba(255,255,255,0.6);margin-bottom:2.5rem;line-height:2}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);padding:2.5rem 6%;display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:rgba(255,255,255,0.15)}
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav-links{display:none}.hamburger{display:block}
+.page-hero{padding:120px 6% 70px}
+.page-hero h1{font-size:1.6rem}
+.page-hero .price-display .amount{font-size:2.2rem}
+.includes-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem}
+.includes-grid .include-card:last-child{grid-column:1 / -1;max-width:50%;margin:0 auto}
+.steps-grid{grid-template-columns:1fr;gap:1.5rem}
+.step-card::after{display:none}
+.advice-grid{grid-template-columns:1fr}
+.guided-grid{grid-template-columns:1fr;max-width:360px}
+.sample-pages{grid-template-columns:1fr;max-width:400px}
+.story-section{padding:80px 6%}
+footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Health<span>map</span></a>
+  <ul class="nav-links">
+    <li><a href="individuals.html" class="active">Individuals</a></li>
+    <li><a href="business.html">Business</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><div class="lang-switch"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div></li>
+    <li><a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="nav-cta" target="_blank" rel="noopener">相談する</a></li>
+  </ul>
+  <button class="hamburger" aria-label="メニューを開く" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="individuals.html" onclick="closeMenu()">Individuals</a>
+  <a href="business.html" onclick="closeMenu()">Business</a>
+  <a href="/#about" onclick="closeMenu()">About</a>
+  <div class="lang-switch" style="justify-content:center"><a href="/" class="active">JP</a><span>|</span><a href="/en/">EN</a></div>
+  <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="nav-cta" target="_blank" rel="noopener" onclick="closeMenu()">相談する</a>
+</div>
+
+<!-- ① HERO -->
+<section class="page-hero">
+  <p class="s-label">Healthmap Insight</p>
+  <h1>自分の身体を理解し、<br>自分に合った<span class="accent-word">次の一歩</span>を決める。</h1>
+  <p class="hero-sub">血液データ × 生活データ × 行動設計で、<br>あなたの身体の「取扱説明書」をつくります。</p>
+  <div class="price-display">
+    <span class="currency">¥</span>
+    <span class="amount">29,800</span>
+  </div>
+  <p class="price-tax">（税込）</p>
+  <div class="hero-buttons">
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" target="_blank" rel="noopener">自分に合うか相談する</a>
+    <a href="#insight-includes" class="btn-outline">Insightの内容を見る</a>
+  </div>
+</section>
+
+<!-- ② INSIGHT INCLUDES -->
+<section id="insight-includes" class="story-section bg-off">
+  <div class="story-center reveal">
+    <p class="s-label">What's Included</p>
+    <h2 class="s-title">Healthmap Insightに含まれるもの</h2>
+    <p class="s-body">血液検査の結果と、睡眠・食事・活動量などのデータを統合。<br>あなたの現在地と「何から始めるか」を1枚に整理します。</p>
+  </div>
+  <div class="includes-grid reveal">
+    <div class="include-card">
+      <div class="icon">📊</div>
+      <h3>統合解析</h3>
+      <p>血液・生活データを<br>AI分析支援ツールで<br>多角的に整理</p>
+    </div>
+    <div class="include-card">
+      <div class="icon">📍</div>
+      <h3>現在地の理解</h3>
+      <p>栄養バランス・睡眠・<br>活動の状態を<br>視覚的に把握</p>
+    </div>
+    <div class="include-card">
+      <div class="icon">🎯</div>
+      <h3>優先順位の整理</h3>
+      <p>自分の場合、<br>何から取り組むかを<br>明確に</p>
+    </div>
+    <div class="include-card">
+      <div class="icon">📋</div>
+      <h3>Priority Action Plan</h3>
+      <p>日常に落とし込んだ<br>具体的な<br>行動プラン</p>
+    </div>
+    <div class="include-card">
+      <div class="icon">💬</div>
+      <h3>結果説明</h3>
+      <p>カウンセラーが<br>結果と次の一歩を<br>丁寧にご説明</p>
+    </div>
+  </div>
+  <p style="font-size:0.72rem;color:var(--gray);margin-top:2.5rem;text-align:center;line-height:1.8" class="reveal">※医療機関監修のAI分析支援ツール（8weeks.ai）を活用。診断・治療・投薬判断は行いません。</p>
+</section>
+
+<!-- ③ KNOW / DECIDE / ACT / REVIEW -->
+<section class="story-section bg-navy">
+  <div class="story-center reveal">
+    <p class="s-label" style="color:var(--accent-hero)">Customer Journey</p>
+    <h2 class="s-title white">「健康情報を探す」から<br>「自分の次の一歩がわかる」へ</h2>
+  </div>
+  <div class="steps-grid reveal">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-name">KNOW</div>
+      <div class="step-title">自分を知る</div>
+      <div class="step-desc">血液検査の結果、睡眠・食事・活動データを提出。AI分析支援ツールが多角的に状態を整理します。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-name">DECIDE</div>
+      <div class="step-title">優先順位を決める</div>
+      <div class="step-desc">カウンセラーが分析結果を解釈し、あなたの日常に合った「何から始めるか」を一緒に整理します。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-name">ACT</div>
+      <div class="step-title">一つ実行する</div>
+      <div class="step-desc">Priority Action Planに基づき、まず1つだけ。小さな変化から始めます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-name">REVIEW</div>
+      <div class="step-title">変化を確認する</div>
+      <div class="step-desc">データで変化を確認し、必要に応じて調整。Guidedプログラムで継続的な伴走も可能です。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ REAL EXAMPLE -->
+<section class="story-section bg-white">
+  <div class="story-center reveal">
+    <p class="s-label">Real Example</p>
+    <h2 class="s-title">例えば、こんなアドバイスが届きます。</h2>
+    <p class="s-body">一般的な健康情報ではなく、<br>あなたのデータに基づいた具体的な行動の提案です。</p>
+  </div>
+  <div class="advice-grid reveal">
+    <div class="advice-card">
+      <div class="advice-icon">😴</div>
+      <h3>「食事より、まず睡眠から。」</h3>
+      <p class="advice-data">データ：睡眠リズムとストレス負荷に見直す余地があることを示唆。</p>
+      <p class="advice-conclusion">Priority：まず睡眠環境を整える。<br><strong>午後のカフェインを控え、23時台の就寝を目指す。</strong></p>
+    </div>
+    <div class="advice-card">
+      <div class="advice-icon">🍂</div>
+      <h3>「季節の不調は、腸とビタミンDに見直す余地があった。」</h3>
+      <p class="advice-data">データ：秋冬のビタミンD値低下と腸内環境の関連を示唆。</p>
+      <p class="advice-conclusion">Priority：日光浴の習慣と、<br><strong>発酵食品を1日1品追加する。</strong></p>
+    </div>
+    <div class="advice-card">
+      <div class="advice-icon">🏃</div>
+      <h3>「運動量は十分。回復が追いついていない。」</h3>
+      <p class="advice-data">データ：活動量は高いが、回復指標に改善の余地を確認。</p>
+      <p class="advice-conclusion">Priority：トレーニング量を増やすのではなく、<br><strong>休息日の質を高める。</strong></p>
+    </div>
+    <div class="advice-card">
+      <div class="advice-icon">🩸</div>
+      <h3>「鉄は足りている。問題は吸収の方。」</h3>
+      <p class="advice-data">データ：鉄の摂取量は十分だが、吸収効率に影響する要因を確認。</p>
+      <p class="advice-conclusion">Priority：鉄のサプリを増やす前に、<br><strong>食べ合わせとタイミングを見直す。</strong></p>
+    </div>
+  </div>
+  <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※実際のアドバイスは個人のデータに基づきます。上記は一例です。</p>
+</section>
+
+<!-- ⑤ GUIDED PROGRAM -->
+<section class="story-section bg-off">
+  <div class="story-center reveal">
+    <p class="s-label">Guided Program</p>
+    <h2 class="s-title">Insightの後、<br>さらに伴走が必要な方へ。</h2>
+    <p class="s-body">Insightで現在地と優先順位を理解した後、<br>継続的なサポートが必要な方のためのプログラムです。<br>Weekly ReportとOne Actionで、行動を定着させます。</p>
+  </div>
+  <div class="guided-grid reveal">
+    <div class="guided-card">
+      <div class="duration">3 Months</div>
+      <div class="g-price">
+        <span class="currency">¥</span>
+        <span class="amount">59,800</span>
+      </div>
+      <p class="g-tax">（税込）</p>
+      <ul class="g-features">
+        <li>Insight（¥29,800）込み</li>
+        <li>Weekly Report</li>
+        <li>毎週のOne Action</li>
+        <li>定期的なデータレビュー</li>
+        <li>カウンセラーとのフィードバック</li>
+      </ul>
+    </div>
+    <div class="guided-card recommended">
+      <div class="duration">6 Months</div>
+      <div class="g-price">
+        <span class="currency">¥</span>
+        <span class="amount">99,800</span>
+      </div>
+      <p class="g-tax">（税込）</p>
+      <ul class="g-features">
+        <li>Insight（¥29,800）込み</li>
+        <li>Weekly Report</li>
+        <li>毎週のOne Action</li>
+        <li>定期的なデータレビュー</li>
+        <li>カウンセラーとのフィードバック</li>
+        <li>優先順位の再評価・調整</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:0.72rem;color:var(--gray);margin-top:2.5rem;text-align:center;line-height:1.8" class="reveal">「Insightで価値を実感し、必要な方だけがGuidedへ」</p>
+</section>
+
+<!-- ⑥ HEALTH MAP SAMPLE -->
+<section class="story-section bg-white">
+  <div class="story-center reveal">
+    <p class="s-label">Sample Report</p>
+    <h2 class="s-title">あなたの<span class="accent-word">健康地図</span>（サンプル）</h2>
+    <p class="s-body">これは実際に提供している内容の一部です。<br>自分にとって何を優先するかが、一目で分かります。</p>
+  </div>
+  <div class="sample-pages reveal">
+    <div class="sample-page-card">
+      <img src="report_page1.png" alt="健康地図サンプル - 表紙" loading="lazy">
+    </div>
+    <div class="sample-page-card">
+      <img src="report_page2.png" alt="健康地図サンプル - 総合評価サマリー" loading="lazy">
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem" class="reveal">
+    <a href="sample-report.pdf" target="_blank" class="btn-consult">実際の健康地図を見る</a>
+    <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※サンプルPDFが開きます</p>
+  </div>
+</section>
+
+<!-- ⑦ FREE CONSULTATION -->
+<section class="story-section bg-off">
+  <div class="consult-box reveal">
+    <p class="s-label">Free Consultation</p>
+    <h3>Healthmapが<br>自分に合うか相談する</h3>
+    <p>現在のお悩みや、<br>お持ちの健康データについて伺い、<br>Healthmap Insightが<br>ご自身に合うサービスかをご案内します。</p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-consult" target="_blank" rel="noopener">自分に合うか相談する</a>
+    <p style="font-size:0.68rem;color:var(--gray);margin-top:1.5rem;line-height:1.8">※無料相談はサービス適合の確認です。<br>Insight（統合解析・Priority Action Plan等）は有料サービスです。</p>
+  </div>
+</section>
+
+<!-- ⑧ FINAL CTA -->
+<section class="cta-final">
+  <div class="reveal">
+    <h2 class="s-title">あなたの身体の「取扱説明書」を。</h2>
+    <p>自分を知り、次の一歩を決める。</p>
+    <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-primary" style="background:var(--white);color:var(--navy)" target="_blank" rel="noopener">自分に合うか相談する</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3);font-size:0.65rem">本サービスは診断・治療・投薬判断を目的としたものではありません。必要に応じて医療機関への相談をおすすめします。</span>
+  <span>© 2026 Healthmap</span>
+  <span><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none">プライバシーポリシー</a> | <a href="/legal/" style="color:rgba(255,255,255,0.3);text-decoration:none">特定商取引法に基づく表記</a></span>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active');document.querySelector('.hamburger').classList.toggle('active')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('active');document.querySelector('.hamburger').classList.remove('active')}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

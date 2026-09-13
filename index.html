@@ -30,10 +30,10 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--wh
 
 /* NAV */
 nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);backdrop-filter:blur(20px);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--white);letter-spacing:0.06em;text-decoration:none}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--white);letter-spacing:0.06em;text-decoration:none}
 .nav-logo span{color:var(--accent-hero)}
 .nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
-.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.2s}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:15px;letter-spacing:0.08em;transition:color 0.2s}
 .nav-links a:hover{color:var(--white)}
 .nav-cta{background:var(--white);color:var(--navy)!important;padding:0.5rem 1.4rem;border-radius:10px;font-weight:500!important;transition:all 0.2s!important}
 .nav-cta:hover{background:#eef2f7!important;transform:translateY(-1px)}
@@ -43,8 +43,8 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .hamburger.active span:nth-child(1){top:9px;transform:rotate(45deg)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){top:9px;transform:rotate(-45deg)}
 .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(7,20,38,0.96);backdrop-filter:blur(20px);z-index:105;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
 .mobile-menu.active{display:flex}
-.mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.08em}
-.mobile-menu .nav-cta{margin-top:1rem;padding:0.9rem 2.2rem;font-size:1rem;border-radius:12px;background:var(--white);color:var(--navy)!important}
+.mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:19px;letter-spacing:0.08em}
+.mobile-menu .nav-cta{margin-top:1rem;padding:0.9rem 2.2rem;font-size:18px;border-radius:12px;background:var(--white);color:var(--navy)!important}
 
 /* HERO */
 #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:180px 6% 100px;background:radial-gradient(circle at 72% 38%,rgba(125,184,224,0.22),transparent 34%),radial-gradient(ellipse at 30% 50%,#1a4a7a 0%,#0d2847 40%,#071426 100%)}
@@ -52,33 +52,33 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .hero-hook{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.05em;margin-bottom:1.8rem;animation:fadeUp 0.7s ease both;line-height:1.6}
 .hero-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.55;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
 .hero-title .accent-word{color:var(--accent-hero);font-weight:600}
-.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.24s both}
-.btn-primary{background:var(--white);color:var(--navy);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;font-weight:500;transition:all 0.25s;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
+.btn-primary{background:var(--white);color:var(--navy);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:16px;font-weight:500;transition:all 0.25s;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
 .btn-primary:hover{background:#f0f4f8;transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.2)}
-.btn-outline{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:0.88rem;transition:all 0.25s;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px)}
+.btn-outline{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:16px;transition:all 0.25s;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px)}
 .btn-outline:hover{background:rgba(255,255,255,0.15);color:var(--white);border-color:rgba(255,255,255,0.35)}
 .hero-trust{display:flex;gap:1.5rem;margin-top:2.2rem;animation:fadeUp 0.8s ease 0.32s both;flex-wrap:wrap}
-.trust-item{font-size:0.72rem;color:rgba(255,255,255,0.55);letter-spacing:0.04em}
+.trust-item{font-size:15px;color:rgba(255,255,255,0.55);letter-spacing:0.04em}
 .hero-right{display:flex;align-items:center;justify-content:center;animation:fadeUp 1s ease 0.2s both;align-self:center}
 
 /* HEALTH MAP */
 .health-map{position:relative;width:100%;max-width:420px;margin:0 auto;filter:drop-shadow(0 0 80px rgba(125,184,224,0.28))}
 .hm-input-nodes{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;width:88%;margin:0 auto}
 .hm-node{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:var(--radius-sm);text-align:center;backdrop-filter:blur(12px);padding:0.75rem 0.7rem}
-.hm-node-icon{margin-bottom:0.25rem;font-size:1.2rem}
-.hm-node-text{font-size:0.66rem;color:rgba(255,255,255,0.65);font-weight:500;letter-spacing:0.04em}
+.hm-node-icon{margin-bottom:0.25rem;font-size:22px}
+.hm-node-text{font-size:14px;color:rgba(255,255,255,0.65);font-weight:500;letter-spacing:0.04em}
 .hm-map-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:var(--radius-sm);padding:1.3rem 1.5rem;box-shadow:0 4px 24px rgba(0,0,0,0.12);backdrop-filter:blur(12px)}
-.hm-map-title{font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-weight:500;color:var(--white);margin-bottom:0.7rem;letter-spacing:0.04em}
+.hm-map-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--white);margin-bottom:0.7rem;letter-spacing:0.04em}
 .hm-map-bars{display:flex;flex-direction:column;gap:0.45rem}
-.hm-bar-label{font-size:0.6rem;color:rgba(255,255,255,0.5);margin-bottom:0.15rem}
+.hm-bar-label{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:0.15rem}
 .hm-bar-track{height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
 .hm-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent-hero),#a8d4f0);border-radius:3px}
 .hm-bar-fill.hm-bar-warn{background:linear-gradient(90deg,#E8A87C,#D4956B)}
 .hm-results{display:flex;gap:0.7rem}
 .hm-result-card{flex:1;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:var(--radius-sm);padding:0.7rem;text-align:center;backdrop-filter:blur(8px)}
-.hm-result-num{font-family:'Noto Sans JP',sans-serif;font-size:1rem;color:var(--accent-hero);font-weight:400;margin-bottom:0.1rem}
-.hm-result-text{font-size:0.62rem;color:rgba(255,255,255,0.55);font-weight:500}
+.hm-result-num{font-family:'Noto Sans JP',sans-serif;font-size:18px;color:var(--accent-hero);font-weight:400;margin-bottom:0.1rem}
+.hm-result-text{font-size:14px;color:rgba(255,255,255,0.55);font-weight:500}
 
 /* STORY SECTIONS - seamless flow */
 .story-section{padding:120px 6%;position:relative}
@@ -89,55 +89,55 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .story-wide{max-width:900px;margin:0 auto}
 
 /* Section titles */
-.s-label{font-size:0.65rem;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
+.s-label{font-size:14px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
 .s-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
 .s-title.white{color:var(--white)}
-.s-body{font-size:0.9rem;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+.s-body{font-size:16px;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
 .s-body.white{color:rgba(255,255,255,0.6)}
 
 /* Connector - bridges between sections */
 .connector{padding:60px 6%;text-align:center;background:var(--white)}
 .connector.bg-off{background:var(--off-white)}
-.connector p{font-size:1rem;font-weight:500;color:var(--navy);line-height:2;max-width:480px;margin:0 auto}
-.connector .accent-word{font-size:1.1rem}
+.connector p{font-size:18px;font-weight:500;color:var(--navy);line-height:2;max-width:480px;margin:0 auto}
+.connector .accent-word{font-size:19px}
 
 /* PAIN */
 .pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--gray-light);border-radius:var(--radius);overflow:hidden;max-width:600px;margin:0 auto;box-shadow:var(--shadow-sm)}
 .pain-item{background:var(--white);padding:2.5rem 2rem}
-.pain-item p{font-size:0.88rem;line-height:1.9;color:var(--text-light)}
+.pain-item p{font-size:16px;line-height:1.9;color:var(--text-light)}
 
 /* DATA CARDS */
 .data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:680px;margin:2rem auto 0}
 .data-card{background:var(--white);border:1px solid var(--gray-light);border-radius:var(--radius-sm);padding:1.8rem 1.3rem;text-align:center;transition:transform 0.3s}
 .data-card:hover{transform:translateY(-2px)}
-.data-card-icon{font-size:1.5rem;margin-bottom:0.7rem}
-.data-card-title{font-size:0.82rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
-.data-card-desc{font-size:0.72rem;color:var(--text-light);line-height:1.8}
+.data-card-icon{font-size:30px;margin-bottom:0.7rem}
+.data-card-title{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
+.data-card-desc{font-size:15px;color:var(--text-light);line-height:1.8}
 
 /* SERVICE - minimal */
 .service-core{max-width:580px;margin:0 auto}
-.service-core p{font-size:0.9rem;line-height:2.3;color:var(--text-light);margin-bottom:1.5rem}
-.service-inline-compare{font-size:0.82rem;color:var(--gray);line-height:2;padding:1.2rem 1.5rem;border-left:3px solid var(--gray-light);margin:2rem 0}
+.service-core p{font-size:16px;line-height:2.3;color:var(--text-light);margin-bottom:1.5rem}
+.service-inline-compare{font-size:16px;color:var(--gray);line-height:2;padding:1.2rem 1.5rem;border-left:3px solid var(--gray-light);margin:2rem 0}
 
 /* HOW - minimal 3 steps */
 .steps-minimal{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;max-width:720px;margin:2.5rem auto 0}
 .step-m{text-align:center}
-.step-m-num{font-size:2rem;font-weight:400;color:rgba(125,184,224,0.5);margin-bottom:0.8rem}
-.step-m-title{font-size:0.88rem;font-weight:500;color:var(--white);margin-bottom:0.5rem}
-.step-m-desc{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.9}
+.step-m-num{font-size:38px;font-weight:400;color:rgba(125,184,224,0.5);margin-bottom:0.8rem}
+.step-m-title{font-size:16px;font-weight:500;color:var(--white);margin-bottom:0.5rem}
+.step-m-desc{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.9}
 
 /* SAMPLE REPORT */
 .report-preview{max-width:540px;margin:0 auto;background:var(--white);border:1px solid var(--gray-light);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
 .report-cover{background:linear-gradient(135deg,var(--navy) 0%,#1a4a7a 100%);padding:2.2rem 2.2rem 1.8rem;position:relative}
 .report-cover::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-hero))}
-.report-cover-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--white);margin-bottom:0.3rem;letter-spacing:0.04em}
-.report-cover-sub{font-size:0.68rem;color:rgba(255,255,255,0.5);letter-spacing:0.06em}
+.report-cover-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--white);margin-bottom:0.3rem;letter-spacing:0.04em}
+.report-cover-sub{font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.06em}
 .report-body{padding:2rem}
 .report-items{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:1.5rem}
 .report-item{background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius-sm);padding:1rem;text-align:left}
-.report-item-icon{font-size:0.9rem;margin-bottom:0.4rem}
-.report-item-title{font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:0.15rem}
-.report-item-desc{font-size:0.68rem;color:var(--text-light);line-height:1.6}
+.report-item-icon{font-size:16px;margin-bottom:0.4rem}
+.report-item-title{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:0.15rem}
+.report-item-desc{font-size:14px;color:var(--text-light);line-height:1.6}
 
 /* SAMPLE PAGES */
 .sample-pages{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;margin:2.5rem auto 0}
@@ -147,27 +147,27 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 
 /* PRICING */
 .pricing-card{max-width:460px;margin:2rem auto 0;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:3rem;text-align:left;box-shadow:var(--shadow-lg);backdrop-filter:blur(10px)}
-.pricing-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1.2rem}
+.pricing-label{font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1.2rem}
 .pricing-amount{display:flex;align-items:baseline;gap:0.3rem;margin-bottom:0.4rem}
-.pricing-amount .currency{font-size:1rem;color:var(--navy)}
-.pricing-amount .amount{font-family:'Noto Sans JP',sans-serif;font-size:2.6rem;font-weight:400;color:var(--navy);line-height:1}
-.pricing-amount .period{font-size:0.82rem;color:var(--gray)}
-.pricing-tax{font-size:0.7rem;color:var(--gray);margin-bottom:1.5rem}
+.pricing-amount .currency{font-size:18px;color:var(--navy)}
+.pricing-amount .amount{font-family:'Noto Sans JP',sans-serif;font-size:48px;font-weight:400;color:var(--navy);line-height:1}
+.pricing-amount .period{font-size:16px;color:var(--gray)}
+.pricing-tax{font-size:15px;color:var(--gray);margin-bottom:1.5rem}
 .pricing-features{list-style:none;display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem}
-.pricing-features li{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.82rem;color:var(--text-light);line-height:1.7}
+.pricing-features li{display:flex;align-items:flex-start;gap:0.7rem;font-size:16px;color:var(--text-light);line-height:1.7}
 .pricing-features li::before{content:'\2713';color:var(--accent);font-weight:700;flex-shrink:0}
-.btn-pricing{display:block;background:var(--navy);color:var(--white);text-align:center;padding:0.95rem;text-decoration:none;font-size:0.84rem;font-weight:500;border-radius:12px;transition:all 0.25s;box-shadow:var(--shadow-sm)}
+.btn-pricing{display:block;background:var(--navy);color:var(--white);text-align:center;padding:0.95rem;text-decoration:none;font-size:16px;font-weight:500;border-radius:12px;transition:all 0.25s;box-shadow:var(--shadow-sm)}
 .btn-pricing:hover{background:var(--navy-light);transform:translateY(-1px);box-shadow:var(--shadow-md)}
 
 /* ABOUT */
 .about-layout{max-width:580px}
-.about-name{font-family:'Noto Sans JP',sans-serif;font-size:1.4rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
-.about-name-en{font-size:0.7rem;letter-spacing:0.12em;color:var(--gray);margin-bottom:1.5rem}
-.about-bio{font-size:0.84rem;line-height:2.3;color:var(--text-light);margin-bottom:1.8rem}
-.about-belief{padding:1.3rem 1.6rem;background:var(--white);border-radius:var(--radius-sm);font-size:0.9rem;line-height:2.1;color:var(--navy);margin-bottom:1.5rem;font-weight:500;border-left:3px solid var(--accent)}
+.about-name{font-family:'Noto Sans JP',sans-serif;font-size:28px;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
+.about-name-en{font-size:15px;letter-spacing:0.12em;color:var(--gray);margin-bottom:1.5rem}
+.about-bio{font-size:16px;line-height:2.3;color:var(--text-light);margin-bottom:1.8rem}
+.about-belief{padding:1.3rem 1.6rem;background:var(--white);border-radius:var(--radius-sm);font-size:16px;line-height:2.1;color:var(--navy);margin-bottom:1.5rem;font-weight:500;border-left:3px solid var(--accent)}
 .about-creds{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.about-cred-tag{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;padding:0.4rem 0.8rem;font-size:0.68rem;color:var(--text-light)}
-.btn-ghost{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.78rem;font-weight:500;transition:opacity 0.2s}
+.about-cred-tag{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;padding:0.4rem 0.8rem;font-size:14px;color:var(--text-light)}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:15px;font-weight:500;transition:opacity 0.2s}
 .btn-ghost:hover{opacity:0.7}
 
 /* LEARN */
@@ -177,35 +177,35 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 /* FAQ */
 .faq-list{max-width:640px;margin:2rem auto 0}
 .faq-item{border-bottom:1.5px dotted var(--gray-light)}
-.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:2rem 0;font-family:'Noto Sans JP',sans-serif;font-size:0.88rem;font-weight:500;color:var(--navy);text-align:left;gap:1rem}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:2rem 0;font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:500;color:var(--navy);text-align:left;gap:1rem}
 .faq-q:hover{color:var(--accent)}
-.faq-q-label{font-weight:700;color:var(--accent);margin-right:0.7rem;font-size:0.82rem}
-.faq-icon{width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;color:var(--accent);font-weight:400}
+.faq-q-label{font-weight:700;color:var(--accent);margin-right:0.7rem;font-size:16px}
+.faq-icon{width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px;color:var(--accent);font-weight:400}
 .faq-item.open .faq-icon{color:var(--navy)}
-.faq-a{font-size:0.82rem;line-height:2.1;color:var(--text-light);padding:0 0 2rem;display:none;text-align:left}
+.faq-a{font-size:16px;line-height:2.1;color:var(--text-light);padding:0 0 2rem;display:none;text-align:left}
 .faq-item.open .faq-a{display:block}
 
 /* CTA FINAL */
 .cta-final{padding:140px 6%;background:var(--navy);text-align:center}
 .cta-final .s-title{color:var(--white);margin-bottom:1.2rem}
-.cta-final p{font-size:0.88rem;color:rgba(255,255,255,0.6);margin-bottom:2.5rem;line-height:2}
+.cta-final p{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:2.5rem;line-height:2}
 
 /* FOOTER */
-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);padding:2.5rem 6%;display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:rgba(255,255,255,0.15)}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);padding:2.5rem 6%;display:flex;justify-content:space-between;align-items:center;font-size:15px;color:rgba(255,255,255,0.15)}
 
 /* ADVICE CARDS */
 .advice-section{padding:100px 6%;background:var(--white)}
 .advice-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:2.5rem auto 0}
 .advice-card{background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.2rem 2rem;transition:transform 0.3s}
 .advice-card:hover{transform:translateY(-2px)}
-.advice-icon{font-size:2rem;display:block;margin-bottom:1rem}
-.advice-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:1.2rem;line-height:1.6}
-.advice-data{font-size:0.78rem;color:var(--gray);line-height:1.9;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--gray-light)}
-.advice-conclusion{font-size:0.84rem;color:var(--text-light);line-height:2}
-.advice-conclusion strong{color:var(--accent);font-weight:600;font-size:0.88rem}
+.advice-icon{font-size:38px;display:block;margin-bottom:1rem}
+.advice-card h3{font-size:18px;font-weight:600;color:var(--navy);margin-bottom:1.2rem;line-height:1.6}
+.advice-data{font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--gray-light)}
+.advice-conclusion{font-size:16px;color:var(--text-light);line-height:2}
+.advice-conclusion strong{color:var(--accent);font-weight:600;font-size:16px}
 
 /* LANG SWITCH */
-.lang-switch{display:flex;align-items:center;gap:0.3rem;font-size:0.78rem}
+.lang-switch{display:flex;align-items:center;gap:0.3rem;font-size:15px}
 .lang-switch a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
 .lang-switch a:hover,.lang-switch a.active{color:var(--white)}
 .lang-switch span{color:rgba(255,255,255,0.3)}
@@ -409,8 +409,31 @@ body, body * { font-weight: revert; }
 }
 /* ===== END TYPOGRAPHY NORMALIZATION ===== */
 
+
+/* === TYPOGRAPHY RESPONSIVE === */
+@media (min-width: 768px) and (max-width: 1199px) {
+  :root {
+    --fs-hero-title: 42px;
+    --fs-section-title: 32px;
+    --fs-body: 17px;
+    --fs-card-title: 21px;
+    --fs-card-body: 17px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --fs-hero-title: 34px;
+    --fs-hero-lead: 18px;
+    --fs-section-title: 28px;
+    --fs-body: 16px;
+    --fs-card-title: 20px;
+    --fs-card-body: 16px;
+    --fs-table: 15px;
+    --fs-disclaimer: 13px;
+  }
+}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -458,19 +481,19 @@ body, body * { font-weight: revert; }
   </div>
   <div class="hero-right" aria-hidden="true">
     <div class="health-map">
-      <p style="font-size:0.6rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem;font-weight:500">Input Data</p>
+      <p style="color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem">Input Data</p>
       <div class="hm-input-nodes">
         <div class="hm-node"><div class="hm-node-icon">🩸</div><div class="hm-node-text">血液検査</div></div>
         <div class="hm-node"><div class="hm-node-icon">🌙</div><div class="hm-node-text">睡眠</div></div>
         <div class="hm-node"><div class="hm-node-icon">🍽️</div><div class="hm-node-text">食事</div></div>
         <div class="hm-node"><div class="hm-node-icon">🏃</div><div class="hm-node-text">活動量</div></div>
       </div>
-      <div style="text-align:center;margin:0.8rem 0;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
+      <div style="text-align:center;margin:0.8rem 0;color:rgba(125,184,224,0.5)">↓</div>
       <div style="text-align:center;margin-bottom:0.8rem">
-        <span style="display:inline-block;background:rgba(125,184,224,0.15);border:1px solid rgba(125,184,224,0.3);border-radius:20px;padding:0.4rem 1.2rem;font-size:0.72rem;color:var(--accent-hero);font-weight:500;letter-spacing:0.04em">AI分析支援（8weeks.ai）</span>
+        <span style="display:inline-block;background:rgba(125,184,224,0.15);border:1px solid rgba(125,184,224,0.3);border-radius:20px;padding:0.4rem 1.2rem;color:var(--accent-hero)">AI分析支援（8weeks.ai）</span>
       </div>
-      <div style="text-align:center;margin-bottom:0.8rem;font-size:1.2rem;color:rgba(125,184,224,0.5)">↓</div>
-      <p style="font-size:0.6rem;letter-spacing:0.12em;color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem;font-weight:500">Output</p>
+      <div style="text-align:center;margin-bottom:0.8rem;color:rgba(125,184,224,0.5)">↓</div>
+      <p style="color:var(--accent-hero);text-transform:uppercase;text-align:center;margin-bottom:0.6rem">Output</p>
       <div class="hm-map-card">
         <div class="hm-map-title">Your Health Map</div>
         <div class="hm-map-bars">
@@ -530,7 +553,7 @@ body, body * { font-weight: revert; }
     <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">ヘルスケアデータ</div><div class="data-card-desc">iPhone等の睡眠・活動量<br>体温・体重の記録</div></div>
     <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">食事・血糖記録</div><div class="data-card-desc">日々の食事記録<br>グルコース変動データ</div></div>
   </div>
-  <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※データが増えることで、より多角的に状態を整理できます。まずはお手元にあるものだけでOK。</p>
+  <p style="color:var(--gray);margin-top:2rem;text-align:center" class="reveal">※データが増えることで、より多角的に状態を整理できます。まずはお手元にあるものだけでOK。</p>
 </section>
 
 <!-- connector -->
@@ -546,18 +569,18 @@ body, body * { font-weight: revert; }
   <div class="service-core reveal">
     <p>医療機関監修のAI分析支援ツール <span class="emphasis">8weeks.ai</span>が、<br>血液・食事・睡眠・活動などのデータを多角的に整理。</p>
     <p>その結果を、カウンセラーがあなたの日常に合わせた<br>「行動の優先順位」へ翻訳します。</p>
-    <p style="font-size:0.84rem;color:var(--text-light);line-height:2.2;margin-bottom:1.5rem">まず「何からやるか」が1枚で分かる設計。<br>その裏側に、詳細な分析レポートがあります。</p>
+    <p style="color:var(--text-light);margin-bottom:1.5rem">まず「何からやるか」が1枚で分かる設計。<br>その裏側に、詳細な分析レポートがあります。</p>
     <div class="service-inline-compare">従来は「正しいこと」を積み上げるアプローチ。<br>しかしそれでは、何からやるべきかは分かりません。<br>健康地図によって<span class="emphasis">「何からやるか」を明確に</span>します。</div>
-    <p style="font-size:0.9rem;line-height:2.3;color:var(--text-light);margin-top:2rem">AIが答えを出すのではありません。<br>カウンセラーが、分析結果をあなたの日常に合った「次の一歩」に翻訳する。<br>それがHealthmapの核心です。</p>
+    <p style="color:var(--text-light);margin-top:2rem">AIが答えを出すのではありません。<br>カウンセラーが、分析結果をあなたの日常に合った「次の一歩」に翻訳する。<br>それがHealthmapの核心です。</p>
     <!-- 役割図 -->
     <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin:2.5rem 0 1.5rem;flex-wrap:wrap">
-      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">👤</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">あなた</div><div style="font-size:0.65rem;color:var(--gray)">データを提出</div></div>
-      <div style="color:var(--accent);font-size:1rem;opacity:0.4">⇄</div>
-      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(7,20,38,0.05);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🧑‍⚕️</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">カウンセラー</div><div style="font-size:0.65rem;color:var(--gray)">解釈＋優先順位設計</div></div>
-      <div style="color:var(--accent);font-size:1rem;opacity:0.4">⇄</div>
-      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(21,84,209,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;font-size:1.3rem">🤖</div><div style="font-size:0.78rem;font-weight:500;color:var(--navy)">8weeks.ai</div><div style="font-size:0.65rem;color:var(--gray)">AI分析支援</div></div>
+      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem">👤</div><div style="color:var(--navy)">あなた</div><div style="color:var(--gray)">データを提出</div></div>
+      <div style="color:var(--accent);opacity:0.4">⇄</div>
+      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(7,20,38,0.05);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem">🧑‍⚕️</div><div style="color:var(--navy)">カウンセラー</div><div style="color:var(--gray)">解釈＋優先順位設計</div></div>
+      <div style="color:var(--accent);opacity:0.4">⇄</div>
+      <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(21,84,209,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem">🤖</div><div style="color:var(--navy)">8weeks.ai</div><div style="color:var(--gray)">AI分析支援</div></div>
     </div>
-    <p style="font-size:0.74rem;color:var(--gray)">※診断・治療・投薬判断は行いません。必要に応じて医療機関への相談をおすすめします。</p>
+    <p style="color:var(--gray)">※診断・治療・投薬判断は行いません。必要に応じて医療機関への相談をおすすめします。</p>
   </div>
 </section>
 
@@ -581,43 +604,43 @@ body, body * { font-weight: revert; }
     <p class="s-body">Healthmapは「何を食べるか」「何を鍛えるか」ではなく、<br>「自分の場合、何から始めるか」を整理するサービスです。</p>
   </div>
   <div class="story-wide reveal">
-    <table style="width:100%;border-collapse:collapse;font-size:0.82rem;line-height:1.9">
+    <table style="width:100%;border-collapse:collapse">
       <thead>
         <tr style="border-bottom:2px solid var(--gray-light)">
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">観点</th>
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">一般的な栄養指導</th>
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray);font-weight:500">パーソナルジム</th>
-          <th style="padding:1rem 0.8rem;text-align:left;color:var(--accent);font-weight:600">Healthmap</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray)">観点</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray)">一般的な栄養指導</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray)">パーソナルジム</th>
+          <th style="padding:1rem 0.8rem;text-align:left;color:var(--accent)">Healthmap</th>
         </tr>
       </thead>
       <tbody>
         <tr style="border-bottom:1px solid var(--gray-light)">
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">判断の根拠</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy)">判断の根拠</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">食事記録</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">体組成・運動量</td>
           <td style="padding:1rem 0.8rem;color:var(--text)">血液検査＋生活データ＋AI分析支援</td>
         </tr>
         <tr style="border-bottom:1px solid var(--gray-light)">
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">焦点</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy)">焦点</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">何を食べるか</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">何をトレーニングするか</td>
-          <td style="padding:1rem 0.8rem;color:var(--text);font-weight:500">何から始めるか（優先順位）</td>
+          <td style="padding:1rem 0.8rem;color:var(--text)">何から始めるか（優先順位）</td>
         </tr>
         <tr style="border-bottom:1px solid var(--gray-light)">
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">監修・分析支援</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy)">監修・分析支援</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">施設による</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">施設による</td>
           <td style="padding:1rem 0.8rem;color:var(--text)">医療機関監修のAI分析支援ツールを活用</td>
         </tr>
         <tr>
-          <td style="padding:1rem 0.8rem;color:var(--navy);font-weight:500">継続の仕組み</td>
+          <td style="padding:1rem 0.8rem;color:var(--navy)">継続の仕組み</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">食事記録の継続</td>
           <td style="padding:1rem 0.8rem;color:var(--text-light)">定期セッション</td>
           <td style="padding:1rem 0.8rem;color:var(--text)">必要に応じてデータを再確認</td>
         </tr>
       </tbody>
     </table>
-    <p style="font-size:0.72rem;color:var(--gray);margin-top:1.5rem;text-align:center">※各サービスにはそれぞれの強みがあります。上記は観点の違いを示すものです。</p>
+    <p style="color:var(--gray);margin-top:1.5rem;text-align:center">※各サービスにはそれぞれの強みがあります。上記は観点の違いを示すものです。</p>
   </div>
 </section>
 
@@ -642,7 +665,7 @@ body, body * { font-weight: revert; }
   </div>
   <div style="text-align:center;margin-top:2.5rem;padding-bottom:1rem" class="reveal">
     <a href="sample-report.pdf" target="_blank" class="btn-primary" style="background:var(--navy);color:var(--white)">実際の健康地図を見る</a>
-    <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※サンプルPDFが開きます</p>
+    <p style="color:var(--gray);margin-top:1rem">※サンプルPDFが開きます</p>
   </div>
 </section>
 
@@ -654,17 +677,17 @@ body, body * { font-weight: revert; }
   </div>
   <div class="two-audience-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:2.5rem auto 0;" class="reveal">
     <div style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
-      <p style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.2rem;">For Individuals</p>
-      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">自分の身体を理解し、<br>自分に合った次の一歩を決める。</h3>
-      <p style="font-size:0.84rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem;">Healthmap Insight</p>
-      <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:1.5rem;">¥29,800（税込）</p>
-      <a href="individuals.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.82rem;font-weight:500;">詳しく見る →</a>
+      <p style="text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem">For Individuals</p>
+      <h3 style="color:var(--navy);margin-bottom:1.2rem">自分の身体を理解し、<br>自分に合った次の一歩を決める。</h3>
+      <p style="color:var(--navy);margin-bottom:0.3rem">Healthmap Insight</p>
+      <p style="color:var(--text-light);margin-bottom:1.5rem">¥29,800（税込）</p>
+      <a href="individuals.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none">詳しく見る →</a>
     </div>
     <div style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
-      <p style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.2rem;">For Business</p>
-      <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.7;margin-bottom:1.2rem;">従業員一人ひとりが、<br>自分に合った次の一歩を<br>見つけられる健康支援へ。</h3>
-      <p style="font-size:0.84rem;font-weight:500;color:var(--navy);margin-bottom:1.5rem;">Scaled Insight</p>
-      <a href="business.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.82rem;font-weight:500;">法人向けを見る →</a>
+      <p style="text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem">For Business</p>
+      <h3 style="color:var(--navy);margin-bottom:1.2rem">従業員一人ひとりが、<br>自分に合った次の一歩を<br>見つけられる健康支援へ。</h3>
+      <p style="color:var(--navy);margin-bottom:1.5rem">Scaled Insight</p>
+      <a href="business.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none">法人向けを見る →</a>
     </div>
   </div>
 </section>
@@ -711,29 +734,29 @@ body, body * { font-weight: revert; }
       <li>結果説明</li>
     </ul>
     <a href="individuals.html" class="btn-pricing">Healthmap Insightを見る</a>
-    <p style="text-align:center;font-size:0.72rem;color:var(--gray);margin-top:1rem;">※まず無料相談でご自身に合うか確認することもできます。</p>
+    <p style="text-align:center;color:var(--gray);margin-top:1rem">※まず無料相談でご自身に合うか確認することもできます。</p>
   </div>
 
   <!-- Guided Program (Insightの後のオプション) -->
   <div style="max-width:460px;margin:2.5rem auto 0;text-align:center;" class="reveal">
-    <p style="font-size:0.82rem;font-weight:500;color:var(--navy);margin-bottom:1rem;">Insight後、必要な方のみ</p>
-    <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:0.8rem;">Healthmap Guided</p>
+    <p style="color:var(--navy);margin-bottom:1rem">Insight後、必要な方のみ</p>
+    <p style="text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem">Healthmap Guided</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;flex:1;min-width:180px;">
-        <p style="font-size:0.82rem;font-weight:500;color:var(--navy);">3-Month Program</p>
-        <p style="font-size:1.1rem;color:var(--navy);font-weight:400;">¥59,800</p>
-        <p style="font-size:0.7rem;color:var(--text-light);">行動変容の土台づくり</p>
+        <p style="color:var(--navy)">3-Month Program</p>
+        <p style="color:var(--navy)">¥59,800</p>
+        <p style="color:var(--text-light)">行動変容の土台づくり</p>
       </div>
       <div style="background:var(--glass);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;flex:1;min-width:180px;position:relative;">
-        <p style="position:absolute;top:-8px;right:12px;background:var(--accent);color:var(--white);font-size:0.58rem;padding:0.15rem 0.6rem;border-radius:10px;letter-spacing:0.06em;">Recommended</p>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--navy);">6-Month Program</p>
-        <p style="font-size:1.1rem;color:var(--navy);font-weight:400;">¥99,800</p>
-        <p style="font-size:0.7rem;color:var(--text-light);">習慣化と変化の検証</p>
+        <p style="position:absolute;top:-8px;right:12px;background:var(--accent);color:var(--white);padding:0.15rem 0.6rem;border-radius:10px">Recommended</p>
+        <p style="color:var(--navy)">6-Month Program</p>
+        <p style="color:var(--navy)">¥99,800</p>
+        <p style="color:var(--text-light)">習慣化と変化の検証</p>
       </div>
     </div>
   </div>
 
-  <p style="text-align:center;font-size:0.72rem;color:var(--gray);margin-top:2rem;max-width:460px;margin-left:auto;margin-right:auto;">※本サービスは診断・治療・投薬判断を行うものではありません。<br>必要に応じて医療機関への相談をおすすめします。</p>
+  <p style="text-align:center;color:var(--gray);margin-top:2rem;max-width:460px;margin-left:auto;margin-right:auto">※本サービスは診断・治療・投薬判断を行うものではありません。<br>必要に応じて医療機関への相談をおすすめします。</p>
 </section>
 
 <!-- ABOUT -->
@@ -757,22 +780,22 @@ body, body * { font-weight: revert; }
     <p class="s-label" style="color:var(--accent-hero);">Client Voice</p>
   </div>
   <div style="max-width:640px;margin:0 auto 2rem;text-align:center;" class="reveal">
-    <p style="font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:500;color:var(--white);line-height:1.8;margin-bottom:0.8rem;">
+    <p style="color:var(--white);margin-bottom:0.8rem">
       「自分の場合、<br>まず何を変えるべきかが分かる。」
     </p>
-    <p style="font-size:0.78rem;color:rgba(255,255,255,0.45);">30代男性・会社員</p>
+    <p style="color:rgba(255,255,255,0.45)">30代男性・会社員</p>
   </div>
   <div class="voice-support-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:640px;margin:0 auto;" class="reveal">
     <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:1.8rem 1.5rem;backdrop-filter:blur(8px);">
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-bottom:0.8rem;">「なんとなく不調の原因が、<br>データとつながって見えた。」</p>
-      <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);">30代女性・会社員</p>
+      <p style="color:rgba(255,255,255,0.8);margin-bottom:0.8rem">「なんとなく不調の原因が、<br>データとつながって見えた。」</p>
+      <p style="color:rgba(255,255,255,0.4)">30代女性・会社員</p>
     </div>
     <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:1.8rem 1.5rem;backdrop-filter:blur(8px);">
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-bottom:0.8rem;">「根拠があるから、<br>迷わず実践できた。」</p>
-      <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);">20代女性・会社員</p>
+      <p style="color:rgba(255,255,255,0.8);margin-bottom:0.8rem">「根拠があるから、<br>迷わず実践できた。」</p>
+      <p style="color:rgba(255,255,255,0.4)">20代女性・会社員</p>
     </div>
   </div>
-  <p style="text-align:center;font-size:0.68rem;color:rgba(255,255,255,0.3);margin-top:2rem;" class="reveal">※サービス利用者個人の感想です。</p>
+  <p style="text-align:center;color:rgba(255,255,255,0.3);margin-top:2rem" class="reveal">※サービス利用者個人の感想です。</p>
 </section>
 
 <!-- FAQ -->
@@ -848,7 +871,7 @@ body, body * { font-weight: revert; }
 </section>
 
 <footer>
-  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3);font-size:0.65rem">本サービスは診断・治療・投薬判断を目的としたものではありません。必要に応じて医療機関への相談をおすすめします。</span>
+  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3)">本サービスは診断・治療・投薬判断を目的としたものではありません。必要に応じて医療機関への相談をおすすめします。</span>
   <span>© 2026 Healthmap</span>
   <span><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none">プライバシーポリシー</a> | <a href="/legal/" style="color:rgba(255,255,255,0.3);text-decoration:none">特定商取引法に基づく表記</a></span>
 </footer>

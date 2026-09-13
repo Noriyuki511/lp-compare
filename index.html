@@ -24,7 +24,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.02em}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.02em;line-height:var(--lh-body)}
 .emphasis{font-weight:600;color:var(--accent)}
 .accent-word{color:var(--accent);font-weight:600}
 
@@ -49,7 +49,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 /* HERO */
 #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:180px 6% 100px;background:radial-gradient(circle at 72% 38%,rgba(125,184,224,0.22),transparent 34%),radial-gradient(ellipse at 30% 50%,#1a4a7a 0%,#0d2847 40%,#071426 100%)}
 .hero-left{max-width:540px}
-.hero-hook{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.05em;margin-bottom:1.8rem;animation:fadeUp 0.7s ease both;line-height:1.6}
+.hero-hook{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.05em;margin-bottom:1.8rem;animation:fadeUp 0.7s ease both;line-height:1.6}
 .hero-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.55;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
 .hero-title .accent-word{color:var(--accent-hero);font-weight:600}
 .hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
@@ -378,7 +378,7 @@ footer, footer * {
 
 /* Override any remaining font-weight: 400 */
 * { font-weight: unset; }
-body, body * { font-weight: revert; }
+
 
 /* Cormorant ONLY for logo */
 .nav-logo {
@@ -432,8 +432,14 @@ body, body * { font-weight: revert; }
     --fs-disclaimer: 13px;
   }
 }
+
+
+/* === FINAL BODY TYPOGRAPHY === */
+body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
+p, li, td, th, dd, dt, span, div { font-family: inherit; }
+
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>

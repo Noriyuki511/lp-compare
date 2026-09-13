@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healthmap Insight｜自分の身体の現在地を知り、何から始めるかを整理する</title>
-<meta name="description" content="血液・食事・睡眠・活動データをもとに、自分の身体の現在地を知り、「何から始めるか」を整理。Healthmap Insightで身体の「取扱説明書」をつくります。¥29,800（税込）">
+<title>Healthmap Insight｜自分の身体を理解し、次の一歩を決める</title>
+<meta name="description" content="血液・食事・睡眠・活動データを統合解析し、あなたの#1 Priorityを整理。Healthmap Insightで身体の「取扱説明書」をつくります。¥29,800（税込）">
 <link rel="alternate" hreflang="ja" href="https://healthmap.jp/individuals.html">
 <link rel="alternate" hreflang="en" href="https://healthmap.jp/en/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
 --navy:#071426;--navy-light:#122a4a;
@@ -95,7 +92,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .step-card{text-align:center;position:relative}
 .step-card::after{content:'→';position:absolute;right:-1.2rem;top:1.5rem;color:rgba(255,255,255,0.2);font-size:1.2rem}
 .step-card:last-child::after{display:none}
-.step-num{font-size:2.2rem;font-weight:300;color:rgba(125,184,224,0.4);margin-bottom:0.8rem;font-family:'Cormorant Garamond',serif}
+.step-num{font-size:2.2rem;font-weight:400;color:rgba(125,184,224,0.4);margin-bottom:0.8rem;font-family:'Cormorant Garamond',serif}
 .step-name{font-size:0.82rem;font-weight:600;color:var(--accent-hero);margin-bottom:0.4rem;letter-spacing:0.06em}
 .step-title{font-size:0.88rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;line-height:1.6}
 .step-desc{font-size:0.76rem;color:rgba(255,255,255,0.5);line-height:1.9}
@@ -167,7 +164,180 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);paddin
 .story-section{padding:80px 6%}
 footer{flex-direction:column;gap:0.5rem;text-align:center}
 }
+
+/* ===== TYPOGRAPHY NORMALIZATION ===== */
+:root {
+  --font-primary: 'Noto Sans JP', sans-serif;
+  --font-brand: 'Cormorant Garamond', serif;
+  --fs-body: 18px;
+  --fs-body-small: 16px;
+  --fs-caption: 14px;
+  --fs-card-title: 23px;
+  --fs-card-body: 18px;
+  --fs-section-lead: 19px;
+  --fs-section-title: 38px;
+  --fs-hero-lead: 20px;
+  --fs-hero-title: 52px;
+  --fs-table: 16px;
+  --fs-button: 16px;
+  --fs-nav: 15px;
+  --fs-chip: 14px;
+  --fs-disclaimer: 14px;
+  --lh-body: 1.8;
+  --lh-heading: 1.45;
+  --lh-hero: 1.35;
+  --lh-card: 1.8;
+  --lh-table: 1.65;
+}
+
+body {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-body) !important;
+  font-weight: 400 !important;
+  line-height: var(--lh-body) !important;
+  letter-spacing: 0.01em;
+}
+
+/* Section titles */
+.s-title, h2.s-title {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-section-title) !important;
+  font-weight: 600 !important;
+  line-height: var(--lh-heading) !important;
+  letter-spacing: -0.01em;
+}
+
+/* Hero */
+.hero-title, h1 {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-hero-title) !important;
+  font-weight: 600 !important;
+  line-height: var(--lh-hero) !important;
+  letter-spacing: -0.01em;
+}
+
+/* Navigation */
+nav, .nav-links, .nav-links a, .nav-cta {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-nav) !important;
+  font-weight: 500;
+}
+
+/* Card titles */
+.diff-card-title, .value-card-title, .step-title, .advice-card h3,
+.data-card-title, .exp-title, .privacy-card-title,
+.insight-card-title, .step-m-title {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-card-title) !important;
+  font-weight: 600 !important;
+  line-height: 1.5;
+}
+
+/* Card body */
+.diff-card-body, .value-card-body, .step-desc, .advice-data, .advice-conclusion,
+.data-card-desc, .exp-desc, .privacy-card-body,
+.insight-card-desc, .step-m-desc {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-card-body) !important;
+  font-weight: 400 !important;
+  line-height: var(--lh-card) !important;
+}
+
+/* Section lead / body */
+.s-body, .section-lead {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-section-lead) !important;
+  font-weight: 400 !important;
+  line-height: var(--lh-body) !important;
+}
+
+/* Buttons */
+.btn-primary, .btn-outline, .btn-pricing, .cta-btn, a[class*="btn"] {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-button) !important;
+  font-weight: 600 !important;
+}
+
+/* Tables */
+.compare-table th, .compare-table td,
+table th, table td {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-table) !important;
+  line-height: var(--lh-table);
+}
+.compare-table th, table th {
+  font-weight: 600;
+}
+
+/* FAQ */
+.faq-q {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-body) !important;
+  font-weight: 500 !important;
+}
+.faq-a {
+  font-family: var(--font-primary) !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: var(--lh-body) !important;
+}
+
+/* Labels / chips */
+.s-label, .diff-card-label, .chip {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-chip) !important;
+  font-weight: 600;
+}
+
+/* Disclaimer */
+.disclaimer, [class*="disclaimer"] {
+  font-size: var(--fs-disclaimer) !important;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Footer */
+footer, footer * {
+  font-family: var(--font-primary) !important;
+}
+
+/* Override any remaining font-weight: 400 */
+* { font-weight: unset; }
+body, body * { font-weight: revert; }
+
+/* Cormorant ONLY for logo */
+.nav-logo {
+  font-family: var(--font-brand) !important;
+}
+
+/* Responsive */
+@media (max-width: 1199px) and (min-width: 768px) {
+  :root {
+    --fs-hero-title: 42px;
+    --fs-section-title: 32px;
+    --fs-body: 17px;
+    --fs-card-title: 21px;
+    --fs-card-body: 17px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --fs-hero-title: 34px;
+    --fs-hero-lead: 18px;
+    --fs-section-title: 28px;
+    --fs-body: 16px;
+    --fs-card-title: 20px;
+    --fs-card-body: 16px;
+    --fs-table: 15px;
+    --fs-disclaimer: 13px;
+  }
+}
+/* ===== END TYPOGRAPHY NORMALIZATION ===== */
+
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -212,33 +382,33 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   <div class="story-center reveal">
     <p class="s-label">What's Included</p>
     <h2 class="s-title">Healthmap Insightに含まれるもの</h2>
-    <p class="s-body">血液検査の結果と、睡眠・食事・活動量などのデータを統合。<br>あなたの現在地と「何から始めるか」を整理します。</p>
+    <p class="s-body">血液検査の結果と、睡眠・食事・活動量などのデータを統合。<br>あなたの現在地と「何から始めるか」を1枚に整理します。</p>
   </div>
   <div class="includes-grid reveal">
     <div class="include-card">
       <div class="icon">📊</div>
       <h3>統合解析</h3>
-      <p>血液・食事・睡眠・活動などの<br>データを、AI分析支援ツールで<br>多角的に整理。</p>
+      <p>血液・生活データを<br>AI分析支援ツールで<br>多角的に整理</p>
     </div>
     <div class="include-card">
       <div class="icon">📍</div>
       <h3>現在地の理解</h3>
-      <p>今の身体を、<br>複数のデータから<br>一緒に見ていきます。</p>
+      <p>栄養バランス・睡眠・<br>活動の状態を<br>視覚的に把握</p>
     </div>
     <div class="include-card">
       <div class="icon">🎯</div>
       <h3>優先順位の整理</h3>
-      <p>「全部やる」ではなく、<br>自分の場合、何から<br>始めるかを明確に。</p>
+      <p>自分の場合、<br>何から取り組むかを<br>明確に</p>
     </div>
     <div class="include-card">
       <div class="icon">📋</div>
       <h3>Priority Action Plan</h3>
-      <p>日常に落とし込める<br>具体的な次の一歩に<br>変換。</p>
+      <p>日常に落とし込んだ<br>具体的な<br>行動プラン</p>
     </div>
     <div class="include-card">
       <div class="icon">💬</div>
       <h3>結果説明</h3>
-      <p>カウンセラーが<br>分析結果を解釈し、<br>優先順位と行動プランをご説明。</p>
+      <p>カウンセラーが<br>結果と次の一歩を<br>丁寧にご説明</p>
     </div>
   </div>
   <p style="font-size:0.72rem;color:var(--gray);margin-top:2.5rem;text-align:center;line-height:1.8" class="reveal">※医療機関監修のAI分析支援ツール（8weeks.ai）を活用。診断・治療・投薬判断は行いません。</p>
@@ -267,13 +437,13 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
       <div class="step-num">03</div>
       <div class="step-name">ACT</div>
       <div class="step-title">一つ実行する</div>
-      <div class="step-desc">Priority Action Planをもとに、ご自身でまず一つの行動から始めます。</div>
+      <div class="step-desc">Priority Action Planに基づき、まず1つだけ。小さな変化から始めます。</div>
     </div>
     <div class="step-card">
       <div class="step-num">04</div>
       <div class="step-name">REVIEW</div>
-      <div class="step-title">必要に応じて変化を確認する</div>
-      <div class="step-desc">継続的なサポートを希望する方は、Guided Programでデータを確認しながら優先順位を見直していきます。</div>
+      <div class="step-title">変化を確認する</div>
+      <div class="step-desc">データで変化を確認し、必要に応じて調整。Guidedプログラムで継続的な伴走も可能です。</div>
     </div>
   </div>
 </section>
@@ -289,17 +459,27 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <div class="advice-card">
       <div class="advice-icon">😴</div>
       <h3>「食事より、まず睡眠から。」</h3>
-      <p class="advice-data">データ：睡眠リズムやストレス負荷に見直す余地があることを示唆。</p>
+      <p class="advice-data">データ：睡眠リズムとストレス負荷に見直す余地があることを示唆。</p>
       <p class="advice-conclusion">Priority：まず睡眠環境を整える。<br><strong>午後のカフェインを控え、23時台の就寝を目指す。</strong></p>
     </div>
-
+    <div class="advice-card">
+      <div class="advice-icon">🍂</div>
+      <h3>「季節の不調は、腸とビタミンDに見直す余地があった。」</h3>
+      <p class="advice-data">データ：秋冬のビタミンD値低下と腸内環境の関連を示唆。</p>
+      <p class="advice-conclusion">Priority：日光浴の習慣と、<br><strong>発酵食品を1日1品追加する。</strong></p>
+    </div>
     <div class="advice-card">
       <div class="advice-icon">🏃</div>
-      <h3>「運動量は十分。まず、回復の取り方も見直す。」</h3>
-      <p class="advice-data">データ：活動量に対して、休息や睡眠にも見直すポイントがあることを示唆。</p>
-      <p class="advice-conclusion">Priority：運動量を増やす前に、回復の時間を確保する。<br><strong>意識的に休息日を設ける。</strong></p>
+      <h3>「運動量は十分。回復が追いついていない。」</h3>
+      <p class="advice-data">データ：活動量は高いが、回復指標に改善の余地を確認。</p>
+      <p class="advice-conclusion">Priority：トレーニング量を増やすのではなく、<br><strong>休息日の質を高める。</strong></p>
     </div>
-
+    <div class="advice-card">
+      <div class="advice-icon">🩸</div>
+      <h3>「鉄は足りている。問題は吸収の方。」</h3>
+      <p class="advice-data">データ：鉄の摂取量は十分だが、吸収効率に影響する要因を確認。</p>
+      <p class="advice-conclusion">Priority：鉄のサプリを増やす前に、<br><strong>食べ合わせとタイミングを見直す。</strong></p>
+    </div>
   </div>
   <p style="font-size:0.72rem;color:var(--gray);margin-top:2rem;text-align:center;line-height:1.8" class="reveal">※実際のアドバイスは個人のデータに基づきます。上記は一例です。</p>
 </section>
@@ -308,8 +488,8 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <section class="story-section bg-off">
   <div class="story-center reveal">
     <p class="s-label">Guided Program</p>
-    <h2 class="s-title">Insightの後、<br>継続的な伴走を希望する方へ。</h2>
-    <p class="s-body">まずはInsightで、身体の現在地とPriorityを理解。<br>その後、継続的なサポートを希望する方だけが<br>Guided Programを選択できます。</p>
+    <h2 class="s-title">Insightの後、<br>さらに伴走が必要な方へ。</h2>
+    <p class="s-body">Insightで現在地と優先順位を理解した後、<br>継続的なサポートが必要な方のためのプログラムです。<br>Weekly ReportとOne Actionで、行動を定着させます。</p>
   </div>
   <div class="guided-grid reveal">
     <div class="guided-card">
@@ -320,12 +500,12 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
       </div>
       <p class="g-tax">（税込）</p>
       <ul class="g-features">
+        <li>Insight（¥29,800）込み</li>
         <li>Weekly Report</li>
         <li>毎週のOne Action</li>
         <li>定期的なデータレビュー</li>
         <li>カウンセラーとのフィードバック</li>
       </ul>
-      <p style="font-size:0.65rem;color:var(--gray);margin-top:0.5rem">※Healthmap Insightとは別料金です。</p>
     </div>
     <div class="guided-card recommended">
       <div class="duration">6 Months</div>
@@ -335,13 +515,13 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
       </div>
       <p class="g-tax">（税込）</p>
       <ul class="g-features">
+        <li>Insight（¥29,800）込み</li>
         <li>Weekly Report</li>
         <li>毎週のOne Action</li>
         <li>定期的なデータレビュー</li>
         <li>カウンセラーとのフィードバック</li>
         <li>優先順位の再評価・調整</li>
       </ul>
-      <p style="font-size:0.65rem;color:var(--gray);margin-top:0.5rem">※Healthmap Insightとは別料金です。</p>
     </div>
   </div>
   <p style="font-size:0.72rem;color:var(--gray);margin-top:2.5rem;text-align:center;line-height:1.8" class="reveal">「Insightで価値を実感し、必要な方だけがGuidedへ」</p>
@@ -351,10 +531,17 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
 <section class="story-section bg-white">
   <div class="story-center reveal">
     <p class="s-label">Sample Report</p>
-    <h2 class="s-title">あなたの<span class="accent-word">健康地図</span></h2>
-    <p class="s-body">あなたのデータを、「何から整えるか」が分かる形に。<br>Healthmapは、データを並べるだけではありません。<br>現在地と優先順位を整理し、行動につながる「健康地図」にします。</p>
+    <h2 class="s-title">あなたの<span class="accent-word">健康地図</span>（サンプル）</h2>
+    <p class="s-body">これは実際に提供している内容の一部です。<br>自分にとって何を優先するかが、一目で分かります。</p>
   </div>
-
+  <div class="sample-pages reveal">
+    <div class="sample-page-card">
+      <img src="report_page1.png" alt="健康地図サンプル - 表紙" loading="lazy">
+    </div>
+    <div class="sample-page-card">
+      <img src="report_page2.png" alt="健康地図サンプル - 総合評価サマリー" loading="lazy">
+    </div>
+  </div>
   <div style="text-align:center;margin-top:2.5rem" class="reveal">
     <a href="sample-report.pdf" target="_blank" class="btn-consult">実際の健康地図を見る</a>
     <p style="font-size:0.7rem;color:var(--gray);margin-top:1rem">※サンプルPDFが開きます</p>
@@ -368,7 +555,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
     <h3>Healthmapが<br>自分に合うか相談する</h3>
     <p>現在のお悩みや、<br>お持ちの健康データについて伺い、<br>Healthmap Insightが<br>ご自身に合うサービスかをご案内します。</p>
     <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-consult" target="_blank" rel="noopener">自分に合うか相談する</a>
-    <p style="font-size:0.68rem;color:var(--gray);margin-top:1.5rem;line-height:1.8">※無料相談はサービス適合の確認です。<br>統合解析、Priority Action Plan、Your Health Map、<br>結果説明は有料のHealthmap Insightに含まれます。</p>
+    <p style="font-size:0.68rem;color:var(--gray);margin-top:1.5rem;line-height:1.8">※無料相談はサービス適合の確認です。<br>Insight（統合解析・Priority Action Plan等）は有料サービスです。</p>
   </div>
 </section>
 

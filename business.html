@@ -289,7 +289,7 @@ footer, footer * {
 
 /* Override any remaining font-weight: 400 */
 * { font-weight: unset; }
-body, body * { font-weight: revert; }
+
 
 /* Cormorant ONLY for logo */
 .nav-logo {
@@ -344,9 +344,11 @@ body, body * { font-weight: revert; }
   }
 }
 
+
 /* === FINAL BODY TYPOGRAPHY === */
-body { font-family: 'Noto Sans JP', sans-serif; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
-p, li, td, th, dd, dt { font-family: inherit; }
+body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
+p, li, td, th, dd, dt, span, div { font-family: inherit; }
+
 </style>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -415,52 +417,46 @@ p, li, td, th, dd, dt { font-family: inherit; }
 </div>
 
 <!-- ③ COMPARISON -->
-<section class="section bg-off">
-  <div class="section-inner">
-    <h2 class="section-title">健康支援は、<br>目的によって選ぶ。</h2>
-    <p class="section-lead">それぞれのサービスには、得意な役割があります。<br>Healthmapは、日々の健康管理や組織管理を置き換えるものではありません。</p>
-    <div class="compare-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>比較ポイント</th>
-            <th>健康アプリ</th>
-            <th>健康経営・組織管理</th>
-            <th>Healthmap</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>主な目的</td>
-            <td>日々の健康習慣を支援</td>
-            <td>組織状態を把握し、施策につなげる</td>
-            <td>一人ひとりの優先順位を明確にする</td>
-          </tr>
-          <tr>
-            <td>個別化</td>
-            <td>行動・ライフログ等をもとに提供</td>
-            <td>組織・属性・状態等をもとに活用</td>
-            <td>血液＋食事＋睡眠＋活動から<br>#1 Priority を設計</td>
-          </tr>
-          <tr>
-            <td>本人への価値</td>
-            <td>情報・継続的なアドバイス</td>
-            <td>セルフケア・組織施策</td>
-            <td>「自分の場合、まずここから」が分かる</td>
-          </tr>
-          <tr>
-            <td>企業との関係</td>
-            <td>サービスにより異なる</td>
-            <td>組織分析に活用するサービスもある</td>
-            <td>本人がOPT-IN。<br>個人結果は企業へ共有しない</td>
-          </tr>
-        </tbody>
-      </table>
+<section style="padding:80px 0;background:var(--off-white, #F7F9FB);">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px;" class="reveal">
+    <h2 style="font-size:var(--fs-section-title, 38px);font-weight:600;line-height:1.45;text-align:center;color:var(--navy, #071426);margin-bottom:1rem;">健康支援は、<br>目的によって選ぶ。</h2>
+    <p style="font-size:var(--fs-section-lead, 19px);text-align:center;color:var(--text-light, #556275);max-width:600px;margin:0 auto 3rem;line-height:1.8;">それぞれのサービスには、得意な役割があります。</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:2.5rem;">
+      <div style="background:#fff;border:1px solid var(--border, #E5EAF0);border-radius:12px;padding:28px 20px;text-align:center;">
+        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">日々の習慣を支える</p>
+        <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">健康アプリ・PHR</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">記録や継続的な情報提供で、<br>日々の健康行動を支援。</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border, #E5EAF0);border-radius:12px;padding:28px 20px;text-align:center;">
+        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">健康管理を<br>専門家に任せる</p>
+        <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">パーソナルドクター・<br>予防医療型サービス</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">医師や専門チームが、<br>検査・相談・継続的な<br>健康管理を支援。</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border, #E5EAF0);border-radius:12px;padding:28px 20px;text-align:center;">
+        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">組織全体を把握する</p>
+        <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">健康経営・<br>組織管理サービス</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">組織の状態を可視化し、<br>企業施策や<br>マネジメントにつなげる。</p>
+      </div>
+      <div style="background:rgba(21,84,209,0.04);border:2px solid var(--accent, #1554D1);border-radius:12px;padding:28px 20px;text-align:center;">
+        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">自分を理解し、<br>優先順位を決める</p>
+        <p style="font-size:14px;font-weight:600;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">Healthmap</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">血液＋生活データから、<br>本人の「#1 Priority」<br>を明確にする。</p>
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+          <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(21,84,209,0.08);padding:4px 10px;border-radius:20px;">Priority</span>
+          <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(21,84,209,0.08);padding:4px 10px;border-radius:20px;">OPT-IN</span>
+          <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(21,84,209,0.08);padding:4px 10px;border-radius:20px;">Private</span>
+        </div>
+      </div>
     </div>
-    <p class="compare-note">Healthmapは、健康管理ツールでも組織管理システムでもありません。<br>一人ひとりが「自分の場合、何から始めるか」を理解することに特化しています。</p>
-    <p class="compare-note" style="margin-top:0.8rem">※上記は各サービスカテゴリーの一般的な特徴を整理したものです。具体的な機能・データの取り扱いはサービスごとに異なります。</p>
+    <p style="text-align:center;font-size:14px;color:var(--text-light, #556275);line-height:1.7;max-width:600px;margin:0 auto;">※各カテゴリーには、それぞれ異なる役割と強みがあります。<br>具体的な機能・提供範囲はサービスごとに異なります。</p>
   </div>
 </section>
+
+<!-- STRONG DIFFERENCE -->
+<div style="max-width:780px;margin:0 auto;padding:48px 24px;text-align:center;" class="reveal">
+  <p style="font-size:18px;color:var(--text-light, #556275);line-height:1.8;margin-bottom:0.5rem;">Healthmapは、健康管理を「任せる」ためのサービスでも、<br>組織を「管理する」ためのサービスでもありません。</p>
+  <p style="font-size:24px;font-weight:600;color:var(--navy, #071426);line-height:1.5;">一人ひとりが、自分を理解し、<br>「自分の場合、何から始めるか」を決めるためのサービスです。</p>
+</div>
 
 <!-- ④ IMPLEMENTATION FLOW -->
 <section class="section bg-white">
@@ -491,6 +487,11 @@ p, li, td, th, dd, dt { font-family: inherit; }
 </section>
 
 <!-- ⑤ EMPLOYEE CHOICE -->
+
+<!-- EMPLOYER OPPORTUNITY -->
+<div style="max-width:700px;margin:0 auto;padding:32px 24px;text-align:center;" class="reveal">
+  <p style="font-size:19px;color:var(--navy, #071426);line-height:1.8;font-weight:500;">企業は、健康結果を見るのではなく、<br>従業員が自分に必要な支援を選べる「機会」を提供する。</p>
+</div>
 <section class="section bg-off">
   <div class="section-inner">
     <h2 class="section-title">全員に同じ支援ではなく、<br>必要な人が、自分で選ぶ。</h2>

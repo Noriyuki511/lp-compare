@@ -428,6 +428,8 @@ footer {
 
 /* === MOBILE RESPONSIVE FIXES === */
 @media (max-width: 767px) {
+  /* Hero heading: hide forced br on mobile to allow balanced wrapping */
+  h1 br { display: none; }
   /* Section spacing: 60px uniform */
   .story-section { padding: 60px 6% !important; }
   .page-hero { padding: 110px 6% 60px !important; }

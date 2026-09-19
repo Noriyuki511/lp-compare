@@ -307,6 +307,8 @@ footer, footer * {
   }
 }
 @media (max-width: 767px) {
+  /* Hero heading: hide forced br on mobile to allow balanced wrapping */
+  h1 br { display: none; }
   :root {
     --fs-hero-title: 34px;
     --fs-hero-lead: 18px;

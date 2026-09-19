@@ -22,6 +22,11 @@
 --shadow-md:0 4px 24px rgba(7,20,38,0.07);
 --shadow-lg:0 8px 40px rgba(7,20,38,0.09);
 --radius:16px;--radius-sm:12px;
+--fs-label:14px;
+--fs-hero:clamp(2rem,4.5vw,3.25rem);
+--fs-h2:clamp(1.5rem,3vw,2.375rem);
+--lh-h2:1.35;
+--fs-btn:16px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -51,9 +56,9 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:180px 6% 100px;background:radial-gradient(circle at 72% 38%,rgba(125,184,224,0.22),transparent 34%),radial-gradient(ellipse at 30% 50%,#1a4a7a 0%,#0d2847 40%,#071426 100%)}
 .hero-left{max-width:540px}
 .hero-hook{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.05em;margin-bottom:1.8rem;animation:fadeUp 0.7s ease both;line-height:1.6}
-.hero-title{font-family:'Inter',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.55;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
+.hero-title{font-family:'Inter',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.35;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
 .hero-title .accent-word{color:var(--accent-hero);font-weight:600}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.24s both}
 .btn-primary{background:var(--white);color:var(--navy);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:16px;font-weight:500;transition:all 0.25s;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
 .btn-primary:hover{background:#f0f4f8;transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.2)}
@@ -91,9 +96,9 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 
 /* Section titles */
 .s-label{font-size:14px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
-.s-title{font-family:'Inter',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
+.s-title{font-family:'Inter',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.35;letter-spacing:0.01em;margin-bottom:1.8rem}
 .s-title.white{color:var(--white)}
-.s-body{font-size:16px;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+.s-body{font-size:16px;color:var(--text-light);line-height:1.75;margin-bottom:2rem}
 .s-body.white{color:rgba(255,255,255,0.6)}
 
 /* Connector - bridges between sections */
@@ -117,7 +122,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 
 /* SERVICE - minimal */
 .service-core{max-width:580px;margin:0 auto}
-.service-core p{font-size:16px;line-height:2.3;color:var(--text-light);margin-bottom:1.5rem}
+.service-core p{font-size:16px;line-height:1.75;color:var(--text-light);margin-bottom:1.5rem}
 .service-inline-compare{font-size:16px;color:var(--gray);line-height:2;padding:1.2rem 1.5rem;border-left:3px solid var(--gray-light);margin:2rem 0}
 
 /* HOW - minimal 3 steps */
@@ -228,11 +233,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);paddin
 .report-items{grid-template-columns:1fr}
 .sample-pages{grid-template-columns:1fr;max-width:400px}
 .advice-grid{grid-template-columns:1fr}
-.story-section{padding:80px 6%}
+.story-section{padding:60px 6%}
 .connector{padding:40px 6%}
-footer{flex-direction:column;gap:0.5rem;text-align:center}
+footer{flex-direction:column;gap:0.8rem;text-align:center;padding:2rem 20px}
+footer span{display:block}
 .story-wide table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
-
 .two-audience-grid{grid-template-columns:1fr!important}
 .voice-support-grid{grid-template-columns:1fr!important}
 }
@@ -373,8 +378,7 @@ footer, footer * {
   font-family: var(--font-primary) !important;
 }
 
-/* Override any remaining font-weight: 400 */
-* { font-weight: unset; }
+/* font-weight managed per element */
 
 
 /* Cormorant ONLY for logo */
@@ -407,33 +411,16 @@ footer, footer * {
 /* ===== END TYPOGRAPHY NORMALIZATION ===== */
 
 
-/* === TYPOGRAPHY RESPONSIVE === */
-@media (min-width: 768px) and (max-width: 1199px) {
-  :root {
-    --fs-hero-title: 42px;
-    --fs-section-title: 32px;
-    --fs-body: 17px;
-    --fs-card-title: 21px;
-    --fs-card-body: 17px;
-  }
-}
-@media (max-width: 767px) {
-  :root {
-    --fs-hero-title: 34px;
-    --fs-hero-lead: 18px;
-    --fs-section-title: 28px;
-    --fs-body: 16px;
-    --fs-card-title: 20px;
-    --fs-card-body: 16px;
-    --fs-table: 15px;
-    --fs-disclaimer: 13px;
-  }
-}
+
 
 
 /* === FINAL BODY TYPOGRAPHY === */
-body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
+html { overflow-x: hidden; }
+body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); overflow-x: hidden; word-break: normal; }
 p, li, td, th, dd, dt, span, div { font-family: inherit; }
+p, .s-body, .section-lead { text-wrap: pretty; }
+h1, h2, h3, .s-title, .hero-title { text-wrap: balance; }
+.btn-primary, .btn-outline, .btn-pricing, .cta-btn, a[class*="btn"], .nav-cta { white-space: nowrap; }
 
 </style>
 
@@ -468,7 +455,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div style="max-width:900px;margin:0 auto;position:relative;z-index:1">
     <p style="font-family:'Cormorant Garamond',serif;font-size:var(--fs-label);font-weight:500;letter-spacing:0.15em;color:var(--accent-hero);margin-bottom:18px">HEALTHMAP FOR BUSINESS</p>
     <h1 style="font-size:var(--fs-hero);font-weight:600;line-height:var(--lh-hero);margin-bottom:24px">A different next step<br>for every employee.</h1>
-    <p style="font-size:var(--fs-body);line-height:var(--lh-body);color:rgba(255,255,255,0.82);max-width:640px;margin:0 auto 40px">Not a one-size-fits-all wellness program.<br>Each person receives their own #1 Priority &mdash; based on their data, interpreted by a professional.</p>
+    <p style="font-size:var(--fs-body);line-height:var(--lh-body);color:rgba(255,255,255,0.82);max-width:640px;margin:0 auto 40px">Not a one-size-fits-all wellness program. Each person receives their own #1 Priority &mdash; based on their data, interpreted by a professional.</p>
     <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:48px">
       <div style="text-align:center">
         <p style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;color:var(--accent-hero);letter-spacing:0.12em;margin-bottom:4px">PRIORITY</p>
@@ -667,13 +654,30 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 
 <!-- Responsive overrides for Business page -->
 <style>
+/* Tablet: 2 columns for roles */
 @media(max-width:900px){
   .biz-cards-grid{grid-template-columns:1fr !important}
-  .biz-roles-grid{grid-template-columns:1fr !important}
+  .biz-roles-grid{grid-template-columns:1fr 1fr !important}
   .biz-steps-grid{grid-template-columns:repeat(2,1fr) !important}
 }
+/* Mobile: 1 column for everything */
 @media(max-width:600px){
+  .biz-roles-grid{grid-template-columns:1fr !important}
   .biz-steps-grid{grid-template-columns:1fr !important}
+}
+/* Mobile hero & section spacing */
+@media(max-width:767px){
+  .hero{padding:110px 20px 60px !important}
+  section[style*="padding:100px"]{padding-top:60px !important;padding-bottom:60px !important}
+  section[style*="padding:80px"]{padding-top:48px !important;padding-bottom:48px !important}
+  .cta-btn{width:100%;max-width:340px;text-align:center !important;padding:16px 24px !important}
+  footer{padding:2rem 20px !important;flex-direction:column !important;gap:0.8rem !important;text-align:center !important}
+  footer span{display:block}
+}
+/* Fine mobile: 390px and below */
+@media(max-width:430px){
+  section[style*="padding"]{padding-left:20px !important;padding-right:20px !important}
+  .biz-cards-grid>div, .biz-roles-grid>div, .biz-steps-grid>div{padding:32px 20px !important}
 }
 </style>
 

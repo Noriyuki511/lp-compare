@@ -27,7 +27,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-inner{max-width:780px;margin:0 auto}
 .hero-label{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2rem}
 .hero-problem{font-size:18px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2.5rem}
-.hero h1{font-size:2.5rem;font-weight:400;line-height:1.4;margin-bottom:1.5rem;letter-spacing:-0.01em}
+.hero h1{font-size:2.5rem;font-weight:400;line-height:1.35;margin-bottom:1.5rem;letter-spacing:-0.01em}
 .hero-body{font-size:18px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:0.8rem;max-width:620px;margin-left:auto;margin-right:auto}
 .hero-privacy{font-size:16px;color:rgba(255,255,255,0.55);margin-bottom:2.5rem}
 .hero-cta{display:inline-block;background:#fff;color:#071426;padding:0.85rem 2.2rem;border-radius:6px;font-size:18px;font-weight:500;transition:transform 0.2s}
@@ -38,7 +38,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* ===== SECTIONS ===== */
 .section{padding:88px 2rem}
 .section-inner{max-width:1140px;margin:0 auto}
-.section-title{font-size:36px;font-weight:400;line-height:1.5;text-align:center;margin-bottom:0.8rem;color:#071426}
+.section-title{font-size:36px;font-weight:400;line-height:1.4;text-align:center;margin-bottom:0.8rem;color:#071426}
 .section-lead{font-size:18px;color:#556275;text-align:center;line-height:1.8;max-width:680px;margin:0 auto 3rem}
 .bg-white{background:#fff}
 .bg-off{background:#F7F9FB}
@@ -320,8 +320,46 @@ footer, footer * {
 }
 /* ===== END TYPOGRAPHY NORMALIZATION ===== */
 
+/* === RESPONSIVE POLISH === */
 
-/* === TYPOGRAPHY RESPONSIVE === */
+/* Typography wrapping */
+h1, h2, h3, .section-title, .diff-title, .cta-final h2 {
+  text-wrap: balance;
+}
+body, p, .section-lead, .diff-body, .step-title, .step-sub {
+  text-wrap: pretty;
+}
+body {
+  line-break: strict;
+  word-break: normal;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Button no-wrap */
+.hero-cta, .cta-primary, .cta-secondary, .nav-cta, a[class*="btn"], a[class*="cta"] {
+  white-space: nowrap;
+}
+
+/* Section spacing normalization */
+.section {
+  padding: 100px 2rem;
+}
+.pos-band {
+  padding: 56px 2rem;
+}
+
+/* Comparison grid - ensure responsive */
+.comparison-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Tablet: 768-1199 */
 @media (min-width: 768px) and (max-width: 1199px) {
   :root {
     --fs-hero-title: 42px;
@@ -330,24 +368,307 @@ footer, footer * {
     --fs-card-title: 21px;
     --fs-card-body: 17px;
   }
+  .section {
+    padding: 80px 2rem;
+  }
+  .diff-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .diff-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
+
+/* Mobile: <=767px */
 @media (max-width: 767px) {
   :root {
     --fs-hero-title: 34px;
     --fs-hero-lead: 18px;
-    --fs-section-title: 28px;
+    --fs-section-title: 26px;
     --fs-body: 16px;
     --fs-card-title: 20px;
     --fs-card-body: 16px;
     --fs-table: 15px;
     --fs-disclaimer: 13px;
   }
+  
+  /* Section spacing mobile */
+  .section {
+    padding: 60px 1.25rem;
+  }
+  .pos-band {
+    padding: 40px 1.25rem;
+  }
+  .cta-final {
+    padding: 64px 1.25rem;
+  }
+  
+  /* Hero mobile */
+  .hero {
+    padding: 100px 1.25rem 64px;
+  }
+  .hero h1 {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    line-height: 1.4;
+  }
+  .hero-body {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  .hero-problem {
+    font-size: 16px;
+  }
+  
+  /* Diff cards mobile → 1 col */
+  .diff-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .diff-card {
+    padding: 24px 20px;
+  }
+  
+  /* Steps mobile → 1 col */
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .step-card {
+    padding: 20px 16px;
+    text-align: left;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-size: 32px;
+    flex-shrink: 0;
+    min-width: 48px;
+  }
+  .step-title {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .step-sub {
+    font-size: 14px;
+  }
+  
+  /* Choice flow mobile → vertical */
+  .choice-flow {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .choice-arrow {
+    transform: rotate(90deg);
+  }
+  .choice-item {
+    min-width: unset;
+    width: 100%;
+  }
+  
+  /* CTAs mobile */
+  .hero-cta {
+    display: block;
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    font-size: 16px;
+  }
+  .cta-primary {
+    display: block;
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 1rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 16px;
+  }
+  .cta-secondary {
+    display: block;
+    text-align: center;
+  }
+  .cta-final h2 {
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
+  }
+  
+  /* Nav mobile */
+  nav {
+    padding: 0 1rem;
+    height: 56px;
+  }
+  .nav-links {
+    display: none;
+  }
+  
+  /* Section titles mobile */
+  .section-title {
+    font-size: clamp(1.4rem, 6vw, 1.75rem);
+    line-height: 1.45;
+  }
+  .section-lead {
+    font-size: 16px;
+  }
+  
+  /* Pos band mobile */
+  .pos-large {
+    font-size: 16px;
+  }
+  .pos-highlight {
+    font-size: 24px;
+  }
+  .pos-small {
+    font-size: 15px;
+  }
+  
+  /* Founder mobile */
+  .founder-block {
+    padding: 2rem 0.5rem 0;
+  }
+  
+  /* Footer mobile */
+  footer {
+    padding: 1.5rem 1.25rem;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  footer span {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* Tiny mobile: <=375px */
+@media (max-width: 375px) {
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+  .section-title {
+    font-size: 1.35rem;
+  }
+  .cta-final h2 {
+    font-size: 1.4rem;
+  }
+  .hero-cta, .cta-primary {
+    font-size: 15px;
+    padding: 0.75rem 1.2rem;
+  }
+  .pos-highlight {
+    font-size: 22px;
+  }
+}
+
+/* Body typography finalization */
+body {
+  font-family: 'Noto Sans JP', sans-serif !important;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+}
+p, li, td, th, dd, dt, span, div {
+  font-family: inherit;
 }
 
 
-/* === FINAL BODY TYPOGRAPHY === */
-body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
-p, li, td, th, dd, dt, span, div { font-family: inherit; }
+/* 4-category comparison grid responsive */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .compare-category-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 767px) {
+  .compare-category-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .compare-category-grid > div {
+    padding: 24px 20px !important;
+  }
+}
+
+/* Comparison section responsive */
+@media (max-width: 767px) {
+  .compare-section {
+    padding: 60px 0 !important;
+  }
+  .compare-section > div {
+    padding: 0 20px !important;
+  }
+  .compare-section h2 {
+    font-size: clamp(1.4rem, 6vw, 1.75rem) !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* Strong difference responsive */
+@media (max-width: 767px) {
+  .strong-diff {
+    padding: 32px 20px !important;
+  }
+  .strong-diff p[style*="font-size:24px"] {
+    font-size: 20px !important;
+  }
+  .strong-diff p[style*="font-size:18px"] {
+    font-size: 15px !important;
+  }
+}
+
+/* Employer opportunity responsive */
+@media (max-width: 767px) {
+  .employer-opp {
+    padding: 24px 20px !important;
+  }
+  .employer-opp p {
+    font-size: 16px !important;
+  }
+}
+
+/* Pilot CTA responsive */
+@media (max-width: 767px) {
+  .pilot-cta {
+    display: block !important;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    font-size: 16px;
+  }
+}
+
+/* Hero chips responsive */
+@media (max-width: 767px) {
+  .hero-chips {
+    gap: 0.8rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-chip {
+    font-size: 13px;
+  }
+}
+
+/* Minimum tap target for CTAs */
+.hero-cta, .cta-primary, .nav-cta, .pilot-cta {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-links a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
 
 </style>
 
@@ -371,9 +692,9 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-label">Healthmap for Business</p>
-    <p class="hero-problem">健診も、福利厚生もある。<br>それでも、「自分は何をすればいいか」分からない人がいる。</p>
+    <p class="hero-problem">健診も、福利厚生もある。それでも、「自分は何をすればいいか」分からない人がいる。</p>
     <h1>一人ひとりに、<br>違う「次の一歩」を。</h1>
-    <p class="hero-body">Healthmapは、血液・食事・睡眠・活動を横断して、<br>従業員一人ひとりの「何から始めるか」を整理する<br>パーソナライズ型の健康支援です。</p>
+    <p class="hero-body">Healthmapは、血液・食事・睡眠・活動を横断して、従業員一人ひとりの「何から始めるか」を整理するパーソナライズ型の健康支援です。</p>
     <p class="hero-privacy">本人が選んで利用し、個人の分析結果は企業に共有しません。</p>
     <a href="#business-form" class="hero-cta">法人導入・Pilotについて相談する</a>
     <div class="hero-chips">
@@ -393,17 +714,17 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
       <div class="diff-card primary">
         <p class="diff-label">#1 Priority</p>
         <h3 class="diff-title">優先順位まで、<br>一人ひとりにパーソナライズ。</h3>
-        <p class="diff-body">血液・食事・睡眠・活動を横断し、<br>「あなたの場合、まずここから」まで整理します。</p>
+        <p class="diff-body">血液・食事・睡眠・活動を横断し、「あなたの場合、まずここから」まで整理します。</p>
       </div>
       <div class="diff-card">
         <p class="diff-label">本人主体</p>
         <h3 class="diff-title">本人が、<br>自分で選ぶ。</h3>
-        <p class="diff-body">HealthmapはOPT-IN型。<br>必要と感じた従業員が、<br>自分の意思で利用します。</p>
+        <p class="diff-body">HealthmapはOPT-IN型。必要と感じた従業員が、自分の意思で利用します。</p>
       </div>
       <div class="diff-card">
         <p class="diff-label">Privacy</p>
         <h3 class="diff-title">個人を管理せずに、<br>個別化する。</h3>
-        <p class="diff-body">健康データ、分析結果、相談内容は、<br>企業に共有しません。</p>
+        <p class="diff-body">健康データ、分析結果、相談内容は、企業に共有しません。</p>
       </div>
     </div>
   </div>
@@ -417,30 +738,30 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 </div>
 
 <!-- ③ COMPARISON -->
-<section style="padding:80px 0;background:var(--off-white, #F7F9FB);">
+<section class="compare-section" style="padding:80px 0;background:var(--off-white, #F7F9FB);">
   <div style="max-width:1140px;margin:0 auto;padding:0 24px;" class="reveal">
     <h2 style="font-size:var(--fs-section-title, 38px);font-weight:600;line-height:1.45;text-align:center;color:var(--navy, #071426);margin-bottom:1rem;">健康支援は、<br>目的によって選ぶ。</h2>
     <p style="font-size:var(--fs-section-lead, 19px);text-align:center;color:var(--text-light, #556275);max-width:600px;margin:0 auto 3rem;line-height:1.8;">それぞれのサービスには、得意な役割があります。</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:2.5rem;">
+    <div class="compare-category-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:2.5rem;">
       <div style="background:#fff;border:1px solid var(--border, #E5EAF0);border-radius:12px;padding:28px 20px;text-align:center;">
         <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">日々の習慣を支える</p>
         <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">健康アプリ・PHR</p>
-        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">記録や継続的な情報提供で、<br>日々の健康行動を支援。</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">記録や継続的な情報提供で、日々の健康行動を支援。</p>
       </div>
       <div style="background:#fff;border:1px solid var(--border, #E5EAF0);border-radius:12px;padding:28px 20px;text-align:center;">
-        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">健康管理を<br>専門家に任せる</p>
-        <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">パーソナルドクター・<br>予防医療型サービス</p>
-        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">医師や専門チームが、<br>検査・相談・継続的な<br>健康管理を支援。</p>
+        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">健康管理を専門家に任せる</p>
+        <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">パーソナルドクター・予防医療型サービス</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">医師や専門チームが、検査・相談・継続的な健康管理を支援。</p>
       </div>
       <div style="background:#fff;border:1px solid var(--border, #E5EAF0);border-radius:12px;padding:28px 20px;text-align:center;">
         <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">組織全体を把握する</p>
-        <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">健康経営・<br>組織管理サービス</p>
-        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">組織の状態を可視化し、<br>企業施策や<br>マネジメントにつなげる。</p>
+        <p style="font-size:14px;font-weight:500;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">健康経営・組織管理サービス</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">組織の状態を可視化し、企業施策やマネジメントにつなげる。</p>
       </div>
       <div style="background:rgba(21,84,209,0.04);border:2px solid var(--accent, #1554D1);border-radius:12px;padding:28px 20px;text-align:center;">
-        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">自分を理解し、<br>優先順位を決める</p>
+        <p style="font-size:20px;font-weight:600;color:var(--navy, #071426);margin-bottom:0.8rem;line-height:1.5;">自分を理解し、優先順位を決める</p>
         <p style="font-size:14px;font-weight:600;color:var(--accent, #1554D1);margin-bottom:1rem;letter-spacing:0.02em;">Healthmap</p>
-        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">血液＋生活データから、<br>本人の「#1 Priority」<br>を明確にする。</p>
+        <p style="font-size:16px;color:var(--text-light, #556275);line-height:1.7;">血液＋生活データから、本人の「#1 Priority」を明確にする。</p>
         <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
           <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(21,84,209,0.08);padding:4px 10px;border-radius:20px;">Priority</span>
           <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(21,84,209,0.08);padding:4px 10px;border-radius:20px;">OPT-IN</span>
@@ -448,14 +769,14 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
         </div>
       </div>
     </div>
-    <p style="text-align:center;font-size:14px;color:var(--text-light, #556275);line-height:1.7;max-width:600px;margin:0 auto;">※各カテゴリーには、それぞれ異なる役割と強みがあります。<br>具体的な機能・提供範囲はサービスごとに異なります。</p>
+    <p style="text-align:center;font-size:14px;color:var(--text-light, #556275);line-height:1.7;max-width:600px;margin:0 auto;">※各カテゴリーには、それぞれ異なる役割と強みがあります。具体的な機能・提供範囲はサービスごとに異なります。</p>
   </div>
 </section>
 
 <!-- STRONG DIFFERENCE -->
-<div style="max-width:780px;margin:0 auto;padding:48px 24px;text-align:center;" class="reveal">
-  <p style="font-size:18px;color:var(--text-light, #556275);line-height:1.8;margin-bottom:0.5rem;">Healthmapは、健康管理を「任せる」ためのサービスでも、<br>組織を「管理する」ためのサービスでもありません。</p>
-  <p style="font-size:24px;font-weight:600;color:var(--navy, #071426);line-height:1.5;">一人ひとりが、自分を理解し、<br>「自分の場合、何から始めるか」を決めるためのサービスです。</p>
+<div class="strong-diff reveal" style="max-width:780px;margin:0 auto;padding:48px 24px;text-align:center;">
+  <p style="font-size:18px;color:var(--text-light, #556275);line-height:1.8;margin-bottom:0.5rem;">Healthmapは、健康管理を「任せる」ためのサービスでも、組織を「管理する」ためのサービスでもありません。</p>
+  <p style="font-size:24px;font-weight:600;color:var(--navy, #071426);line-height:1.5;">一人ひとりが、自分を理解し、「自分の場合、何から始めるか」を決めるためのサービスです。</p>
 </div>
 
 <!-- ④ IMPLEMENTATION FLOW -->
@@ -466,20 +787,20 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
     <div class="steps-grid">
       <div class="step-card">
         <p class="step-num">01</p>
-        <p class="step-title">企業が<br>福利厚生の選択肢として案内</p>
+        <p class="step-title">企業が福利厚生の選択肢として案内</p>
       </div>
       <div class="step-card">
         <p class="step-num">02</p>
-        <p class="step-title">希望する従業員が<br>自分で申し込む</p>
+        <p class="step-title">希望する従業員が自分で申し込む</p>
       </div>
       <div class="step-card">
         <p class="step-num">03</p>
-        <p class="step-title">Healthmapが本人へ<br>Insight + Action Planを提供</p>
+        <p class="step-title">Healthmapが本人へInsight + Action Planを提供</p>
       </div>
       <div class="step-card">
         <p class="step-num">04</p>
-        <p class="step-title">企業には<br>個人結果を共有しない</p>
-        <p class="step-sub">必要に応じて、事前に合意した範囲の<br>匿名・集計情報のみ共有。</p>
+        <p class="step-title">企業には個人結果を共有しない</p>
+        <p class="step-sub">必要に応じて、事前に合意した範囲の匿名・集計情報のみ共有。</p>
       </div>
     </div>
     
@@ -489,8 +810,8 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <!-- ⑤ EMPLOYEE CHOICE -->
 
 <!-- EMPLOYER OPPORTUNITY -->
-<div style="max-width:700px;margin:0 auto;padding:32px 24px;text-align:center;" class="reveal">
-  <p style="font-size:19px;color:var(--navy, #071426);line-height:1.8;font-weight:500;">企業は、健康結果を見るのではなく、<br>従業員が自分に必要な支援を選べる「機会」を提供する。</p>
+<div class="employer-opp reveal" style="max-width:700px;margin:0 auto;padding:32px 24px;text-align:center;">
+  <p style="font-size:19px;color:var(--navy, #071426);line-height:1.8;font-weight:500;">企業は、健康結果を見るのではなく、従業員が自分に必要な支援を選べる「機会」を提供する。</p>
 </div>
 <section class="section bg-off">
   <div class="section-inner">
@@ -521,13 +842,13 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <section class="section bg-white">
   <div class="section-inner" style="text-align:center">
     <h2 class="section-title">まずは、<br>小さく試す。</h2>
-    <p class="section-lead">対象・期間・提供内容を設計し、<br>小規模Pilotから始められます。</p>
+    <p class="section-lead">対象・期間・提供内容を設計し、小規模Pilotから始められます。</p>
     <div class="pilot-chips">
       <span class="pilot-chip">OPT-IN</span>
       <span class="pilot-chip">Privacy</span>
       <span class="pilot-chip">Personalized</span>
     </div>
-    <a href="#business-form" class="hero-cta" style="background:#1554D1;color:#fff">Pilotについて相談する</a>
+    <a href="#business-form" class="hero-cta pilot-cta" style="background:#1554D1;color:#fff">Pilotについて相談する</a>
     <div class="founder-block">
       <p class="founder-name">田中紀之</p>
       <p class="founder-role">Healthmap Founder</p>
@@ -552,7 +873,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 </footer>
 
 <script>
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})}); 
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
 </script>
 </body>
 </html>

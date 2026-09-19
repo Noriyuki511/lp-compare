@@ -565,6 +565,65 @@ html, body { overflow-x: hidden; }
 
 /* === END RESPONSIVE VISUAL POLISH === */
 
+
+/* Mobile comparison cards (stacked view) */
+.compare-mobile { display: none; }
+
+@media (max-width: 767px) {
+  .table-scroll-wrapper { display: none !important; }
+  .compare-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .compare-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .compare-card-label {
+    background: var(--off-white);
+    padding: 0.7rem 1rem;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .compare-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    gap: 0.8rem;
+  }
+  .compare-card-row:last-child { border-bottom: none; }
+  .compare-svc {
+    font-size: 13px;
+    color: var(--gray);
+    flex-shrink: 0;
+    min-width: 90px;
+  }
+  .compare-val {
+    font-size: 14px;
+    color: var(--text-light);
+    text-align: right;
+  }
+  .compare-card-hl {
+    background: rgba(21, 84, 209, 0.04);
+  }
+  .compare-card-hl .compare-svc {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .compare-card-hl .compare-val {
+    color: var(--text);
+    font-weight: 500;
+  }
+}
+
 </style>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -772,6 +831,33 @@ html, body { overflow-x: hidden; }
         </tr>
       </tbody>
     </table></div></div>
+    <div class="compare-mobile">
+  <div class="compare-card">
+    <div class="compare-card-label">判断の根拠</div>
+    <div class="compare-card-row"><span class="compare-svc">一般的な栄養指導</span><span class="compare-val">食事記録</span></div>
+    <div class="compare-card-row"><span class="compare-svc">パーソナルジム</span><span class="compare-val">体組成・運動量</span></div>
+    <div class="compare-card-row compare-card-hl"><span class="compare-svc">Healthmap</span><span class="compare-val">血液検査＋生活データ＋AI分析支援</span></div>
+  </div>
+  <div class="compare-card">
+    <div class="compare-card-label">焦点</div>
+    <div class="compare-card-row"><span class="compare-svc">一般的な栄養指導</span><span class="compare-val">何を食べるか</span></div>
+    <div class="compare-card-row"><span class="compare-svc">パーソナルジム</span><span class="compare-val">何をトレーニングするか</span></div>
+    <div class="compare-card-row compare-card-hl"><span class="compare-svc">Healthmap</span><span class="compare-val">何から始めるか（優先順位）</span></div>
+  </div>
+  <div class="compare-card">
+    <div class="compare-card-label">監修・分析支援</div>
+    <div class="compare-card-row"><span class="compare-svc">一般的な栄養指導</span><span class="compare-val">施設による</span></div>
+    <div class="compare-card-row"><span class="compare-svc">パーソナルジム</span><span class="compare-val">施設による</span></div>
+    <div class="compare-card-row compare-card-hl"><span class="compare-svc">Healthmap</span><span class="compare-val">医療機関監修のAI分析支援ツールを活用</span></div>
+  </div>
+  <div class="compare-card">
+    <div class="compare-card-label">継続の仕組み</div>
+    <div class="compare-card-row"><span class="compare-svc">一般的な栄養指導</span><span class="compare-val">食事記録の継続</span></div>
+    <div class="compare-card-row"><span class="compare-svc">パーソナルジム</span><span class="compare-val">定期セッション</span></div>
+    <div class="compare-card-row compare-card-hl"><span class="compare-svc">Healthmap</span><span class="compare-val">必要に応じてGuided Programで継続レビュー</span></div>
+  </div>
+</div>
+
     <p style="color:var(--gray);margin-top:1.5rem;text-align:center">※各サービスにはそれぞれの強みがあります。上記は観点の違いを示すものです。</p>
   </div>
 </section>

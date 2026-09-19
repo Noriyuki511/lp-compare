@@ -53,9 +53,9 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 /* HERO */
 .page-hero{padding:160px 6% 100px;background:radial-gradient(circle at 72% 38%,rgba(125,184,224,0.18),transparent 34%),radial-gradient(ellipse at 30% 50%,#1a4a7a 0%,#0d2847 40%,#071426 100%);text-align:center}
 .page-hero .s-label{color:var(--accent-hero);margin-bottom:1.5rem;font-size:15px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500}
-.page-hero h1{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--white);line-height:1.6;margin-bottom:1.5rem}
+.page-hero h1{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--white);line-height:1.4;margin-bottom:1.5rem}
 .page-hero h1 .accent-word{color:var(--accent-hero);font-weight:600}
-.page-hero .hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:0.8rem;max-width:520px;margin-left:auto;margin-right:auto}
+.page-hero .hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:0.8rem;max-width:520px;margin-left:auto;margin-right:auto}
 .page-hero .price-display{margin:2rem auto;display:inline-flex;align-items:baseline;gap:0.4rem}
 .page-hero .price-display .currency{font-size:18px;color:rgba(255,255,255,0.7)}
 .page-hero .price-display .amount{font-size:52px;font-weight:400;color:var(--white);line-height:1}
@@ -67,16 +67,16 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .btn-outline:hover{background:rgba(255,255,255,0.15);color:var(--white);border-color:rgba(255,255,255,0.35)}
 
 /* SECTIONS */
-.story-section{padding:120px 6%;position:relative}
+.story-section{padding:100px 6%;position:relative}
 .story-section.bg-white{background:var(--white)}
 .story-section.bg-off{background:var(--off-white)}
 .story-section.bg-navy{background:var(--navy)}
 .story-center{max-width:640px;margin:0 auto;text-align:center}
 .story-wide{max-width:900px;margin:0 auto}
 .s-label{font-size:14px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
-.s-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
+.s-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.4;letter-spacing:0.01em;margin-bottom:1.8rem}
 .s-title.white{color:var(--white)}
-.s-body{font-size:16px;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+.s-body{font-size:16px;color:var(--text-light);line-height:1.8;margin-bottom:2rem}
 .s-body.white{color:rgba(255,255,255,0.6)}
 
 /* INSIGHT INCLUDES */
@@ -301,8 +301,6 @@ footer, footer * {
   font-family: var(--font-primary) !important;
 }
 
-/* Override any remaining font-weight: 400 */
-* { font-weight: unset; }
 
 
 /* Cormorant ONLY for logo */
@@ -335,33 +333,161 @@ footer, footer * {
 /* ===== END TYPOGRAPHY NORMALIZATION ===== */
 
 
-/* === TYPOGRAPHY RESPONSIVE === */
-@media (min-width: 768px) and (max-width: 1199px) {
-  :root {
-    --fs-hero-title: 42px;
-    --fs-section-title: 32px;
-    --fs-body: 17px;
-    --fs-card-title: 21px;
-    --fs-card-body: 17px;
-  }
-}
-@media (max-width: 767px) {
-  :root {
-    --fs-hero-title: 34px;
-    --fs-hero-lead: 18px;
-    --fs-section-title: 28px;
-    --fs-body: 16px;
-    --fs-card-title: 20px;
-    --fs-card-body: 16px;
-    --fs-table: 15px;
-    --fs-disclaimer: 13px;
-  }
-}
-
-
 /* === FINAL BODY TYPOGRAPHY === */
 body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
 p, li, td, th, dd, dt, span, div { font-family: inherit; }
+
+
+/* === RESPONSIVE VISUAL POLISH === */
+
+/* Typography: text-wrap */
+h1, h2, h3, .s-title { text-wrap: balance; }
+body, p, .s-body { text-wrap: pretty; }
+
+/* JP body: strict line-break */
+body { line-break: strict; word-break: normal; }
+
+/* Overflow prevention */
+html, body { overflow-x: hidden; }
+
+/* Buttons: no line breaks */
+.btn-primary, .btn-outline, .nav-cta, .btn-consult, .btn-pricing, a[class*="btn"] {
+  white-space: nowrap;
+}
+
+/* Minimum tap target */
+.btn-primary, .btn-outline, .btn-consult, .nav-cta, a[class*="btn"] {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Include cards: flex for equal height */
+.includes-grid {
+  align-items: stretch;
+}
+.include-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.include-card p {
+  flex-grow: 1;
+}
+
+/* Guided cards: flex for equal height */
+.guided-grid {
+  align-items: stretch;
+}
+.guided-card {
+  display: flex;
+  flex-direction: column;
+}
+.guided-card .g-features {
+  flex-grow: 1;
+}
+
+/* Advice cards: flex for equal height */
+.advice-grid {
+  align-items: stretch;
+}
+.advice-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Step cards: flex for equal height */
+.steps-grid {
+  align-items: stretch;
+}
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sample images */
+.sample-page-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Consult box paragraph max-width */
+.consult-box p {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer responsive */
+footer {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* === MOBILE RESPONSIVE FIXES === */
+@media (max-width: 767px) {
+  /* Section spacing: 60px uniform */
+  .story-section { padding: 60px 6% !important; }
+  .page-hero { padding: 110px 6% 60px !important; }
+  .cta-final { padding: 80px 6% !important; }
+  
+  /* Body font minimum 15px */
+  body { font-size: max(15px, var(--fs-body)) !important; }
+  
+  /* Hero h1 balanced sizing */
+  .page-hero h1 { font-size: clamp(1.5rem, 7vw, 2rem) !important; line-height: 1.5 !important; }
+  
+  /* Cards: 1 column */
+  .includes-grid { grid-template-columns: 1fr !important; gap: 1rem !important; max-width: 400px !important; margin-left: auto !important; margin-right: auto !important; }
+  .includes-grid .include-card:last-child { grid-column: auto !important; max-width: 100% !important; }
+  .advice-grid { grid-template-columns: 1fr !important; }
+  .guided-grid { grid-template-columns: 1fr !important; max-width: 400px !important; }
+  .sample-pages { grid-template-columns: 1fr !important; max-width: 100% !important; }
+  .steps-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  
+  /* CTAs: full width on mobile */
+  .hero-buttons { flex-direction: column !important; align-items: center !important; }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+  }
+  
+  /* Footer */
+  footer { 
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 2rem 6% !important;
+    gap: 0.8rem !important;
+  }
+  
+  /* Consult box */
+  .consult-box { padding: 2rem 1.5rem !important; }
+  .consult-box h3 { font-size: 18px !important; }
+}
+
+/* === TABLET === */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .story-section { padding: 80px 6%; }
+  .includes-grid { grid-template-columns: repeat(3, 1fr); }
+  .includes-grid .include-card:nth-child(4),
+  .includes-grid .include-card:nth-child(5) {
+    /* Center last 2 cards in a 3-col grid */
+  }
+}
+
+/* === SMALL MOBILE (375px and below) === */
+@media (max-width: 390px) {
+  .page-hero h1 { font-size: clamp(1.3rem, 6.5vw, 1.7rem) !important; }
+  .s-title, h2.s-title { font-size: clamp(1.2rem, 5.5vw, 1.5rem) !important; }
+  .consult-box { padding: 1.5rem 1.2rem !important; }
+  .btn-consult, .btn-primary { font-size: 15px !important; padding: 0.85rem 1.8rem !important; }
+}
+
+/* === END RESPONSIVE VISUAL POLISH === */
 
 </style>
 
@@ -394,7 +520,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <section class="page-hero">
   <p class="s-label">Healthmap Insight</p>
   <h1>自分の身体を理解し、<br>自分に合った<span class="accent-word">次の一歩</span>を決める。</h1>
-  <p class="hero-sub">血液データ × 生活データ × 行動設計で、<br>あなたの身体の「取扱説明書」をつくります。</p>
+  <p class="hero-sub">血液データ × 生活データ × 行動設計で、あなたの身体の「取扱説明書」をつくります。</p>
   <div class="price-display">
     <span class="currency">¥</span>
     <span class="amount">29,800</span>
@@ -411,33 +537,33 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div class="story-center reveal">
     <p class="s-label">What's Included</p>
     <h2 class="s-title">Healthmap Insightに含まれるもの</h2>
-    <p class="s-body">血液検査の結果と、睡眠・食事・活動量などのデータを統合。<br>あなたの現在地と「何から始めるか」を1枚に整理します。</p>
+    <p class="s-body">血液検査の結果と、睡眠・食事・活動量などのデータを統合。あなたの現在地と「何から始めるか」を1枚に整理します。</p>
   </div>
   <div class="includes-grid reveal">
     <div class="include-card">
       <div class="icon">📊</div>
       <h3>統合解析</h3>
-      <p>血液・生活データを<br>AI分析支援ツールで<br>多角的に整理</p>
+      <p>血液・生活データをAI分析支援ツールで多角的に整理</p>
     </div>
     <div class="include-card">
       <div class="icon">📍</div>
       <h3>現在地の理解</h3>
-      <p>栄養バランス・睡眠・<br>活動の状態を<br>視覚的に把握</p>
+      <p>栄養バランス・睡眠・活動の状態を視覚的に把握</p>
     </div>
     <div class="include-card">
       <div class="icon">🎯</div>
       <h3>優先順位の整理</h3>
-      <p>自分の場合、<br>何から取り組むかを<br>明確に</p>
+      <p>自分の場合、何から取り組むかを明確に</p>
     </div>
     <div class="include-card">
       <div class="icon">📋</div>
       <h3>Priority Action Plan</h3>
-      <p>日常に落とし込んだ<br>具体的な<br>行動プラン</p>
+      <p>日常に落とし込んだ具体的な行動プラン</p>
     </div>
     <div class="include-card">
       <div class="icon">💬</div>
       <h3>結果説明</h3>
-      <p>カウンセラーが<br>結果と次の一歩を<br>丁寧にご説明</p>
+      <p>カウンセラーが結果と次の一歩を丁寧にご説明</p>
     </div>
   </div>
   <p style="color:var(--gray);margin-top:2.5rem;text-align:center" class="reveal">※医療機関監修のAI分析支援ツール（8weeks.ai）を活用。診断・治療・投薬判断は行いません。</p>
@@ -482,7 +608,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div class="story-center reveal">
     <p class="s-label">Real Example</p>
     <h2 class="s-title">例えば、こんなアドバイスが届きます。</h2>
-    <p class="s-body">一般的な健康情報ではなく、<br>あなたのデータに基づいた具体的な行動の提案です。</p>
+    <p class="s-body">一般的な健康情報ではなく、あなたのデータに基づいた具体的な行動の提案です。</p>
   </div>
   <div class="advice-grid reveal">
     <div class="advice-card">
@@ -498,7 +624,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
       <p class="advice-data">データ：活動量は高いが、休息や睡眠にも見直すポイントがあることを示唆。</p>
       <p class="advice-conclusion">Priority：トレーニング量を増やすのではなく、<br><strong>休息日の質を高める。</strong></p>
     </div>
-    
+  </div>
   <p style="color:var(--gray);margin-top:2rem;text-align:center" class="reveal">※実際のアドバイスは個人のデータに基づきます。上記は一例です。</p>
 </section>
 
@@ -507,7 +633,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div class="story-center reveal">
     <p class="s-label">Guided Program</p>
     <h2 class="s-title">Insightの後、<br>継続的な伴走を希望する方へ。</h2>
-    <p class="s-body">Insightで現在地と優先順位を理解した後、<br>継続的なサポートが必要な方のためのプログラムです。<br>Weekly ReportとOne Actionで、行動を定着させます。</p>
+    <p class="s-body">Insightで現在地と優先順位を理解した後、継続的なサポートが必要な方のためのプログラムです。Weekly ReportとOne Actionで、行動を定着させます。</p>
   </div>
   <div class="guided-grid reveal">
     <div class="guided-card">
@@ -549,7 +675,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div class="story-center reveal">
     <p class="s-label">Sample Report</p>
     <h2 class="s-title">あなたの<span class="accent-word">健康地図</span>（サンプル）</h2>
-    <p class="s-body">これは実際に提供している内容の一部です。<br>自分にとって何を優先するかが、一目で分かります。</p>
+    <p class="s-body">これは実際に提供している内容の一部です。自分にとって何を優先するかが、一目で分かります。</p>
   </div>
   <div class="sample-pages reveal">
     <div class="sample-page-card">
@@ -569,8 +695,8 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <section class="story-section bg-off">
   <div class="consult-box reveal">
     <p class="s-label">Free Consultation</p>
-    <h3>Healthmapが<br>自分に合うか相談する</h3>
-    <p>現在のお悩みや、<br>お持ちの健康データについて伺い、<br>Healthmap Insightが<br>ご自身に合うサービスかをご案内します。</p>
+    <h3>Healthmapが自分に合うか相談する</h3>
+    <p>現在のお悩みや、お持ちの健康データについて伺い、Healthmap Insightがご自身に合うサービスかをご案内します。</p>
     <a href="https://forms.gle/A8U5e2bBPLQNDANUA" class="btn-consult" target="_blank" rel="noopener">自分に合うか相談する</a>
     <p style="color:var(--gray);margin-top:1.5rem">※無料相談はサービス適合の確認です。統合解析、#1 Priority、Priority Action Plan、Your Health Map、結果説明は、有料のHealthmap Insightに含まれます。</p>
   </div>

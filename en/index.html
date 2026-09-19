@@ -372,7 +372,7 @@ footer, footer * {
 }
 
 /* Override any remaining font-weight: 400 */
-* { font-weight: unset; }
+/* font-weight reset removed for stability */
 
 
 /* Cormorant ONLY for logo */
@@ -405,33 +405,153 @@ footer, footer * {
 /* ===== END TYPOGRAPHY NORMALIZATION ===== */
 
 
-/* === TYPOGRAPHY RESPONSIVE === */
-@media (min-width: 768px) and (max-width: 1199px) {
-  :root {
-    --fs-hero-title: 42px;
-    --fs-section-title: 32px;
-    --fs-body: 17px;
-    --fs-card-title: 21px;
-    --fs-card-body: 17px;
-  }
-}
-@media (max-width: 767px) {
-  :root {
-    --fs-hero-title: 34px;
-    --fs-hero-lead: 18px;
-    --fs-section-title: 28px;
-    --fs-body: 16px;
-    --fs-card-title: 20px;
-    --fs-card-body: 16px;
-    --fs-table: 15px;
-    --fs-disclaimer: 13px;
-  }
-}
-
-
 /* === FINAL BODY TYPOGRAPHY === */
 body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
 p, li, td, th, dd, dt, span, div { font-family: inherit; }
+
+
+/* ===== RESPONSIVE VISUAL POLISH ===== */
+
+/* Prevent horizontal scroll */
+html, body { overflow-x: hidden; }
+
+/* Text wrapping */
+h1, h2, h3, .s-title, .hero-title { text-wrap: balance; }
+body, p, .s-body { text-wrap: pretty; }
+
+/* EN typography */
+body { word-break: normal; }
+
+/* Line-height fixes: EN body 1.7, headings 1.35 */
+.s-body, .service-core p { line-height: 1.75 !important; }
+.hero-sub { line-height: 1.75 !important; }
+.connector p { line-height: 1.75; }
+
+/* Button: prevent wrap */
+.btn-primary, .btn-outline, .btn-pricing, .nav-cta, a[class*="btn"] {
+  white-space: nowrap;
+}
+
+/* Minimum tap target */
+.btn-primary, .btn-outline, .btn-pricing, .nav-cta, .faq-q, button {
+  min-height: 44px;
+}
+
+/* Images responsive */
+img { max-width: 100%; height: auto; }
+
+/* Section spacing normalization */
+.story-section { padding: 100px 6%; }
+.connector { padding: 48px 6%; }
+.advice-section { padding: 100px 6%; }
+
+/* Content width for body paragraphs */
+.service-core p, .about-bio { max-width: 720px; }
+
+/* Comparison table mobile wrapper */
+.table-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -2%;
+  padding: 0 2%;
+}
+.table-scroll-wrapper table { min-width: 600px; }
+
+/* Equal height cards */
+.two-audience-grid { align-items: stretch; }
+.two-audience-grid > div { display: flex; flex-direction: column; }
+.two-audience-grid > div > a:last-child { margin-top: auto; }
+
+.voice-support-grid { align-items: stretch; }
+
+.steps-minimal .step-m { display: flex; flex-direction: column; }
+
+/* Footer fix */
+footer {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 2rem 6%;
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 1024px) {
+  .story-section { padding: 80px 6%; }
+  .advice-section { padding: 80px 6%; }
+  .connector { padding: 40px 6%; }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width: 767px) {
+  /* Section spacing mobile */
+  .story-section { padding: 60px 5%; }
+  .advice-section { padding: 60px 5%; }
+  .connector { padding: 32px 5%; }
+  .cta-final { padding: 80px 5%; }
+
+  /* Body font minimum 15px */
+  body { font-size: max(15px, var(--fs-body)) !important; }
+
+  /* Hero adjustments */
+  .hero-title { font-size: clamp(1.8rem, 7vw, 2.4rem) !important; }
+  .hero-sub { font-size: 15px; }
+
+  /* Buttons: full width on mobile */
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Cards: 1 column */
+  .pain-grid { grid-template-columns: 1fr; }
+  .data-cards { grid-template-columns: 1fr; max-width: 100%; }
+  .steps-minimal { grid-template-columns: 1fr; gap: 2rem; }
+  .advice-grid { grid-template-columns: 1fr; }
+  .sample-pages { grid-template-columns: 1fr; max-width: 100%; }
+  .two-audience-grid { grid-template-columns: 1fr !important; }
+  .voice-support-grid { grid-template-columns: 1fr !important; }
+
+  /* Footer stacking */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 2rem 5%;
+  }
+
+  /* Table scroll */
+  .story-wide { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .story-wide table { min-width: 600px; }
+
+  /* Content padding */
+  .story-center { padding: 0 2%; }
+}
+
+/* ===== RESPONSIVE: SMALL MOBILE ===== */
+@media (max-width: 390px) {
+  .hero-title { font-size: clamp(1.6rem, 6.5vw, 2rem) !important; }
+  :root {
+    --fs-section-title: 26px;
+    --fs-card-title: 19px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --fs-section-title: 24px;
+    --fs-hero-title: 30px;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    font-size: 14px !important;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* ===== END RESPONSIVE VISUAL POLISH ===== */
 
 </style>
 
@@ -469,7 +589,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
       Your Body's<br><span class="accent-word">Owner's Manual.</span>
     </h1>
     <p class="hero-sub">
-      Blood Data × Lifestyle Data × Action Design<br>Know yourself. Decide where to start.
+      Blood Data × Lifestyle Data × Action Design — Know yourself. Decide where to start.
     </p>
     <div class="hero-buttons">
       <a href="individuals.html" class="btn-primary">See Healthmap Insight</a>
@@ -558,9 +678,9 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
     <p class="s-body">You can start with data you already have.</p>
   </div>
   <div class="data-cards reveal">
-    <div class="data-card"><div class="data-card-icon">🩸</div><div class="data-card-title">Health Check-up Results</div><div class="data-card-desc">Company or municipal screening<br>Blood donation test results</div></div>
-    <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">Healthcare Data</div><div class="data-card-desc">Sleep &amp; activity from iPhone, etc.<br>Temperature &amp; weight records</div></div>
-    <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">Diet &amp; Glucose Records</div><div class="data-card-desc">Daily food logs<br>Glucose variability data</div></div>
+    <div class="data-card"><div class="data-card-icon">🩸</div><div class="data-card-title">Health Check-up Results</div><div class="data-card-desc">Company or municipal screening, blood donation test results</div></div>
+    <div class="data-card"><div class="data-card-icon">📱</div><div class="data-card-title">Healthcare Data</div><div class="data-card-desc">Sleep &amp; activity from iPhone, etc. Temperature &amp; weight records</div></div>
+    <div class="data-card"><div class="data-card-icon">🍽️</div><div class="data-card-title">Diet &amp; Glucose Records</div><div class="data-card-desc">Daily food logs, glucose variability data</div></div>
   </div>
   <p style="color:var(--gray);margin-top:2rem;text-align:center" class="reveal">※Additional data can provide more context. You can start with what you already have on hand.</p>
 </section>
@@ -578,9 +698,9 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div class="service-core reveal">
     <p>The clinic-supervised AI analysis support tool <span class="emphasis">8weeks.ai</span> organizes your data — blood tests, sleep, diet, and activity — into a clear picture of your current state.</p>
     <p>Based on the analysis, your counselor interprets the results and designs your priority action plan — what to focus on first.</p>
-    <p style="color:var(--text-light);margin-bottom:1.5rem">Designed so "where to start" is clear on one page.<br>Behind it lies a detailed analysis report.</p>
-    <div class="service-inline-compare">The traditional approach stacks "correct" actions.<br>But that doesn't tell you where to begin.<br>Healthmap clarifies <span class="emphasis">"where to start."</span></div>
-    <p style="color:var(--text-light);margin-top:2rem"><span class="emphasis">The counselor's role</span>: To translate the AI's analysis results into "action priorities" that fit your life.<br>Not "adding more correct things to do," but deciding together "what to start with right now" — that's the core of this service.</p>
+    <p style="color:var(--text-light);margin-bottom:1.5rem">Designed so "where to start" is clear on one page. Behind it lies a detailed analysis report.</p>
+    <div class="service-inline-compare">The traditional approach stacks "correct" actions. But that doesn't tell you where to begin. Healthmap clarifies <span class="emphasis">"where to start."</span></div>
+    <p style="color:var(--text-light);margin-top:2rem"><span class="emphasis">The counselor's role</span>: To translate the AI's analysis results into "action priorities" that fit your life. Not "adding more correct things to do," but deciding together "what to start with right now" — that's the core of this service.</p>
     <!-- Role diagram -->
     <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin:2.5rem 0 1.5rem;flex-wrap:wrap">
       <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem">👤</div><div style="color:var(--navy)">You</div><div style="color:var(--gray)">Submit data</div></div>
@@ -599,26 +719,26 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
     <h2 class="s-title white">Know yourself. Take the next step.</h2>
   </div>
   <div class="steps-minimal reveal">
-    <div class="step-m"><div class="step-m-num">01</div><div class="step-m-title">KNOW — Understand yourself</div><div class="step-m-desc">Using blood and lifestyle data,<br>organize your current state.</div></div>
-    <div class="step-m"><div class="step-m-num">02</div><div class="step-m-title">DECIDE — Set your priorities</div><div class="step-m-desc">In your case,<br>clarify what to start with first.</div></div>
-    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">ACT — Take one action</div><div class="step-m-desc">Use your Priority Action Plan to start with one practical change.<br>If you want ongoing review, you can continue with Healthmap Guided.</div></div>
+    <div class="step-m"><div class="step-m-num">01</div><div class="step-m-title">KNOW — Understand yourself</div><div class="step-m-desc">Using blood and lifestyle data, organize your current state.</div></div>
+    <div class="step-m"><div class="step-m-num">02</div><div class="step-m-title">DECIDE — Set your priorities</div><div class="step-m-desc">In your case, clarify what to start with first.</div></div>
+    <div class="step-m"><div class="step-m-num">03</div><div class="step-m-title">ACT — Take one action</div><div class="step-m-desc">Use your Priority Action Plan to start with one practical change. If you want ongoing review, you can continue with Healthmap Guided.</div></div>
   </div>
 </section>
 
 <!-- COMPARE -->
 
 <div style="max-width:700px;margin:0 auto;padding:48px 24px;text-align:center;" class="reveal">
-  <p style="font-size:18px;color:var(--text-light, #556275);line-height:1.8;">Healthmap isn't designed to manage your health for you.<br>It's designed to help you understand your data, identify what matters most, and decide where to start.</p>
+  <p style="font-size:18px;color:var(--text-light, #556275);line-height:1.8;">Healthmap isn't designed to manage your health for you. It's designed to help you understand your data, identify what matters most, and decide where to start.</p>
   <p style="font-size:22px;font-weight:600;color:var(--navy, #071426);margin-top:1rem;line-height:1.5;">We personalize the priority, not just the advice.</p>
 </div>
 <section class="story-section bg-white">
   <div class="story-center reveal">
     <p class="s-label">Difference</p>
     <h2 class="s-title">How We're Different</h2>
-    <p class="s-body">Healthmap doesn't tell you "what to eat" or "what to train."<br>It designs the priority order of "where to start."</p>
+    <p class="s-body">Healthmap doesn't tell you "what to eat" or "what to train." It designs the priority order of "where to start."</p>
   </div>
   <div class="story-wide reveal">
-    <table style="width:100%;border-collapse:collapse">
+    <div class="table-scroll-wrapper"><table style="width:100%;border-collapse:collapse">
       <thead>
         <tr style="border-bottom:2px solid var(--gray-light)">
           <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray)">Aspect</th>
@@ -653,7 +773,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
           <td style="padding:1rem 0.8rem;color:var(--text)">Optional ongoing review through Guided</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p style="color:var(--gray);margin-top:1.5rem;text-align:center">※Each service has its own strengths. The above illustrates differences in approach.</p>
   </div>
 </section>
@@ -667,7 +787,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <section class="story-section bg-off">
   <div class="story-center reveal">
     <h2 class="s-title">Your <span class="accent-word">Healthmap</span> (Sample)</h2>
-    <p class="s-body">This is part of what we actually deliver.<br>What to address first — clear on one page.</p>
+    <p class="s-body">This is part of what we actually deliver. What to address first — clear on one page.</p>
   </div>
   <div class="sample-pages reveal">
     <div class="sample-page-card">
@@ -705,7 +825,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
     </div>
     <div class="reveal" style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:var(--radius);padding:2.5rem 2rem;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
       <p style="text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem">For Business</p>
-      <h3 style="color:var(--navy);margin-bottom:1.2rem">Help each employee find<br>their own next step<br>toward better health.</h3>
+      <h3 style="color:var(--navy);margin-bottom:1.2rem">Help each employee find their own next step toward better health.</h3>
       <p style="color:var(--navy);font-size:0.88rem;line-height:1.7;margin-bottom:1.5rem">Personalized priorities.<br>Employee choice.<br>Individual results stay private.</p>
       <a href="business.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none">For organizations →</a>
     </div>
@@ -784,14 +904,14 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
         <p style="color:var(--navy)">¥59,800</p>
         <p style="color:var(--text-light)">Build a foundation for behavior change</p>
       </div>
-      <div style="background:var(--glass);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;flex:1;min-width:180px;position:relative;">
-        <p style="position:absolute;top:-8px;right:12px;background:var(--accent);color:var(--white);padding:0.15rem 0.6rem;border-radius:10px">Recommended</p>
+      <div style="background:var(--glass);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:2rem 1.5rem 1.2rem 1.5rem;flex:1;min-width:180px;position:relative;">
+        <p style="position:absolute;top:-14px;right:16px;background:var(--accent);color:var(--white);padding:0.3rem 0.9rem;border-radius:10px;font-size:0.85rem">Recommended</p>
         <p style="color:var(--navy)">6-Month Program</p>
         <p style="color:var(--navy)">¥99,800</p>
-    <p style="text-align:center;font-size:0.82rem;color:var(--gray);margin-top:0.8rem;">※Healthmap Guided is priced separately from Healthmap Insight.</p>
         <p style="color:var(--text-light)">Develop habits and verify progress</p>
       </div>
     </div>
+    <p style="text-align:center;font-size:0.82rem;color:var(--gray);margin-top:0.8rem;">※Healthmap Guided is priced separately from Healthmap Insight.</p>
   </div>
 
   <p style="text-align:center;color:var(--gray);margin-top:2rem;max-width:460px;margin-left:auto;margin-right:auto">※This service does not provide medical diagnosis, treatment, or medication decisions.<br>We recommend consulting a healthcare provider as needed.</p>
@@ -804,7 +924,8 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
       <p class="s-label">About</p>
       <h2 class="about-name">Noriyuki Tanaka</h2>
       <p class="about-name-en">Precision Nutrition Counselor</p>
-      <p class="about-bio">What moves people isn't logic alone — it's the design of priorities.<br><br>I learned this principle through years of working in People / HR and organizational transformation, and I now apply it to how people understand their health and decide what to do next.</p>
+      <p class="about-bio">What moves people isn't logic alone — it's the design of priorities.</p>
+      <p class="about-bio">I learned this principle through years of working in People / HR and organizational transformation, and I now apply it to how people understand their health and decide what to do next.</p>
       
       <a href="https://www.linkedin.com/in/noriyuki-tanaka-5a532919/" target="_blank" class="btn-ghost">Full profile (LinkedIn) →</a>
     </div>

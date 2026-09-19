@@ -23,7 +23,7 @@
 --radius:16px;--radius-sm:12px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Inter','Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-weight:400;overflow-x:hidden;letter-spacing:0.01em;line-height:var(--lh-body)}
 .emphasis{font-weight:600;color:var(--accent)}
 .accent-word{color:var(--accent);font-weight:600}
@@ -52,7 +52,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .hero-hook{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.05em;margin-bottom:1.8rem;animation:fadeUp 0.7s ease both;line-height:1.6}
 .hero-title{font-family:'Inter',sans-serif;font-size:clamp(2rem,3.8vw,2.6rem);font-weight:500;color:var(--white);line-height:1.55;letter-spacing:0.02em;margin-bottom:1.8rem;animation:fadeUp 0.8s ease 0.08s both}
 .hero-title .accent-word{color:var(--accent-hero);font-weight:600}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:2.2;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:2.5rem;animation:fadeUp 0.8s ease 0.16s both}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.24s both}
 .btn-primary{background:var(--white);color:var(--navy);padding:0.95rem 2.4rem;border-radius:12px;text-decoration:none;font-size:16px;font-weight:500;transition:all 0.25s;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
 .btn-primary:hover{background:#f0f4f8;transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.2)}
@@ -81,7 +81,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .hm-result-text{font-size:14px;color:rgba(255,255,255,0.55);font-weight:500}
 
 /* STORY SECTIONS - seamless flow */
-.story-section{padding:120px 6%;position:relative}
+.story-section{padding:100px 6%;position:relative}
 .story-section.bg-white{background:var(--white)}
 .story-section.bg-off{background:var(--off-white)}
 .story-section.bg-navy{background:var(--navy)}
@@ -92,7 +92,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .s-label{font-size:14px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
 .s-title{font-family:'Inter',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:500;color:var(--navy);line-height:1.6;letter-spacing:0.01em;margin-bottom:1.8rem}
 .s-title.white{color:var(--white)}
-.s-body{font-size:16px;color:var(--text-light);line-height:2.2;margin-bottom:2rem}
+.s-body{font-size:16px;color:var(--text-light);line-height:1.75;margin-bottom:2rem}
 .s-body.white{color:rgba(255,255,255,0.6)}
 
 /* Connector - bridges between sections */
@@ -116,7 +116,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 
 /* SERVICE - minimal */
 .service-core{max-width:580px;margin:0 auto}
-.service-core p{font-size:16px;line-height:2.3;color:var(--text-light);margin-bottom:1.5rem}
+.service-core p{font-size:16px;line-height:1.75;color:var(--text-light);margin-bottom:1.5rem}
 .service-inline-compare{font-size:16px;color:var(--gray);line-height:2;padding:1.2rem 1.5rem;border-left:3px solid var(--gray-light);margin:2rem 0}
 
 /* HOW - minimal 3 steps */
@@ -163,8 +163,8 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,20,38,0.88);ba
 .about-layout{max-width:580px}
 .about-name{font-family:'Inter',sans-serif;font-size:28px;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
 .about-name-en{font-size:15px;letter-spacing:0.12em;color:var(--gray);margin-bottom:1.5rem}
-.about-bio{font-size:16px;line-height:2.3;color:var(--text-light);margin-bottom:1.8rem}
-.about-belief{padding:1.3rem 1.6rem;background:var(--white);border-radius:var(--radius-sm);font-size:16px;line-height:2.1;color:var(--navy);margin-bottom:1.5rem;font-weight:500;border-left:3px solid var(--accent)}
+.about-bio{font-size:16px;line-height:1.75;color:var(--text-light);margin-bottom:1.8rem}
+.about-belief{padding:1.3rem 1.6rem;background:var(--white);border-radius:var(--radius-sm);font-size:16px;line-height:1.75;color:var(--navy);margin-bottom:1.5rem;font-weight:500;border-left:3px solid var(--accent)}
 .about-creds{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
 .about-cred-tag{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;padding:0.4rem 0.8rem;font-size:14px;color:var(--text-light)}
 .btn-ghost{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:15px;font-weight:500;transition:opacity 0.2s}
@@ -201,7 +201,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);paddin
 .advice-icon{font-size:38px;display:block;margin-bottom:1rem}
 .advice-card h3{font-size:18px;font-weight:600;color:var(--navy);margin-bottom:1.2rem;line-height:1.6}
 .advice-data{font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--gray-light)}
-.advice-conclusion{font-size:16px;color:var(--text-light);line-height:2}
+.advice-conclusion{font-size:16px;color:var(--text-light);line-height:1.75}
 .advice-conclusion strong{color:var(--accent);font-weight:600;font-size:16px}
 
 /* LANG SWITCH */
@@ -227,13 +227,15 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.04);paddin
 .report-items{grid-template-columns:1fr}
 .sample-pages{grid-template-columns:1fr;max-width:400px}
 .advice-grid{grid-template-columns:1fr}
-.story-section{padding:80px 6%}
+.story-section{padding:60px 6%}
 .connector{padding:40px 6%}
 footer{flex-direction:column;gap:0.5rem;text-align:center}
 .story-wide table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
 
 .two-audience-grid{grid-template-columns:1fr!important}
 .voice-support-grid{grid-template-columns:1fr!important}
+.btn-primary,.btn-outline{width:100%;max-width:360px;text-align:center;box-sizing:border-box}
+.hero-buttons{flex-direction:column;align-items:center}
 }
 
 /* ===== TYPOGRAPHY NORMALIZATION ===== */
@@ -254,7 +256,7 @@ footer{flex-direction:column;gap:0.5rem;text-align:center}
   --fs-nav: 15px;
   --fs-chip: 14px;
   --fs-disclaimer: 14px;
-  --lh-body: 1.8;
+  --lh-body: 1.75;
   --lh-heading: 1.45;
   --lh-hero: 1.35;
   --lh-card: 1.8;
@@ -276,6 +278,7 @@ body {
   font-weight: 600 !important;
   line-height: var(--lh-heading) !important;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 /* Hero */
@@ -285,6 +288,7 @@ body {
   font-weight: 600 !important;
   line-height: var(--lh-hero) !important;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 /* Navigation */
@@ -320,6 +324,7 @@ nav, .nav-links, .nav-links a, .nav-cta {
   font-size: var(--fs-section-lead) !important;
   font-weight: 400 !important;
   line-height: var(--lh-body) !important;
+  text-wrap: pretty;
 }
 
 /* Buttons */
@@ -327,6 +332,7 @@ nav, .nav-links, .nav-links a, .nav-cta {
   font-family: var(--font-primary) !important;
   font-size: var(--fs-button) !important;
   font-weight: 600 !important;
+  white-space: nowrap;
 }
 
 /* Tables */
@@ -406,33 +412,13 @@ footer, footer * {
 /* ===== END TYPOGRAPHY NORMALIZATION ===== */
 
 
-/* === TYPOGRAPHY RESPONSIVE === */
-@media (min-width: 768px) and (max-width: 1199px) {
-  :root {
-    --fs-hero-title: 42px;
-    --fs-section-title: 32px;
-    --fs-body: 17px;
-    --fs-card-title: 21px;
-    --fs-card-body: 17px;
-  }
-}
-@media (max-width: 767px) {
-  :root {
-    --fs-hero-title: 34px;
-    --fs-hero-lead: 18px;
-    --fs-section-title: 28px;
-    --fs-body: 16px;
-    --fs-card-title: 20px;
-    --fs-card-body: 16px;
-    --fs-table: 15px;
-    --fs-disclaimer: 13px;
-  }
-}
+
 
 
 /* === FINAL BODY TYPOGRAPHY === */
-body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); }
+body { font-family: 'Noto Sans JP', sans-serif !important; font-size: var(--fs-body); font-weight: 400; line-height: var(--lh-body); text-wrap: pretty; word-break: normal; }
 p, li, td, th, dd, dt, span, div { font-family: inherit; }
+img { max-width: 100%; height: auto; }
 
 </style>
 
@@ -472,9 +458,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
       Decide where to start.
     </h1>
     <p class="hero-sub">
-      Blood test data alone rarely tells you what to do first.<br>
-      Healthmap brings together your existing health data and everyday context<br>
-      to help clarify what deserves your attention now.
+      Blood test data alone rarely tells you what to do first. Healthmap brings together your existing health data and everyday context to help clarify what deserves your attention now.
     </p>
     <p style="font-size:1.1rem;font-weight:600;color:var(--accent-hero, #7db8e0);letter-spacing:0.05em;margin:1.5rem 0;">YOUR #1 PRIORITY</p>
     <div class="hero-buttons">
@@ -489,12 +473,13 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div class="story-center reveal">
     <h2 class="s-title">More health information<br>doesn't always create more clarity.</h2>
     <p class="s-body" style="max-width:680px;margin:1.5rem auto 0;">
-      Blood tests. Nutrition. Sleep. Activity. Stress.<br>
-      Each can tell you something.<br><br>
-      The harder question is:<br>
-      <strong>What should I focus on first?</strong><br><br>
-      Healthmap helps organize the signals<br>
-      and turn them into a clear priority.
+      Blood tests. Nutrition. Sleep. Activity. Stress. Each can tell you something.
+    </p>
+    <p class="s-body" style="max-width:680px;margin:1rem auto 0;">
+      The harder question is: <strong>What should I focus on first?</strong>
+    </p>
+    <p class="s-body" style="max-width:680px;margin:1rem auto 0;">
+      Healthmap helps organize the signals and turn them into a clear priority.
     </p>
   </div>
 </section>
@@ -504,10 +489,10 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
   <div class="story-center">
     <h2 class="s-title">Start with what you already have.</h2>
     <p class="s-body" style="max-width:680px;margin:1.5rem auto 0;">
-      You do not need a special test to get started.<br>
-      Begin with your existing health-check or blood-test data.<br><br>
-      Additional data can provide more context.<br>
-      You can start with what you already have.
+      You do not need a special test to get started. Begin with your existing health-check or blood-test data.
+    </p>
+    <p class="s-body" style="max-width:680px;margin:1rem auto 0;">
+      Additional data can provide more context. You can start with what you already have.
     </p>
   </div>
 </section>
@@ -527,7 +512,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
       </div>
     </div>
     <p class="s-body" style="text-align:center;margin-top:1.5rem;color:var(--text-light, #556275);">
-      Technology helps organize the signals.<br>Human judgment helps decide what matters most for you.
+      Technology helps organize the signals. Human judgment helps decide what matters most for you.
     </p>
   </div>
 </section>
@@ -535,11 +520,9 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <!-- PRIORITY PERSONALIZATION -->
 <section class="story-section bg-navy reveal">
   <div class="story-center" style="text-align:center;">
-    <p style="font-size:1.3rem;font-weight:500;color:rgba(255,255,255,0.8);margin-bottom:0.5rem;">We personalize the priority —</p>
-    <h2 class="s-title white" style="font-size:clamp(1.8rem,3vw,2.4rem);">not just the advice.</h2>
+    <h2 class="s-title white" style="font-size:clamp(1.8rem,3vw,2.4rem);"><span style="display:block;font-size:1.3rem;font-weight:500;color:rgba(255,255,255,0.8);margin-bottom:0.5rem;">We personalize the priority —</span>not just the advice.</h2>
     <p class="s-body white" style="margin-top:1.5rem;color:rgba(255,255,255,0.7);">
-      Two people can look healthy on paper and still need different next steps.<br>
-      Healthmap focuses on identifying what deserves attention first — for each individual.
+      Two people can look healthy on paper and still need different next steps. Healthmap focuses on identifying what deserves attention first — for each individual.
     </p>
     <p style="font-size:1.1rem;font-weight:600;color:var(--accent-hero, #7db8e0);letter-spacing:0.05em;margin-top:1.5rem;">YOUR #1 PRIORITY</p>
   </div>
@@ -598,7 +581,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 <!-- REAL EXAMPLES -->
 <section class="story-section bg-white reveal">
   <div class="story-center">
-    <h2 class="s-title" style="text-align:center;">Here's an example of how Healthmap<br>can translate data into a practical next step.</h2>
+    <h2 class="s-title" style="text-align:center;">Here's an example of how Healthmap can translate data into a practical next step.</h2>
     <div style="display:flex;gap:2rem;max-width:800px;margin:2rem auto 0;flex-wrap:wrap;justify-content:center;">
       <div style="flex:1;min-width:300px;padding:2rem;border:1px solid var(--border, #E5EAF0);border-radius:12px;">
         <p style="font-size:1.5rem;margin-bottom:1rem;">😴</p>
@@ -663,8 +646,7 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
     <p class="s-body" style="margin:1.5rem auto;">Start with a short conversation to see whether Healthmap fits what you're looking for.</p>
     <a href="https://docs.google.com/forms/d/18vREYCvGmOOYYLaoFYiFuDdkGbZTF2U1wdfDvdn1dds/viewform" class="btn-primary" target="_blank" rel="noopener">Check if Healthmap is right for you</a>
     <p style="font-size:0.82rem;color:var(--text-light, #556275);margin-top:1.5rem;text-align:left;">
-      ※The free consultation is a fit check to see whether Healthmap Insight is right for you.<br>
-      Integrated analysis, Your #1 Priority, Priority Action Plan, Your Health Map, and result explanation are included in the paid Healthmap Insight service.
+      ※The free consultation is a fit check to see whether Healthmap Insight is right for you. Integrated analysis, Your #1 Priority, Priority Action Plan, Your Health Map, and result explanation are included in the paid Healthmap Insight service.
     </p>
   </div>
 </section>
@@ -679,15 +661,12 @@ p, li, td, th, dd, dt, span, div { font-family: inherit; }
 </section>
 
 <footer>
-  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3)">This service does not provide medical diagnosis, treatment, or medication decisions. We recommend consulting a healthcare provider as needed.</span>
+  <span style="display:block;margin-bottom:0.5rem;color:rgba(255,255,255,0.3)">This service does not provide medical diagnosis, treatment, or medication decisions. Please consult a healthcare professional when appropriate.</span>
   <span>© 2026 Healthmap</span>
   <span><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none">Privacy Policy</a> | <a href="/legal/" style="color:rgba(255,255,255,0.3);text-decoration:none">Legal Notice</a></span>
 </footer>
 
-<span style="display:block;padding:0 24px 1rem;font-size:0.75rem;color:rgba(255,255,255,0.3);text-align:center;background:var(--navy, #071426);">
-  This service does not provide medical diagnosis, treatment, or medication decisions.<br>
-  Please consult a healthcare professional when appropriate.
-</span>
+
 
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active');document.querySelector('.hamburger').classList.toggle('active')}

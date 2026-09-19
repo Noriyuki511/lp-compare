@@ -492,6 +492,15 @@ html, body { overflow-x: hidden; }
 .connector { padding: 50px 6%; }
 
 @media (max-width: 767px) {
+  /* Role diagram: vertical stack on mobile */
+  .role-diagram { flex-direction: column; gap: 0.5rem; }
+  .role-diagram > div[style*="color:var(--accent)"] { transform: rotate(90deg); }
+  /* Final CTA heading: smaller on mobile to prevent 取扱説明書 break */
+  .cta-final .s-title { font-size: clamp(1.4rem, 6vw, 1.8rem) !important; }
+  /* Comparison table: scrollable on mobile */
+  .table-scroll-wrapper { margin: 0 -6%; padding: 0 6%; }
+  .table-scroll-wrapper table th,
+  .table-scroll-wrapper table td { font-size: 14px; padding: 0.8rem 0.6rem; white-space: nowrap; }
   /* Section spacing mobile */
   .story-section { padding: 60px 5%; }
   .connector { padding: 36px 5%; }
@@ -696,7 +705,7 @@ html, body { overflow-x: hidden; }
     <div class="service-inline-compare">従来は「正しいこと」を積み上げるアプローチ。しかしそれでは、何からやるべきかは分かりません。健康地図によって<span class="emphasis">「何からやるか」を明確に</span>します。</div>
     <p style="color:var(--text-light);margin-top:2rem">AIが答えを出すのではありません。カウンセラーが、分析結果をあなたの日常に合った「次の一歩」に翻訳する。それがHealthmapの核心です。</p>
     <!-- 役割図 -->
-    <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin:2.5rem 0 1.5rem;flex-wrap:wrap">
+    <div class="role-diagram" style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin:2.5rem 0 1.5rem;flex-wrap:wrap">
       <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem">👤</div><div style="color:var(--navy)">あなた</div><div style="color:var(--gray)">データを提出</div></div>
       <div style="color:var(--accent);opacity:0.4">⇄</div>
       <div style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:rgba(7,20,38,0.05);display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem">🧑‍⚕️</div><div style="color:var(--navy)">カウンセラー</div><div style="color:var(--gray)">解釈＋優先順位設計</div></div>
@@ -727,7 +736,7 @@ html, body { overflow-x: hidden; }
     <p class="s-body">Healthmapは「何を食べるか」「何を鍛えるか」ではなく、「自分の場合、何から始めるか」を整理するサービスです。</p>
   </div>
   <div class="story-wide reveal">
-    <div class="table-scroll-wrapper"><table style="width:100%;border-collapse:collapse">
+    <div class="table-scroll-wrapper"><div class="table-scroll-wrapper" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -1rem;padding:0 1rem"><table style="width:100%;border-collapse:collapse;min-width:560px">
       <thead>
         <tr style="border-bottom:2px solid var(--gray-light)">
           <th style="padding:1rem 0.8rem;text-align:left;color:var(--gray)">観点</th>
@@ -762,7 +771,7 @@ html, body { overflow-x: hidden; }
           <td style="padding:1rem 0.8rem;color:var(--text)">必要に応じてGuided Programで継続レビュー</td>
         </tr>
       </tbody>
-    </table></div>
+    </table></div></div>
     <p style="color:var(--gray);margin-top:1.5rem;text-align:center">※各サービスにはそれぞれの強みがあります。上記は観点の違いを示すものです。</p>
   </div>
 </section>
@@ -775,7 +784,7 @@ html, body { overflow-x: hidden; }
 <!-- ⑤ SAMPLE: 結果 -->
 <section class="story-section bg-off">
   <div class="story-center reveal">
-    <h2 class="s-title">あなたの<span class="accent-word">健康地図</span>（サンプル）</h2>
+    <h2 class="s-title">あなたの<span class="accent-word" style="white-space:nowrap">健康地図</span>（サンプル）</h2>
     <p class="s-body">これは実際に提供している内容の一部です。自分にとって何を優先するかが、一目で分かります。</p>
   </div>
   <div class="sample-pages reveal">
@@ -990,7 +999,7 @@ html, body { overflow-x: hidden; }
 <!-- CTA FINAL -->
 <section id="cta-final" class="cta-final">
   <div class="reveal">
-    <h2 class="s-title">あなたの身体の「取扱説明書」を。</h2>
+    <h2 class="s-title" style="word-break:keep-all">あなたの身体の<span style="white-space:nowrap">「取扱説明書」</span>を。</h2>
     <p>自分を知り、次の一歩を決める。</p>
     <a href="individuals.html" class="btn-primary" style="background:var(--white);color:var(--navy)">Healthmap Insightを見る</a>
   </div>

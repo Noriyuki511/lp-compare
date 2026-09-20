@@ -519,6 +519,12 @@ footer {
   max-width: 100% !important;
 }
 
+
+/* Fix: hero-sub and centered paragraphs text-align for natural wrap */
+.page-hero .hero-sub {
+  text-align: left;
+}
+
 </style>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -550,7 +556,7 @@ footer {
 <section class="page-hero">
   <p class="s-label">Healthmap Insight</p>
   <h1>自分の身体を理解し、<br>自分に合った<span class="accent-word">次の一歩</span>を決める。</h1>
-  <p class="hero-sub">血液データ × 生活データ × 行動設計で、あなたの身体の「取扱説明書」をつくります。</p>
+  <p class="hero-sub">血液データ × 生活データ × 行動設計で、あなたの身体の<span style="white-space:nowrap">「取扱説明書」</span>をつくります。</p>
   <div class="price-display">
     <span class="currency">¥</span>
     <span class="amount">29,800</span>
@@ -638,7 +644,7 @@ footer {
   <div class="story-center reveal">
     <p class="s-label">Real Example</p>
     <h2 class="s-title">例えば、こんなアドバイスが届きます。</h2>
-    <p class="s-body">一般的な健康情報ではなく、あなたのデータに基づいた具体的な行動の提案です。</p>
+    <p class="s-body">一般的な健康情報ではなく、あなたのデータに基づいた具体的な<span style="white-space:nowrap">行動の提案です。</span></p>
   </div>
   <div class="advice-grid reveal">
     <div class="advice-card">

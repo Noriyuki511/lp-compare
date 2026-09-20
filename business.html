@@ -28,7 +28,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-label{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2rem}
 .hero-problem{font-size:18px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2.5rem}
 .hero h1{font-size:2.5rem;font-weight:400;line-height:1.35;margin-bottom:1.5rem;letter-spacing:-0.01em}
-.hero-body{font-size:18px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:0.8rem;max-width:620px;margin-left:auto;margin-right:auto}
+.hero-.hero-/* Removed: was body style leak from hero section */
 .hero-privacy{font-size:16px;color:rgba(255,255,255,0.55);margin-bottom:2.5rem}
 .hero-cta{display:inline-block;background:#fff;color:#071426;padding:0.85rem 2.2rem;border-radius:6px;font-size:18px;font-weight:500;transition:transform 0.2s}
 .hero-cta:hover{transform:translateY(-2px)}
@@ -49,7 +49,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .diff-card.primary{border-top:3px solid #1554D1}
 .diff-label{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.15em;color:#1554D1;text-transform:uppercase;margin-bottom:1rem}
 .diff-title{font-size:22px;font-weight:500;line-height:1.6;color:#071426;margin-bottom:0.8rem}
-.diff-body{font-size:17px;color:#556275;line-height:1.75}
+.diff-/* removed: /* Removed: was body style leak from diff section */ — was leak from section style */
 
 /* ===== POSITIONING BAND ===== */
 .pos-band{padding:64px 2rem;background:#F7F9FB;text-align:center}
@@ -110,13 +110,13 @@ footer a:hover{color:rgba(255,255,255,0.6)}
   
   .hero h1{font-size:3.2rem}
   .hero-problem{font-size:19px}
-  .hero-body{font-size:22px}
+  .hero-/* removed: /* Removed: body{font-size:22px} — too large for body text */ — was accidental override */
   .hero-privacy{font-size:18px}
   .hero-cta{font-size:18px;padding:0.9rem 2.5rem}
   .section-title{font-size:2.25rem}
   .section-lead{font-size:19px}
   .diff-title{font-size:26px}
-  .diff-body{font-size:18px}
+  .diff-/* Removed: body{font-size:18px} leak */
   .pos-large{font-size:23px}
   .pos-highlight{font-size:38px}
   .pos-small{font-size:18px}
@@ -138,7 +138,7 @@ footer a:hover{color:rgba(255,255,255,0.6)}
   .nav-links{display:none}
   .hero{padding:100px 1.5rem 72px}
   .hero h1{font-size:36px}
-  .hero-body{font-size:17px}
+  .hero-/* Removed: body{font-size:17px} not in media query */
   .section{padding:56px 1.5rem}
   .section-title{font-size:28px}
   .diff-grid{grid-template-columns:1fr}
@@ -287,8 +287,7 @@ footer, footer * {
   font-family: var(--font-primary) !important;
 }
 
-/* Override any remaining font-weight: 400 */
-* { font-weight: unset; }
+/* font-weight: unset removed — was causing all text to appear thin */
 
 
 /* Cormorant ONLY for logo */
@@ -393,7 +392,7 @@ html, body {
   :root {
     --fs-hero-title: 34px;
     --fs-hero-lead: 18px;
-    --fs-section-title: 26px;
+    --fs-section-title: 28px;
     --fs-body: 16px;
     --fs-card-title: 20px;
     --fs-card-body: 16px;
@@ -677,6 +676,18 @@ p, li, td, th, dd, dt, span, div {
 .founder-bio {
   text-align: left;
 }
+
+
+/* Font weight normalization — match individuals.html */
+h1 { font-weight: 500 !important; }
+h2 { font-weight: 500 !important; }
+h3 { font-weight: 600 !important; }
+.s-title { font-weight: 500 !important; }
+.section-title { font-weight: 500 !important; }
+.step-title { font-weight: 500 !important; }
+.s-label { font-weight: 500; }
+.hero-problem { font-weight: 400; }
+.hero-body { font-weight: 400; }
 
 </style>
 
